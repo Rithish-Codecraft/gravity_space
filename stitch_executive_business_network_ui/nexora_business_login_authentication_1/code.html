@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nexora - B2B Business Opportunity &amp; Growth Network</title>
+<!-- Fonts: Geist & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration for Nexora Charcoal & Emerald -->
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "canvas-mint": "#F4F7F6",
+          "charcoal-primary": "#1E2229",
+          "charcoal-dark": "#13171F",
+          "emerald-accent": "#4A9D4E",
+          "emerald-dark": "#3B823E",
+          "emerald-light": "#EAF5EB",
+          "sage-gray": "#64748B",
+          "sage-border": "#E2E8F0",
+          "ink-black": "#0F172A"
+        },
+        "fontFamily": {
+          "sans": ["Geist", "sans-serif"],
+          "mono": ["JetBrains Mono", "monospace"]
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "2xl": "1rem",
+          "full": "9999px"
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-[#F4F7F6] text-ink-black min-h-screen antialiased flex justify-center font-sans selection:bg-emerald-accent selection:text-white">
+<!-- Mobile Screen Frame (Engineered 390px-420px view shell) -->
+<main class="w-full max-w-[420px] bg-[#F4F7F6] min-h-screen flex flex-col relative pb-8 shadow-[0_4px_30px_rgba(30,34,41,0.06)]">
+<!-- Top Bar: Deep Charcoal Header -->
+<header class="bg-charcoal-primary flex items-center justify-between px-4 h-14 w-full sticky top-0 z-30 shadow-md text-white">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-emerald-accent flex items-center justify-center text-white active:scale-[0.98] transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="flex items-baseline gap-1.5">
+<span class="text-[19px] font-semibold tracking-tight text-white">Nexora</span>
+<span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-semibold bg-white/10 text-emerald-light border border-white/20 uppercase tracking-wider">B2B</span>
+</div>
+</div>
+<!-- Right utility actions: Language & Help -->
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/15 transition-colors text-[13px] text-white/90 border border-white/15 font-medium" type="button">
+<span class="material-symbols-outlined text-[16px] text-emerald-accent" data-icon="language">language</span>
+<span>EN</span>
+<span class="material-symbols-outlined text-[14px] text-white/70" data-icon="expand_more">expand_more</span>
+</button>
+<button aria-label="Support &amp; Grievance desk" class="w-8 h-8 rounded-lg flex items-center justify-center text-white/80 hover:bg-white/10 transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+</header>
+<!-- Content Scrollable Body -->
+<div class="flex-1 px-4 pt-4 flex flex-col gap-4">
+<!-- Institutional Brand Banner & Welcome -->
+<section class="flex flex-col gap-1.5">
+<div class="inline-flex items-center gap-1.5 self-start px-2.5 py-1 rounded-full bg-emerald-light border border-emerald-accent/30 text-emerald-accent">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-accent animate-pulse"></span>
+<span class="font-mono text-[11px] font-semibold tracking-wide uppercase">Institutional Grade Enterprise Nexus</span>
+</div>
+<h1 class="text-[26px] leading-tight text-ink-black tracking-tight font-bold pt-1">
+  Welcome to Nexora
+</h1>
+<p class="text-[14px] text-sage-gray leading-relaxed">
+  The AI-powered opportunity network for verified businesses, entrepreneurs, and manufacturers.
+</p>
+</section>
+<!-- Authentication Method Switcher Tabs -->
+<nav aria-label="Login Methods" class="flex p-1 bg-[#E2E8F0]/70 rounded-xl border border-sage-border gap-1">
+<button class="flex-1 py-2 px-1 text-center rounded-lg bg-white text-ink-black font-semibold text-[13px] shadow-[0_1px_3px_0_rgba(15,23,42,0.08)] flex items-center justify-center gap-1 border border-sage-border/50" type="button">
+<span class="material-symbols-outlined text-[16px] text-emerald-accent" data-icon="verified_user">verified_user</span>
+<span>GSTIN / CIN</span>
+</button>
+<button class="flex-1 py-2 px-1 text-center rounded-lg text-sage-gray hover:text-ink-black font-medium text-[13px] transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px] text-sage-gray" data-icon="smartphone">smartphone</span>
+<span>Direct OTP</span>
+</button>
+<button class="flex-1 py-2 px-1 text-center rounded-lg text-sage-gray hover:text-ink-black font-medium text-[13px] transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px] text-sage-gray" data-icon="mail">mail</span>
+<span>Work Email</span>
+</button>
+</nav>
+<!-- Primary Form Container (Pure Crisp White) -->
+<div class="bg-white rounded-xl border border-sage-border p-5 shadow-[0_4px_16px_rgba(30,34,41,0.04)] flex flex-col gap-4">
+<form class="flex flex-col gap-4" onsubmit="event.preventDefault()">
+<!-- Registered Business Identifier Field -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center">
+<label class="font-mono text-[11px] font-semibold text-sage-gray uppercase tracking-wider" for="biz-id">Registered Business Identifier</label>
+<span class="font-mono text-[11px] text-emerald-accent font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]" data-icon="verified">verified</span>Live Registry
+      </span>
+</div>
+<div class="flex rounded-lg border border-sage-border focus-within:border-emerald-accent focus-within:ring-2 focus-within:ring-emerald-accent/15 bg-white overflow-hidden transition-all h-11">
+<button class="flex items-center gap-1 px-2.5 bg-[#F8FAFC] border-r border-sage-border text-ink-black font-mono text-[12px] font-semibold hover:bg-slate-100 transition-colors" type="button">
+<span>GSTIN</span>
+<span class="material-symbols-outlined text-[14px] text-sage-gray" data-icon="arrow_drop_down">arrow_drop_down</span>
+</button>
+<input class="flex-1 px-3 py-2 text-ink-black font-mono text-[14px] border-0 focus:ring-0 focus:outline-none placeholder:text-sage-gray/60 bg-transparent uppercase font-medium tracking-tight" id="biz-id" placeholder="33AABCU9603R1ZM" required="" type="text" value="33AABCU9603R1ZM"/>
+<div class="px-2.5 flex items-center gap-1 text-emerald-accent">
+<span class="material-symbols-outlined text-[17px]" data-icon="check_circle">check_circle</span>
+</div>
+</div>
+<div class="flex items-center justify-between px-0.5 text-[11px] font-mono text-sage-gray">
+<span class="flex items-center gap-1 text-emerald-accent font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-accent"></span>GSTN &amp; MCA Verified Entity
+      </span>
+<span>Supports Udyam / CIN</span>
+</div>
+</div>
+<!-- Authorized Signatory Mobile Field -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center">
+<label class="font-mono text-[11px] font-semibold text-sage-gray uppercase tracking-wider" for="biz-phone">Authorized Signatory Mobile</label>
+<span class="font-mono text-[11px] text-emerald-accent font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]" data-icon="lock_person">lock_person</span>Govt-Linked OTP
+      </span>
+</div>
+<div class="flex rounded-lg border border-sage-border focus-within:border-emerald-accent focus-within:ring-2 focus-within:ring-emerald-accent/15 bg-white overflow-hidden transition-all h-11">
+<button class="flex items-center gap-1.5 px-2.5 bg-[#F8FAFC] border-r border-sage-border text-ink-black font-mono text-[13px] hover:bg-slate-100 transition-colors" type="button">
+<span aria-hidden="true" class="inline-block w-4 text-[13px] leading-none">🇮🇳</span>
+<span class="font-semibold text-ink-black">+91</span>
+<span class="material-symbols-outlined text-[14px] text-sage-gray" data-icon="arrow_drop_down">arrow_drop_down</span>
+</button>
+<input class="flex-1 px-3 py-2 text-ink-black font-mono text-[14px] border-0 focus:ring-0 focus:outline-none placeholder:text-sage-gray/60 bg-transparent font-medium" id="biz-phone" inputmode="numeric" placeholder="98765 43210" required="" type="tel" value="98765 43210"/>
+<button class="px-2.5 text-sage-gray hover:text-ink-black transition-colors flex items-center" title="Clear field" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="cancel">cancel</span>
+</button>
+</div>
+</div>
+<!-- Advisory Notice -->
+<p class="text-[12px] text-sage-gray leading-relaxed bg-[#F8FAFC] p-3 rounded-lg border border-sage-border/80">
+    Only verified business directors, partners, or authorized representatives can access Nexora's opportunity network.
+  </p>
+<!-- Options Row -->
+<div class="flex items-center justify-between pt-0.5">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded border-sage-border text-emerald-accent focus:ring-emerald-accent/25" type="checkbox"/>
+<span class="text-[13px] text-sage-gray">Remember corporate device</span>
+</label>
+<a class="text-[13px] text-charcoal-primary hover:text-emerald-accent font-semibold transition-colors" href="#">Verify via DSC</a>
+</div>
+<!-- Primary Action CTA Button: Emerald Green -->
+<button class="w-full mt-1 h-11 rounded-lg bg-emerald-accent hover:bg-emerald-dark text-white font-semibold text-[15px] flex items-center justify-center gap-2 active:scale-[0.98] transition-all shadow-[0_2px_8px_rgba(74,157,78,0.3)]" type="submit">
+<span>Verify Business &amp; Continue</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<!-- Bank-Grade Trust & Compliance Footnote -->
+<div class="pt-3 border-t border-sage-border flex items-start gap-2.5 text-sage-gray">
+<span class="material-symbols-outlined text-[18px] text-emerald-accent mt-0.5 flex-shrink-0" data-icon="lock">lock</span>
+<p class="text-[12px] leading-relaxed text-sage-gray">
+    Bank-grade 256-bit encryption. We verify businesses via GSTIN, Udyam MSME, or MCA corporate CIN for institutional safety.
+  </p>
+</div>
+</div>
+<!-- Divider Scaffolding -->
+<div class="flex items-center gap-3 py-1">
+<div class="flex-1 h-[1px] bg-sage-border"></div>
+<span class="font-mono text-[10px] text-sage-gray uppercase tracking-wider font-medium">Instant 1-Tap Government &amp; Corporate KYC</span>
+<div class="flex-1 h-[1px] bg-sage-border"></div>
+</div>
+<!-- Fast Enterprise SSO Actions -->
+<div class="grid grid-cols-2 gap-2.5">
+<button class="h-11 px-3 rounded-lg border border-emerald-accent/40 bg-white hover:bg-emerald-light/40 transition-all flex items-center justify-center gap-2 shadow-xs active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px] text-emerald-accent" data-icon="verified">verified</span>
+<span class="text-[13px] font-semibold text-emerald-accent">DigiLocker Business</span>
+</button>
+<button class="h-11 px-3 rounded-lg border border-sage-border bg-white hover:bg-slate-50 transition-all flex items-center justify-center gap-2 shadow-xs active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[18px] text-charcoal-primary" data-icon="corporate_fare">corporate_fare</span>
+<span class="text-[13px] font-semibold text-charcoal-primary">Corporate SSO</span>
+</button>
+</div>
+<!-- Value Proposition Proof Micro-Card -->
+<div class="p-3.5 rounded-xl bg-white border border-sage-border flex items-center gap-3 shadow-[0_2px_8px_rgba(30,34,41,0.03)]">
+<div class="w-9 h-9 rounded-lg bg-emerald-light border border-emerald-accent/20 flex items-center justify-center text-emerald-accent flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="trending_up">trending_up</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-mono text-[10px] text-emerald-accent font-bold tracking-wider uppercase">LIVE PIPELINE</span>
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-accent"></span>
+</div>
+<p class="text-[13px] text-ink-black font-medium leading-snug pt-0.5">
+      14,000+ verified MSMEs &amp; OEMs sourcing ₹420Cr+ in deals &amp; credit this month.
+    </p>
+</div>
+</div>
+<!-- Registration Hook -->
+<div class="text-center pt-1">
+<p class="text-[14px] text-sage-gray">
+    New to Nexora? 
+    <a class="font-semibold text-charcoal-primary underline underline-offset-4 decoration-emerald-accent decoration-2 hover:text-emerald-accent transition-colors" href="#">
+      Register your business
+    </a>
+</p>
+</div>
+</div>
+<!-- Regulatory & Trust Footer Disclosures -->
+<footer class="mt-auto px-4 pt-6 flex flex-col items-center gap-2 border-t border-sage-border/80">
+<div class="flex items-center gap-3 text-sage-gray font-mono text-[11px]">
+<a class="hover:text-ink-black transition-colors" href="#">Terms of Service</a>
+<span class="text-sage-border">•</span>
+<a class="hover:text-ink-black transition-colors" href="#">Privacy Policy</a>
+<span class="text-sage-border">•</span>
+<a class="hover:text-ink-black transition-colors" href="#">Grievance Desk</a>
+</div>
+<p class="font-mono text-[10px] text-sage-gray/80 text-center tracking-tight">
+    Nexora Nexus Technologies Pvt Ltd © 2025. MCA Reg: U72900DL2023PTC89104
+  </p>
+</footer>
+</main>
+</body></html>

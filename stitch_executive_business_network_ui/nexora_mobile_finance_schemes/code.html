@@ -1,0 +1,427 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Nexora - Institutional Finance &amp; Schemes</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline-variant": "#c6c6cb",
+            "tertiary-fixed": "#a0f79d",
+            "on-tertiary-fixed": "#002205",
+            "secondary-fixed-dim": "#b7c8e1",
+            "primary-fixed": "#dfe2ec",
+            "surface-container-high": "#e2e7ff",
+            "on-secondary-fixed-variant": "#38485d",
+            "tertiary-container": "#002906",
+            "surface": "#faf8ff",
+            "surface-tint": "#5b5e67",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "primary-container": "#1e2229",
+            "outline": "#76777c",
+            "on-tertiary-fixed-variant": "#005315",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#c3c6d0",
+            "error": "#ba1a1a",
+            "on-primary-fixed-variant": "#43474f",
+            "surface-container": "#eaedff",
+            "on-secondary-container": "#54647a",
+            "secondary-fixed": "#d3e4fe",
+            "on-error-container": "#93000a",
+            "primary": "#080c12",
+            "surface-bright": "#faf8ff",
+            "on-primary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "surface-variant": "#dae2fd",
+            "secondary": "#505f76",
+            "on-tertiary-container": "#479a4c",
+            "on-background": "#131b2e",
+            "on-surface": "#131b2e",
+            "surface-dim": "#d2d9f4",
+            "secondary-container": "#d0e1fb",
+            "surface-container-highest": "#dae2fd",
+            "on-surface-variant": "#45474b",
+            "primary-fixed-dim": "#c3c6d0",
+            "inverse-on-surface": "#eef0ff",
+            "background": "#faf8ff",
+            "on-primary-container": "#868992",
+            "on-primary-fixed": "#181c23",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#0b1c30",
+            "tertiary": "#000f01",
+            "inverse-surface": "#283044",
+            "tertiary-fixed-dim": "#84da83"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "space-base": "1rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2rem",
+            "space-lg": "1.5rem",
+            "space-2xl": "3rem",
+            "space-2xs": "0.125rem",
+            "gutter-desktop": "1.5rem",
+            "margin-desktop": "2rem",
+            "space-3xl": "4rem",
+            "space-xs": "0.25rem",
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem"
+          },
+          "fontFamily": {
+            "label-md": ["Geist"],
+            "title-md": ["Geist"],
+            "body-sm": ["Geist"],
+            "headline-sm": ["Geist"],
+            "label-sm": ["Geist"],
+            "headline-lg": ["Geist"],
+            "display-sm": ["Geist"],
+            "body-lg": ["Geist"],
+            "body-md": ["Geist"],
+            "display-lg": ["Geist"],
+            "headline-lg-mobile": ["Geist"],
+            "code-sm": ["Geist"]
+          },
+          "fontSize": {
+            "label-md": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.005em", "fontWeight": "500" }],
+            "title-md": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-sm": ["0.75rem", { "lineHeight": "1.125rem", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-lg": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-sm": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-md": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-lg": ["3.5rem", { "lineHeight": "4rem", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "code-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface antialiased pb-24">
+<!-- Shared Component: TopAppBar -->
+<header class="bg-primary-container text-on-primary flex justify-between items-center w-full px-margin-mobile py-space-sm h-14 fixed top-0 left-0 z-50 shadow-sm border-b border-outline">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Menu" class="flex items-center justify-center p-1 rounded hover:bg-primary transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-primary tracking-tight">Nexora</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm uppercase bg-tertiary-container text-tertiary-fixed border border-on-tertiary-container/30 tracking-wider">VyapaarAI</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Help &amp; Documentation" class="p-1 rounded hover:bg-primary text-on-primary transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<button aria-label="Notifications" class="relative p-1 rounded hover:bg-primary text-on-primary transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-on-tertiary-container ring-2 ring-primary-container"></span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center border border-outline-variant/30 text-on-primary font-label-sm ml-1 text-xs">
+        AB
+      </div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="mt-14 px-margin-mobile pt-space-md space-y-space-base">
+<!-- Page Header Section -->
+<section class="space-y-space-2xs">
+<div class="flex items-center gap-space-xs text-secondary font-label-sm">
+<span class="material-symbols-outlined text-sm" data-icon="shield_lock">shield_lock</span>
+<span class="">Institutional Lending &amp; Subsidy Engine</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-surface tracking-tight">
+        Institutional Finance &amp; Schemes
+      </h1>
+<p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+        Govt. Subsidies, Collateral-Free Credit &amp; Channel Partner Routing
+      </p>
+</section>
+<!-- Pre-Approved Credit Overview Card -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-base shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container/20 rounded-full blur-2xl pointer-events-none"></div>
+<!-- Business Status & Verification Badge -->
+<div class="flex items-start justify-between gap-space-sm border-b border-surface-container pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block">Enterprise Borrower</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">ABC EV Components</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed/30 text-on-tertiary-fixed-variant text-label-sm font-label-sm border border-on-tertiary-container/20">
+<span class="material-symbols-outlined text-xs" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+          Udyam Verified
+        </span>
+</div>
+<!-- Financial Metrics Bento Grid -->
+<div class="grid grid-cols-2 gap-space-sm my-space-base">
+<div class="p-space-sm bg-surface rounded-lg border border-surface-container-high/60">
+<span class="block font-label-sm text-label-sm text-secondary uppercase">Pre-Approved Credit</span>
+<span class="font-display-sm text-display-sm font-bold text-on-surface tracking-tight block mt-0.5">₹1.50 Cr</span>
+<span class="font-body-sm text-body-sm text-on-tertiary-container font-medium flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-xs" data-icon="check_circle">check_circle</span>
+            Sanctioned Ready
+          </span>
+</div>
+<div class="p-space-sm bg-surface rounded-lg border border-surface-container-high/60 flex flex-col justify-between">
+<div>
+<span class="block font-label-sm text-label-sm text-secondary uppercase">Best Subsidized Rate</span>
+<span class="font-title-md text-title-md font-bold text-on-surface mt-1 block">6.50% <span class="font-body-sm text-body-sm text-secondary font-normal">p.a.</span></span>
+</div>
+<div class="mt-2 inline-flex items-center gap-1 text-[11px] font-label-sm text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+            3 Central Schemes Id'd
+          </div>
+</div>
+</div>
+<!-- Action -->
+<button class="w-full h-10 rounded-lg bg-on-tertiary-container text-on-primary font-title-md text-sm flex items-center justify-center gap-space-xs font-semibold shadow-sm hover:opacity-95 transition-all duration-150 active:scale-[0.98]">
+<span class="">Claim Pre-Approved Credit</span>
+<span class="material-symbols-outlined text-base" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</section>
+<!-- Interactive EMI & Subsidy Calculator Card -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-base shadow-sm space-y-space-base">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-tertiary-container" data-icon="calculate">calculate</span>
+<h2 class="font-title-md text-title-md text-on-surface">MSME Capex &amp; Working Capital Calculator</h2>
+</div>
+</div>
+<!-- Loan Amount Input & Dynamic Slider -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-secondary" for="loanRange">Borrowing Amount</label>
+<span class="font-title-md text-title-md text-on-surface font-bold" id="loanValueDisplay">₹50,00,000</span>
+</div>
+<input class="w-full accent-on-tertiary-container cursor-pointer h-2 bg-surface-container-highest rounded-lg" id="loanRange" max="15000000" min="1000000" step="500000" type="range" value="5000000">
+<div class="flex justify-between text-[11px] text-secondary font-label-sm">
+<span class="">₹10 Lakh</span>
+<span class="">Max: ₹1.50 Cr</span>
+</div>
+</div>
+<!-- Tenor Selector -->
+<div class="space-y-space-xs">
+<span class="font-label-md text-label-md text-secondary">Tenor Horizon</span>
+<div class="grid grid-cols-4 gap-2">
+<button class="py-1.5 px-2 rounded-lg text-center font-label-sm text-secondary bg-surface border border-surface-container text-xs hover:border-outline-variant transition-colors">12M</button>
+<button class="py-1.5 px-2 rounded-lg text-center font-label-sm text-on-primary bg-primary-container border border-primary-container text-xs font-semibold shadow-xs">36M (Selected)</button>
+<button class="py-1.5 px-2 rounded-lg text-center font-label-sm text-secondary bg-surface border border-surface-container text-xs hover:border-outline-variant transition-colors">60M</button>
+<button class="py-1.5 px-2 rounded-lg text-center font-label-sm text-secondary bg-surface border border-surface-container text-xs hover:border-outline-variant transition-colors">84M</button>
+</div>
+</div>
+<!-- Govt Subvention Toggle Badge -->
+<div class="p-space-sm rounded-lg bg-surface-container-low border border-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-2 pr-2">
+<span class="material-symbols-outlined text-on-tertiary-container text-lg" data-icon="policy">policy</span>
+<div>
+<span class="text-xs font-title-md text-on-surface block leading-tight">CGTMSE Collateral Cover Active</span>
+<span class="text-[11px] font-body-sm text-secondary">85% Sovereign Default Guarantee applied</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[11px] font-label-sm font-semibold">
+          Active
+        </span>
+</div>
+<!-- Calculated Output Box -->
+<div class="p-space-base rounded-xl bg-primary-container text-on-primary space-y-space-sm border border-outline">
+<div class="flex justify-between items-end border-b border-outline/40 pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-on-primary-container uppercase">Estimated Monthly EMI</span>
+<div class="font-headline-sm text-headline-sm font-bold text-on-primary mt-0.5" id="emiDisplay">₹1,53,240 / mo</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-[11px] text-on-primary-container block">Effective Rate</span>
+<span class="font-title-md text-title-md text-tertiary-fixed font-bold">6.5% <s class="text-on-primary-container font-normal text-xs">11.2%</s></span>
+</div>
+</div>
+<div class="flex items-center justify-between text-xs pt-1 font-body-sm text-on-primary-container">
+<span class="flex items-center gap-1 text-tertiary-fixed font-label-sm">
+<span class="material-symbols-outlined text-sm" data-icon="savings">savings</span>
+            Subsidy Gain
+          </span>
+<span class="font-semibold text-on-primary">₹4,80,000 saved under SIDBI scheme</span>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full h-10 rounded-lg bg-on-tertiary-container text-on-primary font-title-md text-sm font-semibold flex items-center justify-center gap-space-xs hover:opacity-95 transition-all duration-150 active:scale-[0.98]">
+<span class="material-symbols-outlined text-lg" data-icon="fingerprint">fingerprint</span>
+<span class="">Apply with 1-Tap GSTN Consent</span>
+</button>
+</section>
+<!-- Curated Government Credit Schemes -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-title-md text-title-md text-on-surface">Curated Institutional Schemes</h2>
+<p class="font-body-sm text-body-sm text-secondary">Filtered against automotive precision engineering NAICS profile</p>
+</div>
+<span class="text-xs font-label-sm text-on-tertiary-container px-2 py-0.5 rounded bg-surface-container font-semibold">3 Active</span>
+</div>
+<!-- Scheme Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-base shadow-sm space-y-space-sm relative border-l-4 border-l-on-tertiary-container">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="space-y-0.5">
+<span class="text-[11px] font-label-sm text-secondary uppercase tracking-wider">Apex Scheme • SIDBI</span>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold leading-tight">SIDBI MSME Fast-Track Working Capital</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-[11px] font-label-sm font-semibold shrink-0">
+            98% Match
+          </span>
+</div>
+<ul class="text-xs font-body-sm text-secondary space-y-1 bg-surface-container-low/50 p-space-sm rounded-lg">
+<li class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+<span class="">Sanction Limit: <strong>Up to ₹2.00 Crore</strong></span>
+</li>
+<li class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+<span class="">Subsidized interest rate: <strong>6.5% p.a.</strong></span>
+</li>
+<li class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+<span class="">Zero collateral mandate (covered via CGTMSE)</span>
+</li>
+</ul>
+<!-- Channel Partner Routing Pill -->
+<div class="p-space-xs px-space-sm rounded-lg bg-surface-container border border-surface-container-high flex items-center justify-between text-xs">
+<div class="flex items-center gap-1.5 overflow-hidden">
+<span class="material-symbols-outlined text-secondary text-sm shrink-0" data-icon="near_me">near_me</span>
+<span class="truncate font-body-sm text-on-surface">State Bank of India (Hosur SME Branch - 2.8 km away)</span>
+</div>
+<span class="text-[10px] font-label-sm text-secondary shrink-0 ml-2">Lead Routed</span>
+</div>
+<button class="w-full h-9 rounded-lg bg-on-tertiary-container text-on-primary font-title-md text-xs font-semibold flex items-center justify-center gap-1.5 hover:opacity-95 transition-all duration-150 active:scale-[0.98]">
+<span class="material-symbols-outlined text-sm" data-icon="route">route</span>
+<span class="">Route Application</span>
+</button>
+</div>
+<!-- Scheme Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-base shadow-sm space-y-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="space-y-0.5">
+<span class="text-[11px] font-label-sm text-secondary uppercase tracking-wider">Ministry of Heavy Industries</span>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold leading-tight">PLI Scheme for Automotive &amp; EV Components</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant text-[11px] font-label-sm font-semibold shrink-0">
+            Open
+          </span>
+</div>
+<p class="font-body-sm text-xs text-secondary leading-relaxed">
+          Direct fiscal incentive ranging from <strong>8% to 18%</strong> on certified incremental sales of advanced auto tech products and battery subsystems.
+        </p>
+<div class="flex items-center justify-between text-xs font-label-sm text-secondary border-t border-surface-container-low pt-2">
+<span class="flex items-center gap-1 text-on-tertiary-container">
+<span class="material-symbols-outlined text-sm" data-icon="event_available">event_available</span>
+            Accepting Applications • Cohort 2025
+          </span>
+</div>
+<button class="w-full h-9 rounded-lg bg-surface-container text-on-surface border border-outline-variant font-title-md text-xs font-semibold flex items-center justify-center gap-1.5 hover:bg-surface-container-high transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined text-sm" data-icon="description">description</span>
+<span class="">Check Ministry Guidelines &amp; Apply</span>
+</button>
+</div>
+<!-- Scheme Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-base shadow-sm space-y-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="space-y-0.5">
+<span class="text-[11px] font-label-sm text-secondary uppercase tracking-wider">RBI Regulated Gateway</span>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold leading-tight">TReDS Bill Discounting Gateway</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-[11px] font-label-sm font-semibold shrink-0">
+            Instant Cashflow
+          </span>
+</div>
+<p class="font-body-sm text-xs text-secondary leading-relaxed">
+          Liquidate accepted OEM purchase invoices in 24-48 hours via RXIL / M1xchange reverse factoring network with competitive bids.
+        </p>
+<div class="p-space-xs px-space-sm rounded-lg bg-surface-container-low flex items-center justify-between text-xs">
+<span class="font-label-sm text-secondary">Discounting Rate:</span>
+<span class="font-title-md text-xs font-bold text-on-surface">Starting at 7.1% p.a.</span>
+</div>
+<button class="w-full h-9 rounded-lg bg-surface-container text-on-surface border border-outline-variant font-title-md text-xs font-semibold flex items-center justify-center gap-1.5 hover:bg-surface-container-high transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined text-sm" data-icon="upload_file">upload_file</span>
+<span class="">Upload Invoices for Discounting</span>
+</button>
+</div>
+</section>
+<!-- Audit & Trust Footer Note -->
+<div class="flex items-center justify-center gap-2 py-space-sm text-center text-secondary font-label-sm text-[11px]">
+<span class="material-symbols-outlined text-sm" data-icon="verified_user">verified_user</span>
+<span class="">Direct Bank API Integrations • RBI &amp; SIDBI Approved Data Pipeline</span>
+</div>
+</main>
+<!-- Shared Component: BottomNavBar -->
+<!-- Active state logic: The current intent is "Institutional Finance & Schemes", which represents enterprise commercial financing & transactions. Under the available labels ["Home", "Explore", "Post", "Deals", "Network"], "Deals" is the exact closest match for commercial financing, loan facilities & contracts. -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-space-xs pb-safe bg-surface-container-lowest border-t border-outline-variant shadow-md">
+<a class="flex flex-col items-center justify-center text-secondary font-label-sm gap-space-2xs py-1 transition-transform active:scale-95 duration-100 ease-out" href="#home">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary font-label-sm gap-space-2xs py-1 transition-transform active:scale-95 duration-100 ease-out" href="#explore">
+<span class="material-symbols-outlined" data-icon="travel_explore">travel_explore</span>
+<span class="">Explore</span>
+</a>
+<a class="relative flex flex-col items-center justify-center text-on-tertiary-container font-label-sm gap-space-2xs py-1 transition-transform active:scale-95 duration-100 ease-out font-semibold" href="#deals">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="handshake" data-weight="fill" style="font-variation-settings: 'FILL' 1;">handshake</span>
+<span class="absolute -top-1 -right-2 px-1.5 py-0.2 rounded-full bg-on-tertiary-container text-on-primary text-[10px] font-bold leading-none flex items-center justify-center min-w-[14px] h-[14px]">4</span>
+</div>
+<span class="">Deals</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary font-label-sm gap-space-2xs py-1 transition-transform active:scale-95 duration-100 ease-out" href="#messages">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="">Messages</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary font-label-sm gap-space-2xs py-1 transition-transform active:scale-95 duration-100 ease-out" href="#profile">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="">Profile</span>
+</a>
+</nav>
+<!-- Interactive Slider Script -->
+<script>
+    const slider = document.getElementById('loanRange');
+    const loanDisplay = document.getElementById('loanValueDisplay');
+    const emiDisplay = document.getElementById('emiDisplay');
+
+    if (slider && loanDisplay && emiDisplay) {
+      slider.addEventListener('input', (e) => {
+        const val = parseInt(e.target.value, 10);
+        // Format to Indian Currency notation
+        const formatted = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(val);
+        loanDisplay.textContent = formatted;
+
+        // Basic formula approximation for 36 months @ 6.5% p.a.
+        const monthlyRate = 0.065 / 12;
+        const n = 36;
+        const emi = Math.round((val * monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1));
+        const emiFormatted = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(emi);
+        emiDisplay.textContent = `${emiFormatted} / mo`;
+      });
+    }
+  </script>
+
+
+</body></html>

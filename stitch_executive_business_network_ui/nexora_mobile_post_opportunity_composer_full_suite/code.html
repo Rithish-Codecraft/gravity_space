@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nexora - Create Business Broadcast</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "charcoal": "#1E2229",
+            "emerald": "#4A9D4E",
+            "mint-soft": "#F4F7F6",
+            "ink": "#0F172A",
+            "primary-fixed": "#d8e2ff",
+            "on-secondary-fixed": "#002113",
+            "on-primary-container": "#7586b0",
+            "on-secondary-fixed-variant": "#005236",
+            "inverse-on-surface": "#eef0ff",
+            "on-error": "#ffffff",
+            "surface-dim": "#d2d9f4",
+            "on-surface": "#131b2e",
+            "on-tertiary-fixed": "#2a1700",
+            "on-tertiary-fixed-variant": "#653e00",
+            "on-primary-fixed": "#051a3e",
+            "tertiary-container": "#301b00",
+            "secondary-fixed": "#6ffbbe",
+            "primary": "#0F172A",
+            "tertiary-fixed-dim": "#ffb95f",
+            "outline-variant": "#c5c6cf",
+            "surface-tint": "#4c5e85",
+            "surface-container-lowest": "#ffffff",
+            "on-background": "#131b2e",
+            "on-surface-variant": "#44474e",
+            "surface-container": "#eaedff",
+            "surface-container-highest": "#dae2fd",
+            "primary-fixed-dim": "#b4c6f3",
+            "secondary-container": "#6cf8bb",
+            "surface-container-high": "#e2e7ff",
+            "outline": "#75777f",
+            "on-primary-fixed-variant": "#35466c",
+            "surface-variant": "#dae2fd",
+            "surface-bright": "#faf8ff",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "background": "#F4F7F6",
+            "tertiary-fixed": "#ffddb8",
+            "inverse-surface": "#283044",
+            "surface": "#F4F7F6",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "tertiary": "#0e0500",
+            "secondary": "#4A9D4E",
+            "on-tertiary-container": "#bc7800",
+            "inverse-primary": "#b4c6f3",
+            "primary-container": "#1E2229",
+            "on-secondary-container": "#00714d",
+            "secondary-fixed-dim": "#4edea3",
+            "surface-container-low": "#edf2f0",
+            "on-primary": "#ffffff",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "card-padding-default": "1.5rem",
+            "grid-margin-mobile": "1rem",
+            "element-stack-xs": "0.25rem",
+            "gutter-tablet": "1rem",
+            "gutter-desktop": "1.5rem",
+            "element-stack-sm": "0.5rem",
+            "card-padding-compact": "1rem",
+            "gutter-mobile": "0.75rem",
+            "grid-margin-tablet": "1.5rem",
+            "element-stack-md": "0.75rem",
+            "element-stack-lg": "1.25rem",
+            "grid-margin-desktop": "2.5rem"
+          },
+          "fontFamily": {
+            "label-caps": ["JetBrains Mono"],
+            "mono-metric": ["JetBrains Mono"],
+            "title-md": ["Geist"],
+            "display-xl": ["Geist"],
+            "body-md": ["Geist"],
+            "headline-lg-mobile": ["Geist"],
+            "headline-lg": ["Geist"],
+            "body-lg": ["Geist"],
+            "body-sm": ["Geist"],
+            "headline-sm": ["Geist"],
+            "display-xl-mobile": ["Geist"]
+          },
+          "fontSize": {
+            "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "mono-metric": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-xl": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-xl-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-ink antialiased min-h-screen pb-36 selection:bg-emerald selection:text-white">
+<!-- TopAppBar Component -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest flex items-center justify-between px-gutter-mobile h-14 w-full border-b border-outline-variant/30 shadow-[0_1px_3px_0_rgba(15,23,42,0.06)]">
+<div class="flex items-center gap-2">
+<button aria-label="Cancel broadcast" class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-emerald" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h1 class="font-headline-sm text-headline-sm font-semibold tracking-tight text-ink">Nexora</h1>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 text-on-surface-variant hover:bg-surface-container-low rounded-lg font-body-sm text-body-sm font-medium transition-colors" type="button">
+  Drafts
+</button>
+<button class="flex items-center gap-1.5 bg-emerald text-white px-3.5 py-1.5 rounded-lg font-title-md text-body-sm font-semibold hover:bg-emerald/90 active:scale-[0.98] shadow-sm transition-all" type="button">
+<span>Publish Post</span>
+<span>🚀</span>
+</button>
+</div>
+</header>
+<!-- Author Context & Audience Controls -->
+<section class="bg-surface-container-lowest px-grid-margin-mobile py-element-stack-md border-b border-outline-variant/30 shadow-[0_1px_2px_rgba(15,23,42,0.03)]">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-charcoal text-white flex items-center justify-center font-mono-metric text-xs font-semibold shrink-0 shadow-sm">
+  ABC
+</div>
+<div class="truncate">
+<div class="flex items-center gap-1.5">
+<span class="font-body-md text-body-sm font-semibold text-ink truncate">ABC EV Components</span>
+<span class="material-symbols-outlined text-emerald text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-label-caps text-label-caps text-emerald font-semibold tracking-wide">TIER-1 VERIFIED SUPPLIER</p>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-mint-soft px-2 py-1 rounded-md border border-outline-variant/50 text-xs font-mono-metric text-charcoal">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald"></span>
+  Live Node
+</div>
+</div>
+<!-- Audience Scope & Privacy Dropdown Control -->
+<div class="flex items-center justify-between bg-mint-soft px-3 py-1.5 rounded-lg border border-outline-variant/40">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-emerald text-[18px]">lock_open</span>
+<div class="flex items-center gap-1">
+<span class="font-label-caps text-[10px] text-outline uppercase font-semibold">Audience:</span>
+<select class="bg-transparent border-0 p-0 text-body-sm font-semibold text-ink focus:ring-0 cursor-pointer pr-5">
+<option selected="">Public Network &amp; AI Match Engine</option>
+<option>Verified Tier-1 Only</option>
+<option>Private NDA Deal Room</option>
+</select>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[16px] pointer-events-none">expand_more</span>
+</div>
+</div>
+</section>
+<!-- Main Broadcast Creation Canvas -->
+<main class="max-w-2xl mx-auto px-grid-margin-mobile pt-element-stack-lg flex flex-col gap-4">
+<!-- 1. Commercial Intent Mode: Post Type / Format Selector Tabs -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider font-semibold">Commercial Intent Mode</span>
+<span class="font-mono-metric text-[11px] text-emerald font-semibold bg-emerald/10 px-2 py-0.5 rounded-full border border-emerald/30">Active RFQ Matrix</span>
+</div>
+<div class="flex gap-2 overflow-x-auto no-scrollbar pb-1 -mx-grid-margin-mobile px-grid-margin-mobile">
+<!-- Requirement (RFQ) -->
+<button class="shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-charcoal text-white font-body-sm text-body-sm font-semibold shadow-sm border border-charcoal">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">request_quote</span>
+<span>Requirement (RFQ)</span>
+</button>
+<!-- Product Showcase -->
+<button class="shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-lowest border border-outline-variant/60 text-charcoal font-body-sm text-body-sm hover:border-emerald transition-colors font-medium">
+<span class="material-symbols-outlined text-[16px] text-emerald">view_in_ar</span>
+<span>Product Showcase</span>
+</button>
+<!-- Factory Reel / Video -->
+<button class="shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-lowest border border-outline-variant/60 text-charcoal font-body-sm text-body-sm hover:border-emerald transition-colors font-medium">
+<span class="material-symbols-outlined text-[16px] text-emerald">movie</span>
+<span>Factory Reel / Video</span>
+</button>
+<!-- Industry Poll -->
+<button class="shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-lowest border border-outline-variant/60 text-charcoal font-body-sm text-body-sm hover:border-emerald transition-colors font-medium">
+<span class="material-symbols-outlined text-[16px] text-emerald">how_to_vote</span>
+<span>Industry Poll</span>
+</button>
+<!-- Milestone / Audit -->
+<button class="shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-lowest border border-outline-variant/60 text-charcoal font-body-sm text-body-sm hover:border-emerald transition-colors font-medium">
+<span class="material-symbols-outlined text-[16px] text-emerald">verified_user</span>
+<span>Milestone / Audit</span>
+</button>
+</div>
+</div>
+<!-- AI Copilot Prompt Helper Bar -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-charcoal via-ink to-[#1a2636] p- card-padding-compact p-3.5 text-white shadow-md border border-white/10">
+<div class="absolute -right-6 -top-8 w-28 h-28 bg-emerald/20 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald text-[20px]" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="font-title-md text-body-sm font-semibold text-white">Nexora AI Copilot</span>
+</div>
+<button class="flex items-center gap-1 text-[11px] font-mono-metric font-semibold bg-emerald/20 text-emerald border border-emerald/40 px-2 py-0.5 rounded-full hover:bg-emerald/30 transition-all" type="button">
+<span>✨ Smart Draft with Nexora AI</span>
+</button>
+</div>
+<p class="font-body-sm text-[12px] text-mint-soft/80 mb-2.5">
+  Quickly parse your voice memo, spec sheets, or free-form supply needs into compliance-grade RFQ structures.
+</p>
+<div class="relative">
+<input class="w-full bg-white/10 border border-white/20 text-white placeholder:text-mint-soft/50 rounded-lg text-body-sm font-body-sm px-3 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-emerald focus:bg-white/15" placeholder="e.g., We need 5,000 kg aluminium ingots delivered to Hosur by next week..." type="text"/>
+<button aria-label="Format post with AI" class="absolute right-2 top-1/2 -translate-y-1/2 text-emerald hover:text-white p-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">auto_fix_high</span>
+</button>
+</div>
+</div>
+<!-- 2. Rich Post Content Area -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/60 p-card-padding-compact shadow-sm space-y-3.5">
+<!-- Headline / Summary Input -->
+<div>
+<div class="flex items-center justify-between mb-1">
+<label class="block font-label-caps text-label-caps text-charcoal uppercase tracking-wider font-semibold">
+    Requirement Summary / Headline *
+  </label>
+<span class="font-mono-metric text-[10px] text-outline">64 / 120</span>
+</div>
+<input class="w-full rounded-lg border border-outline-variant/80 px-3 py-2 font-body-md text-body-md text-ink font-semibold focus:border-emerald focus:ring-2 focus:ring-emerald/20 outline-none transition bg-white" type="text" value="Supply of Die-Cast Aluminium Ingot (ADC12 Grade) - Hosur Plant"/>
+</div>
+<!-- Text Composer with smart placeholder -->
+<div>
+<div class="flex items-center justify-between mb-1">
+<label class="block font-label-caps text-label-caps text-charcoal uppercase tracking-wider font-semibold">
+    Detailed Brief &amp; Commercial Terms
+  </label>
+<span class="font-mono-metric text-[10px] text-outline">Rich Text + Markdown</span>
+</div>
+<textarea class="w-full rounded-lg border border-outline-variant/80 px-3 py-2.5 font-body-sm text-body-sm text-ink placeholder:text-outline/70 focus:border-emerald focus:ring-2 focus:ring-emerald/20 outline-none transition resize-none bg-white leading-relaxed" placeholder="Share a production update, raw material need, or capacity announcement..." rows="3">ADC12 Standard Alloy composition. Monthly recurring dispatch of 5 Metric Tons. Mill Test Certificates (MTC) required with each consignment. Unloading at Hosur Sector 4 facility. Immediate vendor onboarding subject to ISO9001 compliance.</textarea>
+</div>
+<!-- Attached Factory Machinery Clip Preview Block -->
+<div>
+<span class="block font-label-caps text-[10px] text-outline uppercase font-semibold mb-1.5">Attached Visual Proof / Reel</span>
+<div class="relative rounded-xl overflow-hidden border border-outline-variant/60 bg-charcoal group">
+<!-- Video Poster Image Simulation -->
+<div class="relative h-40 w-full bg-gradient-to-r from-charcoal via-slate-900 to-ink flex items-center justify-center">
+<!-- Industrial Machine Graphic Grid Background -->
+<div class="absolute inset-0 opacity-20 bg-[radial-gradient(#4A9D4E_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<!-- Machinery Mock Visual / Badge -->
+<div class="z-10 flex flex-col items-center gap-1.5 text-center px-4">
+<div class="w-11 h-11 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 shadow-lg cursor-pointer hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px] ml-0.5" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+<p class="font-mono-metric text-xs font-semibold text-white tracking-tight">CNC High-Pressure Die Casting Cell #04</p>
+<div class="flex items-center gap-2 text-[10px] font-mono-metric text-mint-soft/80">
+<span class="flex items-center gap-0.5 bg-black/40 px-1.5 py-0.5 rounded backdrop-blur">
+<span class="material-symbols-outlined text-[12px] text-emerald">videocam</span> 1080p 60fps
+        </span>
+<span class="flex items-center gap-0.5 bg-black/40 px-1.5 py-0.5 rounded backdrop-blur">
+<span class="material-symbols-outlined text-[12px] text-emerald" style="font-variation-settings: 'FILL' 1;">volume_up</span> Audio Verified
+        </span>
+</div>
+</div>
+<!-- Duration Pill Top Left -->
+<div class="absolute top-2.5 left-2.5 bg-black/75 backdrop-blur text-white text-[11px] font-mono-metric px-2 py-0.5 rounded-md flex items-center gap-1 border border-white/10">
+<span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+      0:42
+    </div>
+<!-- Close / Remove Button Top Right -->
+<button aria-label="Remove attached clip" class="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-black/70 hover:bg-red-600 text-white flex items-center justify-center transition-colors backdrop-blur border border-white/20">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+<!-- Bottom File Name Ribbon -->
+<div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-2.5 flex items-center justify-between text-white">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-emerald text-[18px]">smart_display</span>
+<span class="font-mono-metric text-[12px] font-medium truncate">CNC_DieCast_Run_Batch402.mp4</span>
+</div>
+<span class="font-mono-metric text-[10px] text-mint-soft/70 shrink-0">14.2 MB</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. Industry Tags & Discovery Chips -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-caps text-label-caps text-charcoal uppercase tracking-wider font-semibold">
+    Industry Tags &amp; Discovery
+  </span>
+<span class="font-mono-metric text-[11px] text-emerald font-medium">+ Add Custom</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<button class="px-2.5 py-1 rounded-full text-xs font-mono-metric bg-emerald/10 text-emerald border border-emerald/30 font-medium hover:bg-emerald hover:text-white transition-colors" type="button">
+    #EVManufacturing
+  </button>
+<button class="px-2.5 py-1 rounded-full text-xs font-mono-metric bg-emerald/10 text-emerald border border-emerald/30 font-medium hover:bg-emerald hover:text-white transition-colors" type="button">
+    #AluminiumDieCast
+  </button>
+<button class="px-2.5 py-1 rounded-full text-xs font-mono-metric bg-emerald/10 text-emerald border border-emerald/30 font-medium hover:bg-emerald hover:text-white transition-colors" type="button">
+    #HosurIndustrial
+  </button>
+<button class="px-2.5 py-1 rounded-full text-xs font-mono-metric bg-emerald/10 text-emerald border border-emerald/30 font-medium hover:bg-emerald hover:text-white transition-colors" type="button">
+    #Tier1Supply
+  </button>
+<button class="px-2.5 py-1 rounded-full text-xs font-mono-metric bg-emerald/10 text-emerald border border-emerald/30 font-medium hover:bg-emerald hover:text-white transition-colors" type="button">
+    #ISO9001
+  </button>
+</div>
+</div>
+<!-- 4. Commercial Deal Parameters & Specifications -->
+<div class="pt-3 border-t border-outline-variant/30">
+<div class="flex items-center justify-between mb-2.5">
+<span class="font-label-caps text-label-caps text-charcoal uppercase tracking-wider font-semibold">
+    Key Deal Parameters &amp; Specifications
+  </span>
+<span class="font-mono-metric text-[11px] text-emerald font-semibold">RFQ Mode</span>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Category -->
+<div class="bg-mint-soft p-2.5 rounded-lg border border-outline-variant/50">
+<span class="font-label-caps text-[10px] text-outline uppercase block mb-0.5 font-semibold">Category</span>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm font-semibold text-ink truncate">Raw Metals &amp; Alloys</span>
+<span class="material-symbols-outlined text-[16px] text-charcoal">tune</span>
+</div>
+</div>
+<!-- Quantity / MoQ -->
+<div class="bg-mint-soft p-2.5 rounded-lg border border-outline-variant/50">
+<span class="font-label-caps text-[10px] text-outline uppercase block mb-0.5 font-semibold">Quantity / MoQ</span>
+<div class="flex items-center">
+<input class="w-full bg-transparent p-0 border-0 font-mono-metric text-mono-metric font-semibold text-ink focus:ring-0" type="text" value="5,000 kg"/>
+</div>
+</div>
+<!-- Target Price -->
+<div class="bg-mint-soft p-2.5 rounded-lg border border-outline-variant/50">
+<span class="font-label-caps text-[10px] text-outline uppercase block mb-0.5 font-semibold">Target Price (₹)</span>
+<div class="flex items-center">
+<span class="font-mono-metric text-body-sm text-charcoal font-semibold mr-1">₹</span>
+<input class="w-full bg-transparent p-0 border-0 font-mono-metric text-mono-metric font-semibold text-ink focus:ring-0" type="text" value="214.50 /kg"/>
+</div>
+</div>
+<!-- Fulfillment Corridor -->
+<div class="bg-mint-soft p-2.5 rounded-lg border border-outline-variant/50">
+<span class="font-label-caps text-[10px] text-outline uppercase block mb-0.5 font-semibold">Fulfillment Corridor</span>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm font-semibold text-ink truncate">Hosur, TN</span>
+<span class="material-symbols-outlined text-[16px] text-emerald" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+<!-- Attached CAD / Spec Sheet Status Pill -->
+<div class="mt-2.5 flex items-center justify-between p-2 rounded-lg bg-mint-soft border border-outline-variant/50">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-7 h-7 rounded-md bg-charcoal text-white flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</div>
+<div class="truncate">
+<p class="font-body-sm text-body-sm font-semibold text-ink truncate">ADC12_Tolerances_Hosur_Plant.pdf</p>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-[10px] text-outline">1.8 MB • Technical Drawing</span>
+<span class="inline-flex items-center gap-0.5 text-[10px] font-mono-metric text-emerald font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald"></span> Verified Spec
+        </span>
+</div>
+</div>
+</div>
+<button class="p-1 text-outline hover:text-error transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- 5. Call-To-Action (CTA) Selector for Readers -->
+<div class="pt-3 border-t border-outline-variant/30">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps text-charcoal uppercase tracking-wider font-semibold">
+    Interactive Post CTA Button
+  </span>
+<span class="font-label-caps text-[10px] text-outline">Viewer Action</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<!-- Request Quote / RFQ (Selected) -->
+<button class="flex items-center justify-between px-3 py-2 rounded-lg bg-emerald text-white text-body-sm font-semibold shadow-sm border border-emerald" type="button">
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">price_check</span>
+<span class="truncate">Request Quote / RFQ</span>
+</div>
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+</button>
+<!-- View Spec Sheet -->
+<button class="flex items-center justify-between px-3 py-2 rounded-lg bg-mint-soft text-charcoal text-body-sm font-medium border border-outline-variant/60 hover:border-emerald transition-colors" type="button">
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-[16px] text-emerald">layers</span>
+<span class="truncate">View Spec Sheet</span>
+</div>
+</button>
+<!-- Direct Message -->
+<button class="flex items-center justify-between px-3 py-2 rounded-lg bg-mint-soft text-charcoal text-body-sm font-medium border border-outline-variant/60 hover:border-emerald transition-colors" type="button">
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-[16px] text-emerald">chat</span>
+<span class="truncate">Direct Message</span>
+</div>
+</button>
+<!-- Book Plant Visit -->
+<button class="flex items-center justify-between px-3 py-2 rounded-lg bg-mint-soft text-charcoal text-body-sm font-medium border border-outline-variant/60 hover:border-emerald transition-colors" type="button">
+<div class="flex items-center gap-1.5 truncate">
+<span class="material-symbols-outlined text-[16px] text-emerald">factory</span>
+<span class="truncate">Book Plant Visit</span>
+</div>
+</button>
+</div>
+</div>
+<!-- 6. Target Audience & Compliance Distribution Toggle -->
+<div class="p-3 bg-mint-soft rounded-xl border border-emerald/30 flex items-start justify-between gap-3">
+<div class="flex gap-2.5">
+<div class="mt-0.5 p-1.5 rounded-md bg-emerald text-white shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">rocket_launch</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-sm font-bold text-ink">AI Opportunity Distribution</span>
+<span class="text-[10px] bg-emerald/20 text-emerald font-mono-metric font-semibold px-1.5 py-0.2 rounded">AUTO-DISPATCH</span>
+</div>
+<p class="font-body-sm text-[12px] text-charcoal/80 leading-snug mt-0.5">
+  Instantly push structured RFQ parameters. Will notify <strong class="text-emerald font-semibold">42 verified regional smelters</strong> &amp; Tier-2 suppliers within 150 km radius.
+</p>
+</div>
+</div>
+<!-- Switch -->
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-emerald"></div>
+</label>
+</div>
+</div>
+<!-- Match Pre-Calculation Ribbon -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/60 shadow-sm mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald text-[20px]" style="font-variation-settings: 'FILL' 1;">insights</span>
+<div>
+<span class="font-label-caps text-label-caps text-outline uppercase font-semibold">Estimated Match Index</span>
+<p class="font-mono-metric text-mono-metric font-bold text-ink">94.8% Institutional Liquidity</p>
+</div>
+</div>
+<span class="font-mono-metric text-label-caps bg-emerald/15 text-emerald border border-emerald/30 px-2.5 py-1 rounded-full font-bold">
+  HIGH AFFINITY
+</span>
+</div>
+</main>
+<!-- 7. Bottom Quick Action Dock (Above Global Navigation) -->
+<div class="fixed bottom-14 left-0 w-full z-40 bg-surface-container-lowest border-t border-outline-variant/30 py-2 px-3 shadow-[0_-2px_6px_rgba(15,23,42,0.04)]">
+<div class="max-w-2xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-1 sm:gap-2">
+<!-- Camera -->
+<button class="p-2 rounded-lg text-charcoal hover:bg-mint-soft hover:text-emerald active:scale-95 transition-all" title="Capture with Camera" type="button">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+</button>
+<!-- Reel Video -->
+<button class="p-2 rounded-lg text-emerald bg-emerald/10 active:scale-95 transition-all" title="Upload Reel Video" type="button">
+<span class="material-symbols-outlined text-[20px]">video_library</span>
+</button>
+<!-- Document / CAD -->
+<button class="p-2 rounded-lg text-charcoal hover:bg-mint-soft hover:text-emerald active:scale-95 transition-all" title="Attach Document/CAD" type="button">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+</button>
+<!-- Tag Business -->
+<button class="p-2 rounded-lg text-charcoal hover:bg-mint-soft hover:text-emerald active:scale-95 transition-all" title="Tag Verified Partner" type="button">
+<span class="material-symbols-outlined text-[20px]">alternate_email</span>
+</button>
+<!-- Deal Terms -->
+<button class="p-2 rounded-lg text-charcoal hover:bg-mint-soft hover:text-emerald active:scale-95 transition-all" title="Deal Terms" type="button">
+<span class="material-symbols-outlined text-[20px]">request_quote</span>
+</button>
+<!-- Poll -->
+<button class="p-2 rounded-lg text-charcoal hover:bg-mint-soft hover:text-emerald active:scale-95 transition-all" title="Create Poll" type="button">
+<span class="material-symbols-outlined text-[20px]">poll</span>
+</button>
+</div>
+<div class="flex items-center gap-1.5 pl-2 border-l border-outline-variant/40">
+<span class="material-symbols-outlined text-emerald text-[16px]" style="font-variation-settings: 'FILL' 1;">shield</span>
+<span class="font-label-caps text-[10px] text-charcoal font-semibold tracking-wide">NDA READY</span>
+</div>
+</div>
+</div>
+<!-- BottomNavBar Component (Synchronized Nexora Mobile Navigation) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex items-center justify-around px-gutter-mobile py-2 bg-surface-container-lowest border-t border-outline-variant/30 shadow-[0_-2px_10px_rgba(15,23,42,0.06)]">
+<!-- Home tab -->
+<button class="flex flex-col items-center justify-center text-charcoal/70 hover:text-ink font-normal active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="font-label-caps text-[10px] mt-0.5">Home</span>
+</button>
+<!-- Explore tab -->
+<button class="flex flex-col items-center justify-center text-charcoal/70 hover:text-ink font-normal active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-[22px]">travel_explore</span>
+<span class="font-label-caps text-[10px] mt-0.5">Explore</span>
+</button>
+<!-- Post tab (ACTIVE STATE: Contextual screen matches 'Post') -->
+<button class="flex flex-col items-center justify-center text-emerald font-semibold active:scale-95 transition-transform duration-150">
+<div class="w-10 h-10 -mt-4 bg-charcoal text-emerald rounded-full flex items-center justify-center shadow-lg border-2 border-surface-container-lowest">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+</div>
+<span class="font-label-caps text-[10px] mt-0.5 font-bold text-emerald">Post</span>
+</button>
+<!-- Deals tab -->
+<button class="flex flex-col items-center justify-center text-charcoal/70 hover:text-ink font-normal active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-[22px]">handshake</span>
+<span class="font-label-caps text-[10px] mt-0.5">Deals</span>
+</button>
+<!-- Network tab -->
+<button class="flex flex-col items-center justify-center text-charcoal/70 hover:text-ink font-normal active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-[22px]">chat</span>
+<span class="font-label-caps text-[10px] mt-0.5">Network</span>
+</button>
+</nav>
+</body></html>

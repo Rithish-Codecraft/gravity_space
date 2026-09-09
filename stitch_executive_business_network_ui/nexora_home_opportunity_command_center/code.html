@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nexora - Enterprise Opportunity Command Center</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with custom palette config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "charcoal": "#1E2229",
+            "charcoal-dark": "#16191F",
+            "charcoal-light": "#2A303A",
+            "accent": "#4A9D4E",
+            "accent-hover": "#3E8642",
+            "accent-subtle": "#E8F5E9",
+            "sage": "#64748B",
+            "sage-light": "#94A3B8",
+            "canvas": "#F4F7F6",
+            "card": "#FFFFFF",
+            "card-muted": "#F8FAFC",
+            "card-border": "#E2E8F0",
+            "ink": "#0F172A",
+            "error": "#BA1A1A"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "display-xl": ["Geist", "sans-serif"],
+            "headline-sm": ["Geist", "sans-serif"],
+            "mono-metric": ["JetBrains Mono", "monospace"],
+            "label-caps": ["JetBrains Mono", "monospace"],
+            "headline-lg": ["Geist", "sans-serif"],
+            "body-sm": ["Geist", "sans-serif"],
+            "headline-lg-mobile": ["Geist", "sans-serif"],
+            "body-lg": ["Geist", "sans-serif"],
+            "title-md": ["Geist", "sans-serif"],
+            "body-md": ["Geist", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      height: 4px;
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 9999px;
+    }
+    .dark-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .dark-scrollbar::-webkit-scrollbar-track {
+      background: #16191F;
+    }
+    .dark-scrollbar::-webkit-scrollbar-thumb {
+      background: #2A303A;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-canvas text-ink font-body-md text-sm antialiased min-h-screen">
+<!-- ========================================================================= -->
+<!-- TOP NAVIGATION HEADER: Deep Charcoal (#1E2229)                            -->
+<!-- ========================================================================= -->
+<header class="flex justify-between items-center w-full px-6 h-16 sticky top-0 z-40 bg-charcoal text-white border-b border-charcoal-light shadow-sm">
+<!-- Left Cluster: Brand & Search -->
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3">
+<span class="font-headline-sm text-xl font-bold tracking-tight text-white">Nexora</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-caps text-[11px] bg-charcoal-light text-accent font-semibold tracking-wider border border-white/10">B2B NETWORK</span>
+</div>
+<!-- Top Search Bar -->
+<div class="relative hidden md:flex items-center w-72 lg:w-96">
+<span class="material-symbols-outlined absolute left-3 text-sage text-lg">search</span>
+<input class="w-full pl-9 pr-12 py-1.5 text-sm bg-charcoal-dark border border-white/10 rounded-lg text-white placeholder-sage focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent font-body-sm transition-all" placeholder="Search products, RFQs, verified enterprises..." type="text"/>
+<span class="absolute right-2 px-1.5 py-0.5 text-[10px] font-mono-metric text-sage bg-charcoal-light rounded border border-white/10">⌘K</span>
+</div>
+</div>
+<!-- Right Cluster: Actions & Profile -->
+<div class="flex items-center gap-3">
+<!-- Trailing Primary Action (Emerald Accent CTA) -->
+<button class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-accent text-white font-title-md text-sm font-semibold hover:bg-accent-hover active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined text-base">auto_awesome</span>
+<span>Ask Nexora AI</span>
+</button>
+<!-- Trailing Icon Actions -->
+<div class="flex items-center gap-1 border-l border-r border-charcoal-light px-2">
+<button class="p-2 rounded-lg text-sage hover:bg-charcoal-light hover:text-white transition-colors duration-150 relative" title="Notifications">
+<span class="material-symbols-outlined text-lg">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span>
+</button>
+<button class="p-2 rounded-lg text-sage hover:bg-charcoal-light hover:text-white transition-colors duration-150 relative" title="Chat">
+<span class="material-symbols-outlined text-lg">chat</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-accent"></span>
+</button>
+<button class="p-2 rounded-lg text-sage hover:bg-charcoal-light hover:text-white transition-colors duration-150" title="Preferences">
+<span class="material-symbols-outlined text-lg">tune</span>
+</button>
+</div>
+<!-- Business Switcher & User Profile Photo -->
+<div class="flex items-center gap-2.5 pl-1 cursor-pointer group">
+<div class="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-label-caps text-xs font-bold">
+          AB
+        </div>
+<div class="hidden lg:flex flex-col text-left">
+<span class="text-xs font-semibold leading-tight text-white">ABC EV Components</span>
+<span class="text-[11px] text-accent font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Tier-1 Verified
+          </span>
+</div>
+<span class="material-symbols-outlined text-sage text-base group-hover:text-white transition-colors">expand_more</span>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- MAIN LAYOUT: SideNav + 3-Column Enterprise Desktop Workspace             -->
+<!-- ========================================================================= -->
+<div class="flex min-h-[calc(100vh-4rem)]">
+<!-- ========================================================================= -->
+<!-- LEFT SIDEBAR: Deep Charcoal (#1E2229)                                     -->
+<!-- ========================================================================= -->
+<aside class="flex flex-col justify-between w-72 h-[calc(100vh-4rem)] p-4 border-r border-charcoal-light sticky top-16 bg-charcoal text-white shrink-0 overflow-y-auto dark-scrollbar">
+<div class="flex flex-col gap-5">
+<!-- Business Identifier Header -->
+<div class="flex items-center gap-3 px-2 py-2 rounded-lg bg-charcoal-dark border border-white/10">
+<div class="w-10 h-10 rounded-lg bg-charcoal-light border border-white/10 flex items-center justify-center text-accent">
+<span class="material-symbols-outlined text-xl">domain_verification</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-sm font-semibold text-white">ABC EV Components</span>
+<div class="flex items-center gap-1.5">
+<span class="font-mono-metric text-[11px] text-accent font-semibold">87% Profile Strength</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-accent"></span>
+</div>
+</div>
+</div>
+<!-- Primary Rail CTA: Emerald Accent -->
+<button class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-accent text-white font-title-md font-semibold text-sm shadow-sm hover:bg-accent-hover transition-all active:scale-[0.99]">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+<span>New Opportunity</span>
+</button>
+<!-- Navigation Tabs -->
+<nav class="flex flex-col gap-1">
+<!-- Active Tab: Emerald Green accent highlighted -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-accent text-white font-semibold shadow-sm transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-title-md text-sm">Home</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sage hover:text-white hover:bg-charcoal-light transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-body-md text-sm">Explore</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sage hover:text-white hover:bg-charcoal-light transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-body-md text-sm">Network</span>
+<span class="ml-auto font-label-caps text-[10px] px-1.5 py-0.5 rounded bg-charcoal-light text-sage-light">143</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sage hover:text-white hover:bg-charcoal-light transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-body-md text-sm">Opportunities</span>
+<span class="ml-auto font-label-caps text-[10px] px-1.5 py-0.5 rounded bg-accent/20 text-accent font-semibold">4 HOT</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sage hover:text-white hover:bg-charcoal-light transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">domain</span>
+<span class="font-body-md text-sm">Businesses</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sage hover:text-white hover:bg-charcoal-light transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">account_balance</span>
+<span class="font-body-md text-sm">Finance &amp; Schemes</span>
+<span class="ml-auto w-2 h-2 rounded-full bg-accent"></span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sage hover:text-white hover:bg-charcoal-light transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-body-md text-sm">Messages</span>
+<span class="ml-auto font-label-caps text-[10px] px-1.5 py-0.5 rounded-full bg-error text-white font-bold">3</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sage hover:text-white hover:bg-charcoal-light transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-body-md text-sm">Profile</span>
+</a>
+</nav>
+</div>
+<!-- Footer Rail Tabs -->
+<div class="pt-4 border-t border-charcoal-light flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sage hover:text-white hover:bg-charcoal-light text-xs transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sage hover:text-white hover:bg-charcoal-light text-xs transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">translate</span>
+<span>Language (EN)</span>
+</a>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- CENTER & RIGHT CONTENT WORKSPACE: Soft Mint White Canvas                  -->
+<!-- ========================================================================= -->
+<div class="flex-1 flex flex-col xl:flex-row gap-6 p-6 max-w-[1440px] mx-auto w-full">
+<!-- ======================================================================= -->
+<!-- CENTER COLUMN: Daily Brief, Stories, Composer, and Connected Feeds     -->
+<!-- ======================================================================= -->
+<main class="flex-1 flex flex-col gap-6 min-w-0">
+<!-- 1. Top Section Greeting & Opportunity Daily Brief -->
+<section class="flex flex-col gap-4">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+<div>
+<h1 class="font-headline-lg text-2xl font-bold text-ink tracking-tight">Good morning, Rithish 👋</h1>
+<p class="font-body-md text-sm text-sage">Here's what can move ABC EV Components forward today.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-[11px] px-2.5 py-1 bg-white border border-card-border rounded-full text-sage font-medium flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                MARKET ENGINE ACTIVE
+              </span>
+</div>
+</div>
+<!-- 5 Quick Action Summary Metric Cards -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+<!-- Card 1 -->
+<div class="bg-card p-3.5 rounded-xl border border-card-border hover:border-accent/50 transition-all cursor-pointer group shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between gap-1 mb-2">
+<span class="text-base">🔥</span>
+<span class="font-label-caps text-[10px] px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 font-semibold">+2 new today</span>
+</div>
+<div>
+<span class="font-title-md text-sm font-semibold text-ink block leading-tight">4 High-Potential Opps</span>
+<span class="font-label-caps text-[11px] text-accent group-hover:underline mt-1 inline-flex items-center gap-0.5 font-semibold">
+                  Click to review →
+                </span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-card p-3.5 rounded-xl border border-card-border hover:border-accent/50 transition-all cursor-pointer group shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between gap-1 mb-2">
+<span class="text-base">💰</span>
+<span class="font-label-caps text-[10px] px-1.5 py-0.5 rounded bg-card-muted text-sage font-medium">Capital</span>
+</div>
+<div>
+<span class="font-title-md text-sm font-semibold text-ink block leading-tight">2 Financing Matches</span>
+<p class="font-mono-metric text-[12px] text-sage mt-0.5">₹50L &amp; ₹1.4L Schemes identified</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-card p-3.5 rounded-xl border border-card-border hover:border-accent/50 transition-all cursor-pointer group shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between gap-1 mb-2">
+<span class="text-base">🤝</span>
+<span class="font-label-caps text-[10px] px-1.5 py-0.5 rounded bg-accent-subtle text-accent font-bold">90%+ match</span>
+</div>
+<div>
+<span class="font-title-md text-sm font-semibold text-ink block leading-tight">7 Businesses to Meet</span>
+<p class="font-body-sm text-[12px] text-sage mt-0.5">High compatibility in EV &amp; Auto</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-card p-3.5 rounded-xl border border-card-border hover:border-accent/50 transition-all cursor-pointer group shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between gap-1 mb-2">
+<span class="text-base">🛒</span>
+<span class="font-label-caps text-[10px] px-1.5 py-0.5 rounded bg-card-muted text-sage font-medium">Procurement</span>
+</div>
+<div>
+<span class="font-title-md text-sm font-semibold text-ink block leading-tight">5 Potential Customers</span>
+<p class="font-body-sm text-[12px] text-sage mt-0.5">Active procurement RFQs</p>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-card p-3.5 rounded-xl border border-card-border hover:border-accent/50 transition-all cursor-pointer group shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between gap-1 mb-2">
+<span class="text-base">📦</span>
+<span class="font-label-caps text-[10px] px-1.5 py-0.5 rounded bg-card-muted text-sage font-medium">Tier-2</span>
+</div>
+<div>
+<span class="font-title-md text-sm font-semibold text-ink block leading-tight">3 Verified Suppliers</span>
+<p class="font-body-sm text-[12px] text-sage mt-0.5">Aluminium &amp; CNC tooling</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Connected Stories & Factory Highlights Bar -->
+<section class="bg-card border border-card-border rounded-xl p-3.5 shadow-sm">
+<div class="flex items-center gap-4 overflow-x-auto custom-scrollbar pb-1">
+<!-- Your Story (+ Add) -->
+<button class="flex flex-col items-center gap-1.5 shrink-0 group">
+<div class="w-14 h-14 rounded-full border-2 border-dashed border-accent flex items-center justify-center bg-accent-subtle group-hover:bg-accent/20 transition-colors">
+<span class="material-symbols-outlined text-accent text-xl">add</span>
+</div>
+<span class="font-label-caps text-[11px] text-ink font-medium">Your Story (+ Add)</span>
+</button>
+<!-- Tata Motors EV Div -->
+<div class="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer group">
+<div class="w-14 h-14 rounded-full p-0.5 bg-gradient-to-tr from-charcoal to-accent">
+<div class="w-full h-full rounded-full bg-card flex items-center justify-center overflow-hidden border border-white">
+<span class="font-mono-metric text-xs font-bold text-ink">TM</span>
+</div>
+</div>
+<span class="font-label-caps text-[11px] text-sage group-hover:text-ink">Tata Motors EV Div</span>
+</div>
+<!-- Apex Precision Tooling -->
+<div class="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer group">
+<div class="w-14 h-14 rounded-full p-0.5 bg-gradient-to-tr from-charcoal to-accent">
+<div class="w-full h-full rounded-full bg-card flex items-center justify-center overflow-hidden border border-white">
+<span class="font-mono-metric text-xs font-bold text-ink">AP</span>
+</div>
+</div>
+<span class="font-label-caps text-[11px] text-sage group-hover:text-ink">Apex Precision Tooling</span>
+</div>
+<!-- Mahindra Electric -->
+<div class="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer group">
+<div class="w-14 h-14 rounded-full p-0.5 bg-gradient-to-tr from-charcoal to-accent">
+<div class="w-full h-full rounded-full bg-card flex items-center justify-center overflow-hidden border border-white">
+<span class="font-mono-metric text-xs font-bold text-ink">ME</span>
+</div>
+</div>
+<span class="font-label-caps text-[11px] text-sage group-hover:text-ink">Mahindra Electric</span>
+</div>
+<!-- Greaves Cotton -->
+<div class="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer group">
+<div class="w-14 h-14 rounded-full p-0.5 bg-card-border">
+<div class="w-full h-full rounded-full bg-card flex items-center justify-center overflow-hidden border border-white">
+<span class="font-mono-metric text-xs font-bold text-sage">GC</span>
+</div>
+</div>
+<span class="font-label-caps text-[11px] text-sage group-hover:text-ink">Greaves Cotton</span>
+</div>
+<!-- Exide Energy -->
+<div class="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer group">
+<div class="w-14 h-14 rounded-full p-0.5 bg-card-border">
+<div class="w-full h-full rounded-full bg-card flex items-center justify-center overflow-hidden border border-white">
+<span class="font-mono-metric text-xs font-bold text-sage">EE</span>
+</div>
+</div>
+<span class="font-label-caps text-[11px] text-sage group-hover:text-ink">Exide Energy</span>
+</div>
+</div>
+</section>
+<!-- 3. Smart Post Composer Bar -->
+<section class="bg-card border border-card-border rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-charcoal text-white flex items-center justify-center font-label-caps text-xs font-bold shrink-0">
+              AB
+            </div>
+<div class="flex-1 bg-card-muted border border-card-border rounded-lg px-4 py-2.5 text-sage font-body-md text-sm hover:border-slate-300 cursor-text transition-colors">
+              Share an update, requirement, or product announcement...
+            </div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-card-border">
+<div class="flex flex-wrap items-center gap-1.5">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-card-border text-xs font-medium text-ink hover:bg-card-muted transition-colors">
+<span>📦 Product</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-card-border text-xs font-medium text-ink hover:bg-card-muted transition-colors">
+<span>🤝 Requirement (RFQ)</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-card-border text-xs font-medium text-ink hover:bg-card-muted transition-colors">
+<span>💰 Funding Need</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-card-border text-xs font-medium text-ink hover:bg-card-muted transition-colors">
+<span>📢 Update</span>
+</button>
+</div>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-accent-subtle border border-accent/20 text-accent font-title-md text-xs font-semibold hover:bg-accent hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+<span>✨ AI Assistant</span>
+</button>
+</div>
+</section>
+<!-- 4. Feed Filter Navigation Tabs -->
+<nav class="flex items-center justify-between border-b border-card-border pb-2">
+<div class="flex items-center gap-2">
+<!-- Active Tab: Emerald Green Accent with crisp white text -->
+<button class="px-4 py-2 rounded-lg bg-accent text-white font-title-md text-xs font-semibold shadow-sm">
+              For You
+            </button>
+<button class="px-4 py-2 rounded-lg text-sage hover:text-ink hover:bg-white font-title-md text-xs transition-colors">
+              Following
+            </button>
+<button class="px-4 py-2 rounded-lg text-sage hover:text-ink hover:bg-white font-title-md text-xs flex items-center gap-1.5 transition-colors">
+<span>Opportunities</span>
+<span class="px-1.5 py-0.2 rounded-full bg-accent-subtle text-accent font-mono-metric text-[10px] font-bold">4</span>
+</button>
+<button class="px-4 py-2 rounded-lg text-sage hover:text-ink hover:bg-white font-title-md text-xs transition-colors">
+              Industry (EV &amp; Auto)
+            </button>
+</div>
+<button class="p-1.5 text-sage hover:text-ink rounded-lg hover:bg-white border border-transparent hover:border-card-border transition-colors" title="Filter Feed">
+<span class="material-symbols-outlined text-base">tune</span>
+</button>
+</nav>
+<!-- 5. High-Value Actionable Post Card -->
+<article class="bg-card border border-card-border rounded-xl p-5 shadow-sm flex flex-col gap-4">
+<!-- Post Header -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-charcoal text-white flex items-center justify-center font-bold text-sm">
+                AB
+              </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-title-md font-semibold text-ink">ABC EV Components</span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-charcoal text-white font-label-caps text-[10px] font-medium">
+<span class="material-symbols-outlined text-xs text-accent">verified</span> Verified Business
+                  </span>
+<span class="px-1.5 py-0.5 rounded bg-card-muted text-sage font-label-caps text-[10px] border border-card-border">ISO 9001</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-sage mt-0.5">
+<span>Sector: EV &amp; Automotive / Tamil Nadu</span>
+<span>•</span>
+<span>2h ago</span>
+</div>
+</div>
+</div>
+<button class="text-sage hover:text-ink p-1 rounded transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<!-- Post Body -->
+<p class="font-body-md text-sm text-ink leading-relaxed">
+            We are looking for OEM buyers across South India for our next-generation IP67 Aluminium EV Battery Enclosures. Ready for commercial dispatch with 5,000 units/mo capacity.
+          </p>
+<!-- Technical Diagram Showcase Image -->
+<div class="relative w-full h-64 rounded-lg overflow-hidden border border-card-border bg-card-muted">
+<img class="w-full h-full object-cover" data-alt="Technical CAD render and exploded blueprint of an IP67 aluminium electric vehicle battery enclosure showing modular heat dissipation ribs and CNC mounting flanges. The design is displayed in a clean, bright studio environment with architectural lighting, crisp metallic reflections, and precision measuring lines consistent with high-spec institutional automotive engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoaRF5M6pP7-x5ysLPPlfrGUcgOXLbtT-n_o7kNnVvjgAN0iVy-ShOSUXKD4dnQL58qJ9cTT_b6K1yBtZxftl4GQXFadcLzJpBgxQHu8LKXc96PKyEvDJH__pAH-E94hTm6psevoPtczuIRrFzsTO7joinX3cJxGpm30TlfSFIgQFYAc82kEDu-wd4-ct9RpicZLGW6tV-XwQvplQG9GgB2o-P6TvuyDGrQsnsG2oZNAyOA6GxvETjVg"/>
+<div class="absolute bottom-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-lg border border-card-border flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-accent text-sm">verified_user</span>
+<span class="font-mono-metric text-xs font-semibold text-ink">Spec Sheet: IEC 62660-3 Validated</span>
+</div>
+</div>
+<!-- Interactive Tags -->
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded bg-card-muted border border-card-border font-label-caps text-[11px] text-sage hover:text-ink hover:border-slate-300 cursor-pointer transition-colors">#EVManufacturing</span>
+<span class="px-2.5 py-1 rounded bg-card-muted border border-card-border font-label-caps text-[11px] text-sage hover:text-ink hover:border-slate-300 cursor-pointer transition-colors">#BatteryEnclosures</span>
+<span class="px-2.5 py-1 rounded bg-card-muted border border-card-border font-label-caps text-[11px] text-sage hover:text-ink hover:border-slate-300 cursor-pointer transition-colors">#Tier1Supplier</span>
+</div>
+<!-- AI Transparency Callout Box -->
+<div class="p-3.5 bg-accent-subtle/50 border border-accent/20 rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-accent text-lg mt-0.5">auto_awesome</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-caps text-[11px] text-accent font-bold tracking-wider">AI MATCH RATIONALE</span>
+<p class="font-body-sm text-xs text-ink leading-relaxed">
+                You manufacture automotive components. ABC EV Components is actively sourcing Tier-1 integration partners within Tamil Nadu &amp; Karnataka.
+              </p>
+</div>
+</div>
+<!-- Actionable CTAs & Social Cluster -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-3 border-t border-card-border">
+<div class="flex flex-wrap items-center gap-2">
+<!-- Accent Action CTA: Emerald Green with white text -->
+<button class="px-3.5 py-1.5 rounded-lg bg-accent text-white font-title-md text-xs font-semibold hover:bg-accent-hover transition-colors shadow-sm">
+                Request Quote / RFQ
+              </button>
+<button class="px-3.5 py-1.5 rounded-lg border border-card-border bg-white text-ink font-title-md text-xs font-medium hover:bg-card-muted transition-colors">
+                Contact Business
+              </button>
+<button class="px-3 py-1.5 rounded-lg border border-card-border bg-white text-sage font-title-md text-xs hover:text-ink hover:bg-card-muted transition-colors">
+                View Product Specs
+              </button>
+<button class="p-1.5 text-sage hover:text-ink border border-card-border rounded-lg bg-white hover:bg-card-muted transition-colors" title="Save Opportunity">
+<span class="material-symbols-outlined text-base">bookmark</span>
+</button>
+</div>
+<div class="flex items-center gap-4 self-end sm:self-auto text-sage font-mono-metric text-xs">
+<button class="flex items-center gap-1 hover:text-error transition-colors">
+<span>❤️</span> <span>43</span>
+</button>
+<button class="flex items-center gap-1 hover:text-ink transition-colors">
+<span>💬</span> <span>12</span>
+</button>
+<button class="flex items-center gap-1 hover:text-ink transition-colors">
+<span>↗</span> <span>8</span>
+</button>
+</div>
+</div>
+</article>
+<!-- 6. Second Feed Card - Sourcing Requirement -->
+<article class="bg-card border border-card-border rounded-xl p-5 shadow-sm flex flex-col gap-4">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-card-muted text-charcoal flex items-center justify-center font-bold text-sm border border-card-border">
+                SF
+              </div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-title-md font-semibold text-ink">Sundaram Fasteners Ltd</span>
+<span class="material-symbols-outlined text-accent text-base">check_circle</span>
+</div>
+<p class="font-body-sm text-xs text-sage">Procurement Division · Chennai Hub · 4h ago</p>
+</div>
+</div>
+<!-- Match Score Pill: Accent highlight -->
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-accent-subtle border border-accent/30 text-accent font-mono-metric text-xs font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+<span>94% Compatibility</span>
+</div>
+</div>
+<div class="p-3.5 bg-card-muted rounded-lg border border-card-border flex flex-col gap-2">
+<span class="font-label-caps text-[10px] text-sage font-semibold uppercase tracking-wider">ACTIVE SOURCING REQUIREMENT</span>
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-ink text-base font-semibold">
+                5,000 kg/month High-Tensile Aluminium Extrusions
+              </span>
+<span class="font-mono-metric text-xs font-semibold px-2 py-0.5 rounded bg-white border border-card-border text-ink">
+                Target: ₹320/kg
+              </span>
+</div>
+<p class="font-body-sm text-xs text-sage leading-relaxed">
+              Required for continuous supply to Sriperumbudur facility. Must fulfill ASTM B221 standards. ISO/TS 16949 preferred.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2 font-mono-metric text-xs text-sage">
+<span>Bidding closes in 4 days</span>
+<span>•</span>
+<span>18 Suppliers viewed</span>
+</div>
+<!-- Dark Structural Button with Emerald icon accent -->
+<button class="px-4 py-2 rounded-lg bg-charcoal text-white font-title-md text-xs font-semibold hover:bg-charcoal-dark transition-all active:scale-[0.99] shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-accent">send</span>
+<span>I'm a Supplier - Submit Proposal</span>
+</button>
+</div>
+</article>
+</main>
+<!-- ======================================================================= -->
+<!-- RIGHT RAIL PANEL: Opportunities & AI Copilot Hub                        -->
+<!-- ======================================================================= -->
+<aside class="w-full xl:w-80 flex flex-col gap-5 shrink-0">
+<!-- 1. Business Health & Profile Strength Card -->
+<div class="bg-card border border-card-border rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-[11px] text-sage font-medium tracking-wider">BUSINESS HEALTH</span>
+<span class="font-mono-metric text-xs font-bold text-accent">87%</span>
+</div>
+<div>
+<span class="font-title-md font-semibold text-ink block">ABC EV Components</span>
+<div class="w-full bg-slate-100 h-2 rounded-full mt-2 overflow-hidden">
+<div class="bg-accent h-full rounded-full w-[87%]"></div>
+</div>
+</div>
+<!-- Stats -->
+<div class="grid grid-cols-3 gap-2 py-2 border-t border-b border-card-border text-center font-mono-metric">
+<div>
+<span class="text-xs text-sage block">Network</span>
+<span class="text-sm font-semibold text-ink">143</span>
+</div>
+<div class="border-l border-r border-card-border">
+<span class="text-xs text-sage block">Opps</span>
+<span class="text-sm font-semibold text-accent">12</span>
+</div>
+<div>
+<span class="text-xs text-sage block">Views</span>
+<span class="text-sm font-semibold text-ink">83</span>
+</div>
+</div>
+<button class="w-full py-2 px-3 rounded-lg border border-card-border bg-card-muted text-ink font-title-md text-xs font-medium hover:bg-slate-100 hover:border-slate-300 transition-colors">
+            Improve Profile
+          </button>
+</div>
+<!-- 2. High Priority Opportunity Match Card -->
+<div class="bg-card border border-card-border rounded-xl p-4 shadow-sm flex flex-col gap-3 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-semibold flex items-center gap-1">
+<span>🔥</span> 92% MATCH · HIGH POTENTIAL
+            </span>
+</div>
+<div>
+<span class="font-title-md font-bold text-ink block">Ather Energy Procurement</span>
+<p class="font-body-sm text-xs text-ink mt-1 font-medium">
+              Sourcing 500 EV Battery Enclosures/month
+            </p>
+</div>
+<div class="bg-card-muted p-2.5 rounded-lg text-xs font-body-sm text-sage space-y-1 border border-card-border">
+<div class="flex items-center gap-1.5 text-accent font-medium">
+<span class="material-symbols-outlined text-xs font-bold">check</span>
+<span>Same industry</span>
+</div>
+<div class="flex items-center gap-1.5 text-accent font-medium">
+<span class="material-symbols-outlined text-xs font-bold">check</span>
+<span>Matches your 5,000/mo capacity</span>
+</div>
+<div class="flex items-center gap-1.5 text-accent font-medium">
+<span class="material-symbols-outlined text-xs font-bold">check</span>
+<span>Regional delivery feasible</span>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-1">
+<!-- Action Button: Emerald Accent -->
+<button class="flex-1 py-1.5 px-3 rounded-lg bg-accent text-white font-title-md text-xs font-semibold hover:bg-accent-hover transition-colors shadow-sm">
+              Direct Contact
+            </button>
+<button class="py-1.5 px-3 rounded-lg border border-card-border text-ink font-title-md text-xs hover:bg-card-muted transition-colors">
+              Review
+            </button>
+</div>
+</div>
+<!-- 3. Government Scheme Instant Match Card -->
+<div class="bg-card border border-card-border rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-[10px] px-2 py-0.5 rounded-full bg-accent-subtle text-accent font-bold flex items-center gap-1">
+<span>💰</span> 96% ELIGIBILITY MATCH
+            </span>
+</div>
+<div>
+<span class="font-title-md font-bold text-ink block leading-snug">
+              MSME Capital Subsidy &amp; Credit Guarantee Scheme
+            </span>
+<div class="mt-2 flex items-baseline gap-1 font-mono-metric">
+<span class="text-xs text-sage">Max Funding:</span>
+<span class="text-sm font-semibold text-ink">Up to ₹50,00,000</span>
+<span class="text-xs text-accent font-semibold">@ 6.5% p.a.</span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-xs text-sage pt-1 border-t border-card-border">
+<span class="material-symbols-outlined text-sm text-charcoal">account_balance</span>
+<span class="truncate">Canara Bank Commercial Branch (3.4 km away)</span>
+</div>
+<button class="w-full py-2 px-3 rounded-lg bg-card-muted border border-card-border text-ink font-title-md text-xs font-semibold hover:bg-slate-100 transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-accent">calculate</span>
+<span>Calculate EMI &amp; Route Partner</span>
+</button>
+</div>
+<!-- 4. AI Business Copilot Quick Prompt Widget -->
+<div class="bg-card border border-card-border rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent text-base">auto_awesome</span>
+<span class="font-title-md font-semibold text-ink">Ask Nexora AI</span>
+</div>
+<p class="font-body-sm text-xs text-sage">
+            Tap an enterprise agent prompt to start an instant deep query:
+          </p>
+<div class="flex flex-col gap-2">
+<button class="w-full text-left p-2 rounded-lg bg-card-muted hover:bg-white hover:border-accent/50 border border-card-border text-xs text-ink transition-all flex items-center justify-between group">
+<span>"Find buyers in Bengaluru"</span>
+<span class="material-symbols-outlined text-sm text-accent opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</button>
+<button class="w-full text-left p-2 rounded-lg bg-card-muted hover:bg-white hover:border-accent/50 border border-card-border text-xs text-ink transition-all flex items-center justify-between group">
+<span>"Check scheme eligibility"</span>
+<span class="material-symbols-outlined text-sm text-accent opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</button>
+<button class="w-full text-left p-2 rounded-lg bg-card-muted hover:bg-white hover:border-accent/50 border border-card-border text-xs text-ink transition-all flex items-center justify-between group">
+<span>"Draft distributor post"</span>
+<span class="material-symbols-outlined text-sm text-accent opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</button>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nexora - Business Network</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed": "#d8e2ff",
+            "on-secondary-fixed": "#002113",
+            "on-primary-container": "#7586b0",
+            "on-secondary-fixed-variant": "#005236",
+            "inverse-on-surface": "#eef0ff",
+            "on-error": "#ffffff",
+            "surface-dim": "#d2d9f4",
+            "on-surface": "#131b2e",
+            "on-tertiary-fixed": "#2a1700",
+            "on-tertiary-fixed-variant": "#653e00",
+            "on-primary-fixed": "#051a3e",
+            "tertiary-container": "#301b00",
+            "secondary-fixed": "#6ffbbe",
+            "primary": "#000619",
+            "tertiary-fixed-dim": "#ffb95f",
+            "outline-variant": "#c5c6cf",
+            "surface-tint": "#4c5e85",
+            "surface-container-lowest": "#ffffff",
+            "on-background": "#131b2e",
+            "on-surface-variant": "#44474e",
+            "surface-container": "#eaedff",
+            "surface-container-highest": "#dae2fd",
+            "primary-fixed-dim": "#b4c6f3",
+            "secondary-container": "#6cf8bb",
+            "surface-container-high": "#e2e7ff",
+            "outline": "#75777f",
+            "on-primary-fixed-variant": "#35466c",
+            "surface-variant": "#dae2fd",
+            "surface-bright": "#faf8ff",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "background": "#faf8ff",
+            "tertiary-fixed": "#ffddb8",
+            "inverse-surface": "#283044",
+            "surface": "#faf8ff",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "tertiary": "#0e0500",
+            "secondary": "#006c49",
+            "on-tertiary-container": "#bc7800",
+            "inverse-primary": "#b4c6f3",
+            "primary-container": "#091e42",
+            "on-secondary-container": "#00714d",
+            "secondary-fixed-dim": "#4edea3",
+            "surface-container-low": "#f2f3ff",
+            "on-primary": "#ffffff",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "card-padding-default": "1.5rem",
+            "grid-margin-mobile": "1rem",
+            "element-stack-xs": "0.25rem",
+            "gutter-tablet": "1rem",
+            "gutter-desktop": "1.5rem",
+            "element-stack-sm": "0.5rem",
+            "card-padding-compact": "1rem",
+            "gutter-mobile": "0.75rem",
+            "grid-margin-tablet": "1.5rem",
+            "element-stack-md": "0.75rem",
+            "element-stack-lg": "1.25rem",
+            "grid-margin-desktop": "2.5rem"
+          },
+          "fontFamily": {
+            "label-caps": ["JetBrains Mono"],
+            "mono-metric": ["JetBrains Mono"],
+            "title-md": ["Geist"],
+            "display-xl": ["Geist"],
+            "body-md": ["Geist"],
+            "headline-lg-mobile": ["Geist"],
+            "headline-lg": ["Geist"],
+            "body-lg": ["Geist"],
+            "body-sm": ["Geist"],
+            "headline-sm": ["Geist"],
+            "display-xl-mobile": ["Geist"]
+          },
+          "fontSize": {
+            "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "mono-metric": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-xl": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-xl-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed pb-24 font-body-md">
+<!-- TOP APP BAR (Shared Component JSON Blueprint & Styling Applied) -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest border-b border-outline-variant/40 flex items-center justify-between px-gutter-mobile h-14 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl leading-none">auto_awesome</span>
+<span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-primary">Nexora</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-surface-container-low transition-colors duration-150 text-on-surface-variant active:scale-[0.98]">
+<span class="material-symbols-outlined text-xl">qr_code_scanner</span>
+</button>
+<button class="relative w-9 h-9 flex items-center justify-center rounded-lg hover:bg-surface-container-low transition-colors duration-150 text-on-surface-variant active:scale-[0.98]">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span>
+</button>
+</div>
+</header>
+<!-- SEARCH & INVITE ACTION BAR -->
+<section class="bg-surface-container-lowest px-grid-margin-mobile pt-3 pb-3 border-b border-outline-variant/30">
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-lg pointer-events-none">search</span>
+<input class="w-full h-10 pl-9 pr-3 rounded-lg border border-outline-variant/70 text-body-sm font-body-sm bg-surface-bright text-on-surface placeholder:text-outline focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 outline-none transition-all" placeholder="Search connections, suppliers, partners..." type="text"/>
+</div>
+<button class="h-10 px-3 bg-surface-container-lowest border border-outline-variant/80 rounded-lg flex items-center justify-center gap-1.5 text-primary active:scale-95 transition-transform hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-base">person_add</span>
+<span class="font-label-caps text-label-caps font-semibold">Invite</span>
+</button>
+</div>
+</section>
+<!-- HORIZONTAL DESTINATION TABS -->
+<nav class="bg-surface-container-lowest border-b border-outline-variant/40 px-grid-margin-mobile overflow-x-auto no-scrollbar flex items-center gap-6">
+<button class="py-3 border-b-2 border-transparent text-on-surface-variant font-body-sm text-body-sm font-medium whitespace-nowrap hover:text-on-surface flex items-center gap-1.5">
+      Connections
+      <span class="px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant text-[10px] font-mono-metric">143</span>
+</button>
+<button class="py-3 border-b-2 border-primary-container text-primary-container font-body-sm text-body-sm font-semibold whitespace-nowrap flex items-center gap-1.5">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span>
+      Recommendations
+      <span class="px-1.5 py-0.5 rounded bg-secondary/10 text-secondary text-[10px] font-mono-metric font-semibold">AI Matched</span>
+</button>
+<button class="py-3 border-b-2 border-transparent text-on-surface-variant font-body-sm text-body-sm font-medium whitespace-nowrap hover:text-on-surface flex items-center gap-1.5">
+      Pending
+      <span class="px-1.5 py-0.5 rounded-full bg-error-container text-on-error-container text-[10px] font-mono-metric font-bold">3</span>
+</button>
+<button class="py-3 border-b-2 border-transparent text-on-surface-variant font-body-sm text-body-sm font-medium whitespace-nowrap hover:text-on-surface flex items-center gap-1.5">
+      Following
+      <span class="px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant text-[10px] font-mono-metric">58</span>
+</button>
+</nav>
+<!-- MAIN SCROLLABLE CONTENT CANVAS -->
+<main class="px-grid-margin-mobile pt-4 space-y-4">
+<!-- NETWORK HEALTH & RELATIONSHIP MATRIX WIDGET -->
+<div class="rounded-xl border border-outline-variant/60 bg-surface-container-lowest p-card-padding-compact shadow-sm">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container">
+<div>
+<span class="font-label-caps text-label-caps text-outline tracking-wider block">RELATIONSHIP MATRIX</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary">Network Capital</h2>
+</div>
+<div class="flex items-center gap-1 text-secondary bg-secondary/10 px-2 py-1 rounded-full border border-secondary/20">
+<span class="material-symbols-outlined text-sm font-bold">verified_user</span>
+<span class="font-label-caps text-[10px] font-bold">98.4% TRUST SCORE</span>
+</div>
+</div>
+<!-- METRICS GRID -->
+<div class="grid grid-cols-2 gap-3 py-3">
+<div class="p-2.5 rounded-lg bg-surface-container-low/70 border border-outline-variant/30">
+<span class="font-label-caps text-label-caps text-outline">VERIFIED ENTERPRISES</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-mono-metric text-xl font-bold text-primary">143</span>
+<span class="font-mono-metric text-[11px] text-secondary font-semibold">+12 this mo</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low/70 border border-outline-variant/30">
+<span class="font-label-caps text-label-caps text-outline">ACTIONABLE INTROS</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-mono-metric text-xl font-bold text-primary">3</span>
+<span class="font-mono-metric text-[11px] text-on-tertiary-container font-semibold">Priority</span>
+</div>
+</div>
+</div>
+<!-- INDUSTRY DIVERSIFICATION BAR -->
+<div class="pt-1">
+<div class="flex items-center justify-between font-label-caps text-label-caps text-on-surface-variant mb-1.5">
+<span>SUPPLY DIVERSIFICATION</span>
+<span class="font-mono-metric text-[10px]">3 SECTORS</span>
+</div>
+<div class="w-full h-2 rounded-full overflow-hidden flex bg-surface-container">
+<div class="h-full bg-primary-container" style="width: 62%" title="Automotive &amp; EV 62%"></div>
+<div class="h-full bg-secondary" style="width: 24%" title="Precision Tooling 24%"></div>
+<div class="h-full bg-tertiary-fixed-dim" style="width: 14%" title="Capital &amp; Financial 14%"></div>
+</div>
+<div class="grid grid-cols-3 gap-1 mt-2 text-[11px] text-on-surface-variant font-medium">
+<div class="flex items-center gap-1 truncate">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container shrink-0"></span>
+<span class="truncate">Auto &amp; EV (62%)</span>
+</div>
+<div class="flex items-center gap-1 truncate">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shrink-0"></span>
+<span class="truncate">Tooling (24%)</span>
+</div>
+<div class="flex items-center gap-1 truncate">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim shrink-0"></span>
+<span class="truncate">Capital (14%)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- AI MATCH STREAM HEADER -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-lg">neurology</span>
+<h3 class="font-title-md text-title-md text-primary">Businesses You Should Know</h3>
+</div>
+<span class="font-label-caps text-label-caps text-outline tracking-wider">PRECISION RADAR</span>
+</div>
+<!-- AI MATCH STREAM: CARD 1 (HIGH PRIORITY PROCUREMENT LEAD) -->
+<article class="rounded-xl border border-outline-variant/60 bg-surface-container-lowest overflow-hidden transition-all duration-150 hover:border-outline">
+<div class="p-card-padding-compact space-y-3">
+<!-- Badge & Score Header -->
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary/10 border border-secondary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-mono-metric text-[11px] font-semibold text-secondary">96% MATCH COEFF</span>
+</div>
+<span class="font-label-caps text-label-caps text-outline">PROCUREMENT MANDATE</span>
+</div>
+<!-- Entity Identity Zone -->
+<div class="flex items-start gap-3">
+<div class="relative shrink-0">
+<img class="w-12 h-12 rounded-lg object-cover border border-outline-variant/50" data-alt="Close up professional portrait of a senior South Asian male procurement executive wearing tailored dark business attire against a modern architectural background. Crisp clean lighting, enterprise finance aesthetic with neutral tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdQY5_6LW0kYmRoHa5apGwDNZd8Tuz7NS2VRkMndR37QnfkNDNIe3c_EpOCedpHe828CMQOk6imX034Hk6Av_pU1SwjFSg5k7vQ7e7wpWLtTpMpq5u-I9jzeuzO_38_pX4HjsVp3pnqBgZK9AJSXOM-a7i67MC0BuFgw8Cd9vGzDMshOJu0M0MIKTDH153r-0ukk6Nl0WNl1knA6FnEzmTaULjpOuqRKrsE40I6T4oiA9zXUc07fFOPA"/>
+<span class="absolute -bottom-1 -right-1 bg-primary text-surface-container-lowest rounded-full p-0.5 border border-surface-container-lowest">
+<span class="material-symbols-outlined text-xs leading-none block">verified</span>
+</span>
+</div>
+<div class="min-w-0 flex-1">
+<h4 class="font-title-md text-title-md text-primary truncate leading-snug">Rajesh Varma</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Head of Procurement</p>
+<div class="flex items-center gap-1.5 text-xs text-primary-container font-medium mt-0.5">
+<span class="material-symbols-outlined text-xs leading-none">factory</span>
+<span>Bharat Heavy Forge Ltd.</span>
+</div>
+</div>
+</div>
+<!-- Explainable AI Matching Box -->
+<div class="p-2.5 rounded-lg bg-surface-container-low border border-surface-container-highest/60 flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">insights</span>
+<div class="text-body-sm font-body-sm text-on-surface">
+<span class="font-semibold text-primary">Why connect?</span> Sourcing precision aluminium parts, 4 mutual verified suppliers, Hosur manufacturing cluster.
+          </div>
+</div>
+<!-- Mutual Cluster Chips -->
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 bg-surface-bright rounded text-[11px] font-mono-metric text-on-surface-variant border border-outline-variant/40">Hosur SEZ</span>
+<span class="px-2 py-0.5 bg-surface-bright rounded text-[11px] font-mono-metric text-on-surface-variant border border-outline-variant/40">Tier-1 OEM</span>
+<span class="px-2 py-0.5 bg-surface-bright rounded text-[11px] font-mono-metric text-secondary font-semibold border border-secondary/30">4 Mutual Co's</span>
+</div>
+</div>
+<!-- Action Shelf -->
+<div class="bg-surface-bright border-t border-outline-variant/40 px-card-padding-compact py-2.5 flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-outline-variant/80 text-body-sm font-body-sm font-medium text-primary hover:bg-surface-container-low transition-colors active:scale-95 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">mail</span>
+          Send Intro Note
+        </button>
+<button class="px-4 py-1.5 rounded-lg bg-primary text-surface-container-lowest text-body-sm font-body-sm font-semibold hover:bg-primary-container transition-colors active:scale-95 flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-sm">person_add</span>
+          Connect
+        </button>
+</div>
+</article>
+<!-- AI MATCH STREAM: CARD 2 (OEM TIER-1 EXPANSION) -->
+<article class="rounded-xl border border-outline-variant/60 bg-surface-container-lowest overflow-hidden transition-all duration-150 hover:border-outline">
+<div class="p-card-padding-compact space-y-3">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary/10 border border-secondary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-mono-metric text-[11px] font-semibold text-secondary">91% MATCH COEFF</span>
+</div>
+<span class="font-label-caps text-label-caps text-outline">COMMERCIAL EV</span>
+</div>
+<div class="flex items-start gap-3">
+<div class="relative shrink-0">
+<img class="w-12 h-12 rounded-lg object-cover border border-outline-variant/50" data-alt="Professional profile headshot of an executive female leader in supply chain management wearing a crisp minimalist blazer in an enterprise tech environment. Clean natural daytime lighting with soft focused background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU6xsO2AN3gTcjFUM3RpVv-WBVf8eG787rfK5PuBm4Q28rVnBsZXsD0NkVd6gSlthXgSc47kIvE-CyT6XCyfoFeKqTvn_l6qEtL6lzbu4WrFal763877jPCxW6bK6NeGP816Plc4rRt0ZuwuthsdTgmQTOKYDdvwDKFgZ13yrx_vfSFU6HOttnvpsKETDvETGEnGWNquv9F3yCHa7n0lqTM6GViMWvJ8-w0GksXkIXebnCSihTe4SAbg"/>
+<span class="absolute -bottom-1 -right-1 bg-primary text-surface-container-lowest rounded-full p-0.5 border border-surface-container-lowest">
+<span class="material-symbols-outlined text-xs leading-none block">verified</span>
+</span>
+</div>
+<div class="min-w-0 flex-1">
+<h4 class="font-title-md text-title-md text-primary truncate leading-snug">Ananya Sharma</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">VP Supply Chain</p>
+<div class="flex items-center gap-1.5 text-xs text-primary-container font-medium mt-0.5">
+<span class="material-symbols-outlined text-xs leading-none">electric_bolt</span>
+<span>Euler Motors</span>
+</div>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low border border-surface-container-highest/60 flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">insights</span>
+<div class="text-body-sm font-body-sm text-on-surface">
+<span class="font-semibold text-primary">Why connect?</span> Active EV commercial OEM expanding Tier-1 supplier roster in South India.
+          </div>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 bg-surface-bright rounded text-[11px] font-mono-metric text-on-surface-variant border border-outline-variant/40">EV Powertrains</span>
+<span class="px-2 py-0.5 bg-surface-bright rounded text-[11px] font-mono-metric text-on-surface-variant border border-outline-variant/40">Bengaluru</span>
+<span class="px-2 py-0.5 bg-surface-bright rounded text-[11px] font-mono-metric text-secondary font-semibold border border-secondary/30">Immediate RFP</span>
+</div>
+</div>
+<div class="bg-surface-bright border-t border-outline-variant/40 px-card-padding-compact py-2.5 flex items-center justify-end">
+<button class="px-5 py-1.5 rounded-lg bg-primary text-surface-container-lowest text-body-sm font-body-sm font-semibold hover:bg-primary-container transition-colors active:scale-95 flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-sm">person_add</span>
+          Connect
+        </button>
+</div>
+</article>
+<!-- AI MATCH STREAM: CARD 3 (FINANCIAL & CREDIT DESK) -->
+<article class="rounded-xl border border-outline-variant/60 bg-surface-container-lowest overflow-hidden transition-all duration-150 hover:border-outline">
+<div class="p-card-padding-compact space-y-3">
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-tertiary-fixed/40 border border-tertiary-fixed-dim/40">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+<span class="font-mono-metric text-[11px] font-semibold text-on-tertiary-container">CREDIT PARTNER</span>
+</div>
+<span class="font-label-caps text-label-caps text-outline">SIDBI / CGTMSE</span>
+</div>
+<div class="flex items-start gap-3">
+<div class="relative shrink-0 w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center border border-primary-fixed-dim text-on-primary-fixed">
+<span class="material-symbols-outlined text-2xl">account_balance</span>
+</div>
+<div class="min-w-0 flex-1">
+<h4 class="font-title-md text-title-md text-primary truncate leading-snug">Canara Bank Commercial Credit</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Authorized Channel Partner (MSME Desk)</p>
+<div class="flex items-center gap-1.5 text-xs text-secondary font-medium mt-0.5">
+<span class="material-symbols-outlined text-xs leading-none">task_alt</span>
+<span>Govt. Subsidized Schemes Active</span>
+</div>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low border border-surface-container-highest/60 flex items-start gap-2">
+<span class="material-symbols-outlined text-on-tertiary-container text-base mt-0.5 shrink-0">insights</span>
+<div class="text-body-sm font-body-sm text-on-surface">
+<span class="font-semibold text-primary">Why connect?</span> Authorized channel partner for SIDBI &amp; CGTMSE credit schemes in your industrial district.
+          </div>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 bg-surface-bright rounded text-[11px] font-mono-metric text-on-surface-variant border border-outline-variant/40">Working Capital</span>
+<span class="px-2 py-0.5 bg-surface-bright rounded text-[11px] font-mono-metric text-on-surface-variant border border-outline-variant/40">Equipment Term Loan</span>
+</div>
+</div>
+<div class="bg-surface-bright border-t border-outline-variant/40 px-card-padding-compact py-2.5 flex items-center justify-end">
+<button class="px-4 py-1.5 rounded-lg bg-primary-container text-surface-container-lowest text-body-sm font-body-sm font-semibold hover:bg-primary transition-colors active:scale-95 flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-sm">handshake</span>
+          Request Partnership / Consultation
+        </button>
+</div>
+</article>
+<!-- RECENT CONNECTION ACTIVITY -->
+<div class="rounded-xl border border-outline-variant/60 bg-surface-container-lowest p-card-padding-compact space-y-3">
+<div class="flex items-center justify-between pb-2 border-b border-surface-container">
+<h3 class="font-title-md text-title-md text-primary">Recent Connection Activity</h3>
+<span class="font-label-caps text-label-caps text-secondary font-semibold">LIVE LOG</span>
+</div>
+<div class="space-y-3">
+<!-- Log Item 1 -->
+<div class="flex items-center justify-between gap-3 text-body-sm">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-full bg-secondary/10 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-base">verified</span>
+</div>
+<div class="min-w-0">
+<p class="text-primary font-medium truncate">Sundram Fasteners validated NDAs</p>
+<span class="text-xs text-outline font-mono-metric">2 hours ago • Direct Tier-1 Roster</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-base">chevron_right</span>
+</div>
+<!-- Log Item 2 -->
+<div class="flex items-center justify-between gap-3 text-body-sm">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-base">connect_without_contact</span>
+</div>
+<div class="min-w-0">
+<p class="text-primary font-medium truncate">Intro accepted by Tata AutoComp</p>
+<span class="text-xs text-outline font-mono-metric">Yesterday • Industrial Casting Desk</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-base">chevron_right</span>
+</div>
+</div>
+</div>
+</main>
+<!-- BOTTOM NAVIGATION BAR (Shared Component JSON Blueprint & Styling Applied) -->
+<!-- Contextual State: Network destination active -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex items-center justify-around px-gutter-mobile py-2 bg-surface-container-lowest border-t border-outline-variant dark:border-outline dark:bg-primary shadow-sm">
+<!-- Item 0: Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant font-normal hover:text-primary dark:hover:text-surface-container-lowest transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl leading-tight">home</span>
+<span class="font-label-caps text-label-caps text-[10px] mt-0.5">Home</span>
+</a>
+<!-- Item 1: Explore (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant font-normal hover:text-primary dark:hover:text-surface-container-lowest transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl leading-tight">travel_explore</span>
+<span class="font-label-caps text-label-caps text-[10px] mt-0.5">Explore</span>
+</a>
+<!-- Item 2: Post (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant font-normal hover:text-primary dark:hover:text-surface-container-lowest transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl leading-tight">add_circle</span>
+<span class="font-label-caps text-label-caps text-[10px] mt-0.5">Post</span>
+</a>
+<!-- Item 3: Deals (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant font-normal hover:text-primary dark:hover:text-surface-container-lowest transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl leading-tight">handshake</span>
+<span class="font-label-caps text-label-caps text-[10px] mt-0.5">Deals</span>
+</a>
+<!-- Item 4: Network (ACTIVE per prompt mandate & JSON blueprint) -->
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed font-semibold hover:text-primary dark:hover:text-surface-container-lowest transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-2xl leading-tight" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span class="font-label-caps text-label-caps text-[10px] mt-0.5">Network</span>
+</a>
+</nav>
+</body></html>

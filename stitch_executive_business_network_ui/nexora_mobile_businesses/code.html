@@ -1,0 +1,445 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Nexora - Mobile Businesses Directory</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Geist Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline-variant": "#c6c6cb",
+            "tertiary-fixed": "#a0f79d",
+            "on-tertiary-fixed": "#002205",
+            "secondary-fixed-dim": "#b7c8e1",
+            "primary-fixed": "#dfe2ec",
+            "surface-container-high": "#e2e7ff",
+            "on-secondary-fixed-variant": "#38485d",
+            "tertiary-container": "#002906",
+            "surface": "#faf8ff",
+            "surface-tint": "#5b5e67",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "primary-container": "#1e2229",
+            "outline": "#76777c",
+            "on-tertiary-fixed-variant": "#005315",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#c3c6d0",
+            "error": "#ba1a1a",
+            "on-primary-fixed-variant": "#43474f",
+            "surface-container": "#eaedff",
+            "on-secondary-container": "#54647a",
+            "secondary-fixed": "#d3e4fe",
+            "on-error-container": "#93000a",
+            "primary": "#080c12",
+            "surface-bright": "#faf8ff",
+            "on-primary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "surface-variant": "#dae2fd",
+            "secondary": "#505f76",
+            "on-tertiary-container": "#479a4c",
+            "on-background": "#131b2e",
+            "on-surface": "#131b2e",
+            "surface-dim": "#d2d9f4",
+            "secondary-container": "#d0e1fb",
+            "surface-container-highest": "#dae2fd",
+            "on-surface-variant": "#45474b",
+            "primary-fixed-dim": "#c3c6d0",
+            "inverse-on-surface": "#eef0ff",
+            "background": "#faf8ff",
+            "on-primary-container": "#868992",
+            "on-primary-fixed": "#181c23",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#0b1c30",
+            "tertiary": "#000f01",
+            "inverse-surface": "#283044",
+            "tertiary-fixed-dim": "#84da83"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "space-base": "1rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2rem",
+            "space-lg": "1.5rem",
+            "space-2xl": "3rem",
+            "space-2xs": "0.125rem",
+            "gutter-desktop": "1.5rem",
+            "margin-desktop": "2rem",
+            "space-3xl": "4rem",
+            "space-xs": "0.25rem",
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem"
+          },
+          "fontFamily": {
+            "label-md": ["Geist"],
+            "title-md": ["Geist"],
+            "body-sm": ["Geist"],
+            "headline-sm": ["Geist"],
+            "label-sm": ["Geist"],
+            "headline-lg": ["Geist"],
+            "display-sm": ["Geist"],
+            "body-lg": ["Geist"],
+            "body-md": ["Geist"],
+            "display-lg": ["Geist"],
+            "headline-lg-mobile": ["Geist"],
+            "code-sm": ["Geist"]
+          },
+          "fontSize": {
+            "label-md": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.005em", "fontWeight": "500" }],
+            "title-md": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-sm": ["0.75rem", { "lineHeight": "1.125rem", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-lg": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-sm": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-md": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-lg": ["3.5rem", { "lineHeight": "4rem", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "code-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "500" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased flex justify-center min-h-screen">
+<!-- Mobile Container Mockup (428px max-width viewport) -->
+<div class="w-full max-w-md bg-surface flex flex-col relative min-h-screen shadow-2xl pb-24">
+<!-- TopAppBar from Shared Components JSON -->
+<!-- Maps exact classes: bg-primary-container, docked full-width top-0, h-14, tracking-tight, icons etc -->
+<header class="flex justify-between items-center w-full px-margin-mobile py-space-sm h-14 fixed top-0 left-0 max-w-md mx-auto right-0 z-50 bg-primary-container shadow-sm">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Menu" class="transition-colors duration-150 active:scale-95 text-on-primary flex items-center justify-center p-1 rounded hover:bg-primary" type="button">
+<span class="material-symbols-outlined text-[24px]" data-icon="menu">menu</span>
+</button>
+<span class="font-headline-sm text-headline-sm font-bold text-on-primary tracking-tight">Nexora</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Verified Search" class="transition-colors duration-150 active:scale-95 text-on-primary flex items-center justify-center p-1.5 rounded hover:bg-primary" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="verified_user">verified_user</span>
+</button>
+<button aria-label="Notifications" class="transition-colors duration-150 active:scale-95 text-on-primary flex items-center justify-center p-1.5 rounded hover:bg-primary relative" type="button">
+<span class="material-symbols-outlined text-[22px]" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-on-tertiary-container ring-2 ring-primary-container"></span>
+</button>
+</div>
+</header>
+<!-- Main Content Area with top offset for fixed navbar -->
+<main class="pt-16 px-margin-mobile flex flex-col gap-space-base">
+<!-- Header & Discovery Section -->
+<section class="mt-space-sm">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-tertiary-fixed text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[13px] mr-1" data-icon="verified">verified</span>
+            Institutional Tier
+          </span>
+<span class="text-body-sm font-body-sm text-secondary">Q2 B2B Index</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight font-bold">
+          Verified Enterprise Directory
+        </h1>
+<p class="font-body-md text-body-md text-secondary mt-1 leading-relaxed">
+          Discover 14,000+ audited MSMEs, Tier-1 suppliers, and institutional OEMs.
+        </p>
+<!-- Search & Filter Bar -->
+<div class="mt-space-base flex items-center gap-space-xs">
+<div class="relative flex-1">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="search">search</span>
+</span>
+<input class="w-full h-10 pl-9 pr-3 bg-surface-container-lowest border border-outline-variant rounded-lg text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-on-tertiary-container focus:ring-1 focus:ring-on-tertiary-container shadow-sm transition-all" placeholder="Search company, GSTIN, capability, HSN..." type="text">
+</div>
+<button class="h-10 px-3 bg-surface-container-lowest border border-outline-variant hover:border-outline rounded-lg flex items-center justify-center text-primary-container shadow-sm active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="tune">tune</span>
+</button>
+</div>
+<!-- Horizontal Filter Pills -->
+<div class="flex gap-space-xs overflow-x-auto no-scrollbar py-2 mt-space-xs">
+<button class="shrink-0 px-3 py-1.5 rounded-full text-label-sm font-label-sm bg-primary-container text-on-primary shadow-sm flex items-center gap-1">
+<span class="">All (14k+)</span>
+</button>
+<button class="shrink-0 px-3 py-1.5 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant text-secondary hover:text-primary transition-colors">
+            Tier-1 OEMs
+          </button>
+<button class="shrink-0 px-3 py-1.5 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant text-secondary hover:text-primary transition-colors">
+            Die Casting
+          </button>
+<button class="shrink-0 px-3 py-1.5 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant text-secondary hover:text-primary transition-colors">
+            EV Powertrain
+          </button>
+<button class="shrink-0 px-3 py-1.5 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant text-secondary hover:text-primary transition-colors">
+            Sheet Metal
+          </button>
+<button class="shrink-0 px-3 py-1.5 rounded-full text-label-sm font-label-sm bg-surface-container-lowest border border-outline-variant text-secondary hover:text-primary transition-colors">
+            CNC Machining
+          </button>
+</div>
+</section>
+<!-- Business Dossier Cards Stack -->
+<section class="flex flex-col gap-space-base mt-space-xs">
+<!-- Card 1: Sundram Fasteners Ltd -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-base shadow-sm relative overflow-hidden transition-all hover:border-outline">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-on-tertiary-container"></div>
+<div class="flex justify-between items-start pl-1 mb-2">
+<div>
+<div class="flex items-center gap-1.5">
+<h2 class="font-title-md text-title-md text-primary font-bold">Sundram Fasteners Ltd</h2>
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="font-code-sm text-code-sm text-secondary">GSTN: 33AAACS3142P1ZG</span>
+</div>
+<button class="text-secondary hover:text-primary p-1">
+<span class="material-symbols-outlined text-[20px]" data-icon="bookmark">bookmark</span>
+</button>
+</div>
+<!-- Trust Badge -->
+<div class="pl-1 mb-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold">
+<span class="material-symbols-outlined text-[12px]" data-icon="shield">shield</span>
+              Tier-1 Certified Supplier • 98.4% Trust Score
+            </span>
+</div>
+<!-- Image & Facility Micro Preview -->
+<div class="pl-1 mb-space-sm flex gap-space-sm items-center">
+<img class="w-20 h-16 object-cover rounded-lg border border-outline-variant shrink-0" data-alt="Modern precision automated factory floor with rows of high-speed CNC machines and robotic handling arms. Clean architectural lighting casts soft reflections across polished industrial epoxy flooring in deep charcoal and bright mint accents. The atmosphere conveys rigorous B2B manufacturing quality and aerospace-grade engineering standards." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2SMDZ-4ppn2pqtTOfEbL_GLiRTjoMg9FBwcco05ptLBKYnDeZU2bDMxJ9jsgc1hSOtJ69Xps9a9MFJC0uaZW4FM18Ve8_8Jv0ac0h0N0ZC8Ug127IBCSbeH_KiTmR40rpK9cS3a1CUEhrewd6JIYBygbYdZqFO8-2Z47yMrtw_0L6pD4YDxN7tYQytMX3mnDN_p8XfZg7A5AkEZ5wJ4ovYnEZ4xoGAX3OQpLLM2cd935d430L7iX-sA">
+<div class="flex flex-col text-body-sm font-body-sm text-secondary gap-0.5">
+<div class="flex items-center gap-1 text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-secondary shrink-0" data-icon="location_on">location_on</span>
+<span class="font-semibold text-primary">Padi, Chennai</span>
+</div>
+<p class="text-body-sm font-body-sm text-secondary">Plant: 45,000 sq ft • 240+ CNC / Formers</p>
+</div>
+</div>
+<!-- Verticals & Capabilities -->
+<div class="pl-1 space-y-2 mb-space-sm border-t border-outline-variant pt-space-xs">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block mb-1">Core Verticals</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 bg-surface-container-low rounded text-label-sm font-label-sm text-primary">High-Tensile Fasteners</span>
+<span class="px-2 py-0.5 bg-surface-container-low rounded text-label-sm font-label-sm text-primary">Powertrain</span>
+<span class="px-2 py-0.5 bg-surface-container-low rounded text-label-sm font-label-sm text-primary">Cold Forging</span>
+</div>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block mb-1">Certifications</span>
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant font-medium">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[13px] text-on-tertiary-container" data-icon="check_circle">check_circle</span>IATF 16949</span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[13px] text-on-tertiary-container" data-icon="check_circle">check_circle</span>ISO 14001</span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[13px] text-on-tertiary-container" data-icon="check_circle">check_circle</span>MSME ZED Gold</span>
+</div>
+</div>
+</div>
+<!-- Procurement Live Ticker -->
+<div class="pl-1 mb-space-sm bg-surface-container-low p-2 rounded-lg border border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="inline-block w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+<span class="text-body-sm font-body-sm font-medium text-primary">Actively Buying Raw Aluminium Ingot</span>
+</div>
+<span class="text-code-sm font-code-sm text-secondary font-semibold">18 Open RFQs</span>
+</div>
+<!-- Financial Badge Line -->
+<div class="pl-1 mb-space-base flex justify-between items-center text-body-sm font-body-sm">
+<span class="text-secondary">Annual Turnover: <strong class="text-primary font-title-md">₹4,200 Cr</strong></span>
+<span class="text-on-tertiary-container font-semibold flex items-center text-label-sm">
+<span class="material-symbols-outlined text-[15px]" data-icon="trending_up">trending_up</span> +14.2% YoY
+            </span>
+</div>
+<!-- Action CTAs -->
+<div class="pl-1 flex gap-space-xs">
+<button class="flex-1 bg-on-tertiary-container hover:bg-tertiary text-on-primary font-title-md text-title-md py-2 px-3 rounded-lg text-center font-semibold transition-all active:scale-95 shadow-sm flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="handshake">handshake</span>
+              Request Partnership
+            </button>
+<button class="px-3 py-2 bg-surface-container-lowest border border-outline-variant hover:border-outline text-primary font-title-md text-title-md rounded-lg font-semibold transition-all active:scale-95 flex items-center justify-center">
+              View Dossier
+            </button>
+</div>
+</article>
+<!-- Card 2: Bharat Heavy Forge Ltd -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-base shadow-sm relative overflow-hidden transition-all hover:border-outline">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-secondary"></div>
+<div class="flex justify-between items-start pl-1 mb-2">
+<div>
+<div class="flex items-center gap-1.5">
+<h2 class="font-title-md text-title-md text-primary font-bold">Bharat Heavy Forge Ltd</h2>
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="font-code-sm text-code-sm text-secondary">GSTN: 33AABCB8901L1ZV</span>
+</div>
+<button class="text-secondary hover:text-primary p-1">
+<span class="material-symbols-outlined text-[20px]" data-icon="bookmark">bookmark</span>
+</button>
+</div>
+<!-- Trust Badge -->
+<div class="pl-1 mb-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-secondary-container text-on-secondary-fixed-variant font-semibold">
+<span class="material-symbols-outlined text-[12px]" data-icon="verified_user">verified_user</span>
+              Govt. Subcontractor • 96% Reliability
+            </span>
+</div>
+<!-- Location & Details -->
+<div class="pl-1 mb-space-sm text-body-sm font-body-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary shrink-0" data-icon="factory">factory</span>
+<span class="">Hosur Industrial Corridor, Tamil Nadu</span>
+</div>
+<!-- Verticals & Certs -->
+<div class="pl-1 space-y-2 mb-space-base border-t border-outline-variant pt-space-xs">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block mb-1">Core Verticals</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 bg-surface-container-low rounded text-label-sm font-label-sm text-primary">Heavy Industrial Forging</span>
+<span class="px-2 py-0.5 bg-surface-container-low rounded text-label-sm font-label-sm text-primary">Flanges</span>
+<span class="px-2 py-0.5 bg-surface-container-low rounded text-label-sm font-label-sm text-primary">Defence &amp; Aerospace</span>
+</div>
+</div>
+<div class="flex items-center gap-3 text-label-sm font-label-sm text-on-surface-variant font-medium pt-1">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[13px] text-on-tertiary-container" data-icon="check_circle">check_circle</span>ISO 9001:2015</span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[13px] text-on-tertiary-container" data-icon="check_circle">check_circle</span>DGQA Approved</span>
+</div>
+</div>
+<!-- Action CTAs -->
+<div class="pl-1 flex gap-space-xs">
+<button class="flex-1 bg-on-tertiary-container hover:bg-tertiary text-on-primary font-title-md text-title-md py-2 px-3 rounded-lg text-center font-semibold transition-all active:scale-95 shadow-sm flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock">lock</span>
+              Connect &amp; NDA
+            </button>
+<button class="px-3 py-2 bg-surface-container-lowest border border-outline-variant hover:border-outline text-primary font-title-md text-title-md rounded-lg font-semibold transition-all active:scale-95 flex items-center justify-center">
+              View Dossier
+            </button>
+</div>
+</article>
+<!-- Card 3: Sona Comstar Driveline -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-base shadow-sm relative overflow-hidden transition-all hover:border-outline">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-tertiary-fixed-dim"></div>
+<div class="flex justify-between items-start pl-1 mb-2">
+<div>
+<div class="flex items-center gap-1.5">
+<h2 class="font-title-md text-title-md text-primary font-bold">Sona Comstar Driveline</h2>
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="font-code-sm text-code-sm text-secondary">GSTN: 06AAACS5211M1ZB</span>
+</div>
+<button class="text-secondary hover:text-primary p-1">
+<span class="material-symbols-outlined text-[20px]" data-icon="bookmark">bookmark</span>
+</button>
+</div>
+<!-- Trust Badge -->
+<div class="pl-1 mb-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-semibold">
+<span class="material-symbols-outlined text-[12px]" data-icon="bolt">bolt</span>
+              Global EV Systems Partner
+            </span>
+</div>
+<div class="pl-1 mb-space-sm text-body-sm font-body-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary shrink-0" data-icon="hub">hub</span>
+<span class="">Gurugram &amp; Chennai Dual Manufacturing Hubs</span>
+</div>
+<div class="pl-1 space-y-1 mb-space-base border-t border-outline-variant pt-space-xs">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block mb-1">Core Verticals</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 bg-surface-container-low rounded text-label-sm font-label-sm text-primary">EV Differential Assemblies</span>
+<span class="px-2 py-0.5 bg-surface-container-low rounded text-label-sm font-label-sm text-primary">BLDC Traction Motors</span>
+</div>
+</div>
+<!-- Action CTAs -->
+<div class="pl-1 flex gap-space-xs">
+<button class="flex-1 bg-on-tertiary-container hover:bg-tertiary text-on-primary font-title-md text-title-md py-2 px-3 rounded-lg text-center font-semibold transition-all active:scale-95 shadow-sm flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+              Connect
+            </button>
+<button class="px-3 py-2 bg-surface-container-lowest border border-outline-variant hover:border-outline text-primary font-title-md text-title-md rounded-lg font-semibold transition-all active:scale-95 flex items-center justify-center">
+              View Dossier
+            </button>
+</div>
+</article>
+<!-- Business Registration Promotion Bento Prompt -->
+<article class="bg-primary-container text-on-primary rounded-xl p-space-lg shadow-md relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-on-tertiary-container opacity-20 blur-2xl pointer-events-none"></div>
+<div class="flex items-center gap-2 mb-2">
+<span class="p-1.5 bg-on-tertiary-container rounded-lg text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" data-icon="domain_add">domain_add</span>
+</span>
+<span class="font-label-sm text-label-sm text-tertiary-fixed tracking-wide uppercase font-semibold">Supplier Onboarding</span>
+</div>
+<h3 class="font-title-md text-title-md font-bold text-on-primary mb-1">
+            List your factory on Nexora Enterprise Directory
+          </h3>
+<p class="font-body-sm text-body-sm text-on-primary-container mb-space-base leading-relaxed">
+            Get discovered by 500+ institutional OEM procurement heads. Instant GSTN verification.
+          </p>
+<button class="w-full bg-surface-container-lowest text-primary-container hover:bg-surface-container-low font-title-md text-title-md py-2.5 px-4 rounded-lg font-bold flex items-center justify-center gap-2 active:scale-95 transition-all shadow-sm">
+<span class="">Claim Your Business Profile</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</article>
+</section>
+</main>
+<!-- BottomNavBar from Shared Components JSON -->
+<!-- Content: Home, Explore, Post, Deals, Network -->
+<!-- Active Lock: The page intent is Mobile Businesses Directory / Network ecosystem. Highlighting "Network" per mapping -->
+<!-- Executing style_shell_layout, style_active_navigation, style_inactive_navigation verbatim from JSON -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-space-xs pb-safe bg-surface-container-lowest border-t border-outline-variant max-w-md mx-auto right-0 shadow-md">
+<!-- 1. Home (Inactive) -->
+<a class="flex flex-col items-center justify-center text-secondary font-label-sm gap-space-2xs py-1 hover:bg-surface-container-low transition-colors duration-100 ease-out active:scale-95 flex-1" href="#home">
+<span class="material-symbols-outlined text-[22px]" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- 2. Explore (Active) -->
+<a class="flex flex-col items-center justify-center text-on-tertiary-container font-label-sm gap-space-2xs py-1 font-semibold duration-100 ease-out active:scale-95 flex-1" href="#explore">
+<span class="material-symbols-outlined text-[22px]" data-icon="travel_explore" data-weight="fill" style="font-variation-settings: 'FILL' 1;">travel_explore</span>
+<span class="font-label-sm text-label-sm font-semibold">Explore</span>
+</a>
+<!-- 3. Deals (Inactive with badge counter '4') -->
+<a class="flex flex-col items-center justify-center text-secondary font-label-sm gap-space-2xs py-1 hover:bg-surface-container-low transition-colors duration-100 ease-out active:scale-95 relative flex-1" href="#deals">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]" data-icon="handshake">handshake</span>
+<span class="absolute -top-1 -right-2 bg-on-tertiary-container text-on-primary text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">4</span>
+</div>
+<span class="font-label-sm text-label-sm">Deals</span>
+</a>
+<!-- 4. Messages (Inactive) -->
+<a class="flex flex-col items-center justify-center text-secondary font-label-sm gap-space-2xs py-1 hover:bg-surface-container-low transition-colors duration-100 ease-out active:scale-95 flex-1" href="#messages">
+<span class="material-symbols-outlined text-[22px]" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-sm text-label-sm">Messages</span>
+</a>
+<!-- 5. Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center text-secondary font-label-sm gap-space-2xs py-1 hover:bg-surface-container-low transition-colors duration-100 ease-out active:scale-95 flex-1" href="#profile">
+<span class="material-symbols-outlined text-[22px]" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+</div>
+
+
+</body></html>

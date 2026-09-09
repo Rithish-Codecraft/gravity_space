@@ -1,0 +1,518 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Nexora - Mobile Profile &amp; Business Dossier</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline-variant": "#c6c6cb",
+            "tertiary-fixed": "#a0f79d",
+            "on-tertiary-fixed": "#002205",
+            "secondary-fixed-dim": "#b7c8e1",
+            "primary-fixed": "#dfe2ec",
+            "surface-container-high": "#e2e7ff",
+            "on-secondary-fixed-variant": "#38485d",
+            "tertiary-container": "#002906",
+            "surface": "#faf8ff",
+            "surface-tint": "#5b5e67",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "primary-container": "#1e2229",
+            "outline": "#76777c",
+            "on-tertiary-fixed-variant": "#005315",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#c3c6d0",
+            "error": "#ba1a1a",
+            "on-primary-fixed-variant": "#43474f",
+            "surface-container": "#eaedff",
+            "on-secondary-container": "#54647a",
+            "secondary-fixed": "#d3e4fe",
+            "on-error-container": "#93000a",
+            "primary": "#080c12",
+            "surface-bright": "#faf8ff",
+            "on-primary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "surface-variant": "#dae2fd",
+            "secondary": "#505f76",
+            "on-tertiary-container": "#479a4c",
+            "on-background": "#131b2e",
+            "on-surface": "#131b2e",
+            "surface-dim": "#d2d9f4",
+            "secondary-container": "#d0e1fb",
+            "surface-container-highest": "#dae2fd",
+            "on-surface-variant": "#45474b",
+            "primary-fixed-dim": "#c3c6d0",
+            "inverse-on-surface": "#eef0ff",
+            "background": "#faf8ff",
+            "on-primary-container": "#868992",
+            "on-primary-fixed": "#181c23",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#0b1c30",
+            "tertiary": "#000f01",
+            "inverse-surface": "#283044",
+            "tertiary-fixed-dim": "#84da83"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "space-base": "1rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2rem",
+            "space-lg": "1.5rem",
+            "space-2xl": "3rem",
+            "space-2xs": "0.125rem",
+            "gutter-desktop": "1.5rem",
+            "margin-desktop": "2rem",
+            "space-3xl": "4rem",
+            "space-xs": "0.25rem",
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem"
+          },
+          "fontFamily": {
+            "label-md": ["Geist"],
+            "title-md": ["Geist"],
+            "body-sm": ["Geist"],
+            "headline-sm": ["Geist"],
+            "label-sm": ["Geist"],
+            "headline-lg": ["Geist"],
+            "display-sm": ["Geist"],
+            "body-lg": ["Geist"],
+            "body-md": ["Geist"],
+            "display-lg": ["Geist"],
+            "headline-lg-mobile": ["Geist"],
+            "code-sm": ["Geist"]
+          },
+          "fontSize": {
+            "label-md": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.005em", "fontWeight": "500" }],
+            "title-md": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-sm": ["0.75rem", { "lineHeight": "1.125rem", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-lg": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-sm": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-md": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-lg": ["3.5rem", { "lineHeight": "4rem", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "code-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "500" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#F4F7F6] text-on-surface antialiased min-h-screen pb-24 font-body-md text-body-md select-none">
+<!-- TopAppBar Component (JSON Driven with Contextual Shell Mapping) -->
+<header class="bg-primary-container text-on-primary flex justify-between items-center w-full px-margin-mobile py-space-sm h-14 fixed top-0 left-0 z-50 shadow-sm transition-colors duration-150">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Menu" class="p-1 rounded-lg text-on-primary hover:bg-primary transition-colors duration-150 active:scale-95" data-icon="menu">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-primary tracking-tight">Nexora</span>
+<span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-primary text-tertiary-fixed font-semibold tracking-wider">ENTERPRISE</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Share Dossier" class="p-2 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary transition-colors duration-150 active:scale-95 flex items-center justify-center" data-icon="share">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<button aria-label="Notifications" class="p-2 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary transition-colors duration-150 active:scale-95 flex items-center justify-center relative" data-icon="notifications">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-on-tertiary-container ring-2 ring-primary-container"></span>
+</button>
+<button aria-label="Settings" class="p-2 rounded-lg text-on-primary-container hover:text-on-primary hover:bg-primary transition-colors duration-150 active:scale-95 flex items-center justify-center" data-icon="settings">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+</button>
+</div>
+</header>
+<!-- Mobile Screen Content Canvas -->
+<main class="w-full max-w-md mx-auto pt-16 px-margin-mobile flex flex-col gap-space-base">
+<!-- Profile Header Banner & Corporate Identity Bento Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-[#E2E8F0] shadow-sm overflow-hidden mt-2">
+<!-- Gradient Industrial Cover Strip -->
+<div class="h-24 bg-gradient-to-r from-primary-container via-[#252b35] to-primary relative px-4 pt-3 flex justify-between items-start">
+<span class="font-code-sm text-code-sm font-semibold text-secondary-fixed-dim tracking-wider uppercase flex items-center gap-1">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span>
+          OEM Verified ID: NX-IND-9021
+        </span>
+<span class="bg-white/10 backdrop-blur-md text-white font-label-sm text-label-sm px-2.5 py-0.5 rounded-full border border-white/20">
+          Tier-1 Supplier
+        </span>
+</div>
+<!-- Avatar & Titles -->
+<div class="px-space-base pb-space-base pt-0 relative">
+<div class="flex justify-between items-end -mt-10 mb-3">
+<!-- Corporate Plant Logo Badge -->
+<div class="w-20 h-20 rounded-xl bg-surface-container-lowest p-1.5 shadow-md border border-[#E2E8F0] flex items-center justify-center">
+<div class="w-full h-full rounded-lg bg-primary-container text-white flex flex-col items-center justify-center font-headline-sm text-headline-sm font-bold border border-[#38485d]/30">
+<span class="text-tertiary-fixed tracking-tight">ABC</span>
+<span class="font-code-sm text-[9px] text-on-primary-container uppercase tracking-widest -mt-1">EV PRECISION</span>
+</div>
+</div>
+<!-- Verification Pill -->
+<div class="flex items-center gap-1.5 bg-[#4A9D4E]/10 border border-[#4A9D4E]/30 text-[#2E6C32] px-2.5 py-1 rounded-full font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+            Tier-1 Verified
+          </div>
+</div>
+<!-- Entity Identity -->
+<h1 class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold leading-tight">ABC EV Components Pvt Ltd</h1>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Precision Automotive &amp; EV Powertrain Die-Casting Solutions</p>
+<!-- Compliance Mini Pills -->
+<div class="flex flex-wrap gap-1.5 mt-3">
+<span class="inline-flex items-center gap-1 bg-[#F4F7F6] border border-[#CBD5E1] text-[#0F172A] font-code-sm text-code-sm px-2 py-0.5 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+            GSTN Active
+          </span>
+<span class="inline-flex items-center gap-1 bg-[#F4F7F6] border border-[#CBD5E1] text-[#0F172A] font-code-sm text-code-sm px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px] text-secondary" data-icon="domain">domain</span>
+            Udyam Registered
+          </span>
+<span class="inline-flex items-center gap-1 bg-[#F4F7F6] border border-[#CBD5E1] text-[#0F172A] font-code-sm text-code-sm px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px] text-on-tertiary-container" data-icon="shield">shield</span>
+            ZED Gold
+          </span>
+</div>
+<!-- Trust Metric Strip -->
+<div class="mt-4 p-3 rounded-lg bg-[#F4F7F6] border border-[#E2E8F0] flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-[#4A9D4E]/15 flex items-center justify-center text-on-tertiary-container font-bold" data-icon="verified_user">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div>
+<div class="font-title-md text-title-md text-primary font-bold">98.4% <span class="font-body-sm text-body-sm text-secondary font-normal">Trust Index</span></div>
+<div class="font-body-sm text-[11px] text-on-tertiary-container font-semibold">0 Disputes Across 34 Shipments</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-code-sm text-[11px] text-secondary">Updated: Today</span>
+</div>
+</div>
+<!-- Primary Actions Group -->
+<div class="grid grid-cols-2 gap-2 mt-4">
+<button class="bg-[#4A9D4E] hover:bg-[#3F8843] active:bg-[#36743A] text-white font-label-md text-label-md py-2.5 px-3 rounded-lg font-semibold flex items-center justify-center gap-1.5 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit_square">edit_square</span>
+            Edit Profile
+          </button>
+<button class="bg-white hover:bg-[#F4F7F6] text-primary-container border border-[#CBD5E1] hover:border-[#94A3B8] font-label-md text-label-md py-2.5 px-3 rounded-lg font-semibold flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px] text-secondary" data-icon="picture_as_pdf">picture_as_pdf</span>
+            PDF Dossier
+          </button>
+</div>
+</div>
+</div>
+<!-- Profile Completion & Health Strip -->
+<div class="bg-surface-container-lowest p-space-base rounded-xl border border-[#E2E8F0] shadow-sm">
+<div class="flex justify-between items-center mb-1.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-tertiary-container text-[20px]" data-icon="health_and_safety">health_and_safety</span>
+<span class="font-title-md text-title-md text-primary font-bold">Dossier Health</span>
+</div>
+<span class="font-title-md text-title-md text-on-tertiary-container font-bold">87%</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-[#E2E8F0] h-2 rounded-full overflow-hidden my-2">
+<div class="bg-[#4A9D4E] h-full rounded-full" style="width: 87%;"></div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-secondary mt-2">
+<span class="flex items-center gap-1 text-[#0F172A]">
+<span class="material-symbols-outlined text-[16px] text-[#4A9D4E]" data-icon="add_circle">add_circle</span>
+<span class="font-label-sm text-label-sm font-medium">+13% add Plant Video &amp; 3D CAD</span>
+</span>
+<button class="text-on-tertiary-container font-label-sm text-label-sm font-semibold hover:underline">Complete</button>
+</div>
+</div>
+<!-- Dossier Content: Scannable Operational Bento Units -->
+<!-- Section 1: Statutory & Governance Identifiers -->
+<div class="bg-surface-container-lowest rounded-xl border border-[#E2E8F0] shadow-sm overflow-hidden">
+<div class="p-space-base border-b border-[#E2E8F0] flex items-center justify-between bg-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="assured_workload">assured_workload</span>
+<h2 class="font-title-md text-title-md text-primary font-bold">Statutory &amp; Governance</h2>
+</div>
+<span class="font-code-sm text-[11px] bg-[#4A9D4E]/10 text-on-tertiary-container px-2 py-0.5 rounded font-semibold">4 Verified</span>
+</div>
+<div class="p-space-base flex flex-col gap-3">
+<!-- GSTIN item -->
+<div class="flex items-start justify-between p-2.5 rounded-lg bg-[#F4F7F6]/80 border border-[#E2E8F0]">
+<div>
+<div class="font-label-sm text-label-sm uppercase text-secondary tracking-wider">GSTIN Number</div>
+<div class="font-code-sm text-[13px] font-bold text-primary mt-0.5">33AABCU9603R1ZM</div>
+<div class="font-body-sm text-[11px] text-[#2E6C32] flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+              Real-time API Verified via GSTN
+            </div>
+</div>
+<button aria-label="Copy GSTIN" class="p-1 text-secondary hover:text-primary active:scale-95" data-icon="content_copy">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+<!-- MSME & MCA CIN 2-Col Grid -->
+<div class="grid grid-cols-1 gap-2.5">
+<div class="p-2.5 rounded-lg bg-[#F4F7F6]/80 border border-[#E2E8F0]">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm uppercase text-secondary tracking-wider">Udyam MSME Reg</span>
+<span class="font-label-sm text-[11px] bg-white px-2 py-0.5 rounded border border-[#CBD5E1] text-[#0F172A] font-medium">Small Enterprise</span>
+</div>
+<div class="font-code-sm text-[13px] font-bold text-primary mt-1">UDYAM-TN-03-0029182</div>
+</div>
+<div class="p-2.5 rounded-lg bg-[#F4F7F6]/80 border border-[#E2E8F0]">
+<div class="font-label-sm text-label-sm uppercase text-secondary tracking-wider">MCA Corporate CIN</div>
+<div class="font-code-sm text-[13px] font-bold text-primary mt-1">U34300TZ2018PTC030192</div>
+<div class="font-body-sm text-[11px] text-secondary mt-0.5">RoC Coimbatore • Active Company</div>
+</div>
+</div>
+<!-- Authorized Signatory -->
+<div class="p-2.5 rounded-lg bg-surface-container-low/50 border border-[#CBD5E1] flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center font-bold text-xs">
+              RK
+            </div>
+<div>
+<div class="font-title-md text-[13px] font-bold text-primary">Rithish K</div>
+<div class="font-body-sm text-[11px] text-secondary">Authorized Managing Director (DIN Verified)</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="badge">badge</span>
+</div>
+</div>
+</div>
+<!-- Section 2: Plant Infrastructure & Capabilities -->
+<div class="bg-surface-container-lowest rounded-xl border border-[#E2E8F0] shadow-sm overflow-hidden">
+<div class="p-space-base border-b border-[#E2E8F0] flex items-center justify-between bg-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="precision_manufacturing">precision_manufacturing</span>
+<h2 class="font-title-md text-title-md text-primary font-bold">Plant &amp; Capabilities</h2>
+</div>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+          Hosur Unit
+        </span>
+</div>
+<div class="p-space-base flex flex-col gap-3">
+<!-- Plant Location & Metric -->
+<div class="p-3 rounded-lg border border-[#E2E8F0] bg-[#F4F7F6]">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-on-tertiary-container text-[22px] mt-0.5" data-icon="factory">factory</span>
+<div>
+<h3 class="font-title-md text-[14px] font-bold text-primary">Primary Die-Casting Complex</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Plot 44-B, SIPCOT Industrial Park Phase-II, Hosur, Tamil Nadu</p>
+<div class="flex items-center gap-3 mt-2 text-primary font-code-sm text-code-sm">
+<span class="font-semibold bg-white px-2 py-0.5 rounded border border-[#E2E8F0]">32,000 sq ft</span>
+<span class="text-secondary">•</span>
+<span class="text-secondary">Power: 1,250 kVA Dedicated</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Capability Matrix (Bento 2-Grid) -->
+<div class="grid grid-cols-2 gap-2.5">
+<div class="p-3 rounded-lg border border-[#E2E8F0] bg-white">
+<div class="font-label-sm text-label-sm uppercase text-secondary font-semibold">Die Casting Line</div>
+<div class="font-headline-sm text-headline-sm font-bold text-primary mt-1">3x 850T</div>
+<div class="font-body-sm text-[11px] text-secondary mt-1">High-pressure cold chamber Toshiba/Buhler</div>
+</div>
+<div class="p-3 rounded-lg border border-[#E2E8F0] bg-white">
+<div class="font-label-sm text-label-sm uppercase text-secondary font-semibold">CNC Machining</div>
+<div class="font-headline-sm text-headline-sm font-bold text-primary mt-1">8x Units</div>
+<div class="font-body-sm text-[11px] text-secondary mt-1">4-Axis Makino &amp; Haas Vertical Centers</div>
+</div>
+</div>
+<!-- Monthly Utilization Card -->
+<div class="p-3 rounded-lg border border-[#E2E8F0] bg-white">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Monthly Production Load</span>
+<span class="font-title-md text-[13px] font-bold text-primary">5,000 units/mo</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-full bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 74%;"></div>
+</div>
+<span class="font-code-sm text-code-sm font-bold text-primary-container">74%</span>
+</div>
+<div class="font-body-sm text-[11px] text-secondary mt-1.5 flex items-center justify-between">
+<span class="">Spare Available: ~1,300 units/mo</span>
+<span class="text-on-tertiary-container font-semibold">Open for RFQs</span>
+</div>
+</div>
+<!-- Quality Control Lab Pills -->
+<div class="border border-[#CBD5E1] rounded-lg p-2.5 bg-surface">
+<span class="font-label-sm text-label-sm uppercase text-secondary tracking-wider block mb-1.5 font-bold">In-House Metrology &amp; QA Lab</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="bg-white border border-[#CBD5E1] text-primary font-body-sm text-[11px] px-2 py-0.5 rounded font-medium">Zeiss 3D CMM Inspection</span>
+<span class="bg-white border border-[#CBD5E1] text-primary font-body-sm text-[11px] px-2 py-0.5 rounded font-medium">Optical Emission Spectrometer</span>
+<span class="bg-white border border-[#CBD5E1] text-primary font-body-sm text-[11px] px-2 py-0.5 rounded font-medium">IP67 Submersion &amp; Helium Leak Test</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Certifications & Quality Accreditations -->
+<div class="bg-surface-container-lowest rounded-xl border border-[#E2E8F0] shadow-sm overflow-hidden">
+<div class="p-space-base border-b border-[#E2E8F0] flex items-center justify-between bg-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="workspace_premium">workspace_premium</span>
+<h2 class="font-title-md text-title-md text-primary font-bold">Certifications &amp; Standards</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold">All Active</span>
+</div>
+<div class="p-space-base flex flex-col gap-2.5">
+<!-- Cert 1 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg border border-[#E2E8F0] hover:border-[#CBD5E1] transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-[#4A9D4E]/10 border border-[#4A9D4E]/30 flex items-center justify-center text-on-tertiary-container font-bold" data-icon="verified">
+<span class="material-symbols-outlined text-[20px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div>
+<div class="font-title-md text-[14px] font-bold text-primary">IATF 16949:2016</div>
+<div class="font-body-sm text-[11px] text-secondary">Automotive Quality Management System (TÜV SÜD)</div>
+</div>
+</div>
+<span class="font-code-sm text-[11px] text-secondary font-medium">Exp: 2026</span>
+</div>
+<!-- Cert 2 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg border border-[#E2E8F0] hover:border-[#CBD5E1] transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-[#4A9D4E]/10 border border-[#4A9D4E]/30 flex items-center justify-center text-on-tertiary-container font-bold" data-icon="verified">
+<span class="material-symbols-outlined text-[20px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div>
+<div class="font-title-md text-[14px] font-bold text-primary">ISO 9001:2015</div>
+<div class="font-body-sm text-[11px] text-secondary">High Precision Component Manufacturing Standard</div>
+</div>
+</div>
+<span class="font-code-sm text-[11px] text-secondary font-medium">Exp: 2027</span>
+</div>
+<!-- Cert 3 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg border border-[#E2E8F0] hover:border-[#CBD5E1] transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-[#F59E0B]/10 border border-[#F59E0B]/30 flex items-center justify-center text-[#B45309] font-bold" data-icon="military_tech">
+<span class="material-symbols-outlined text-[20px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<div>
+<div class="font-title-md text-[14px] font-bold text-primary">MSME ZED Gold Certificate</div>
+<div class="font-body-sm text-[11px] text-secondary">Zero Defect Zero Effect National Accreditation</div>
+</div>
+</div>
+<span class="font-code-sm text-[11px] text-secondary font-medium">Ministry MSME</span>
+</div>
+</div>
+</div>
+<!-- Section 4: Product & Offering Showcase -->
+<div class="bg-surface-container-lowest rounded-xl border border-[#E2E8F0] shadow-sm overflow-hidden">
+<div class="p-space-base border-b border-[#E2E8F0] flex items-center justify-between bg-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="inventory_2">inventory_2</span>
+<h2 class="font-title-md text-title-md text-primary font-bold">Flagship EV Components</h2>
+</div>
+<button class="font-label-sm text-label-sm text-on-tertiary-container font-semibold">Catalog (14)</button>
+</div>
+<div class="p-space-base flex flex-col gap-3">
+<!-- Product Card 1 -->
+<div class="border border-[#CBD5E1] rounded-lg p-3 bg-white hover:shadow-sm transition-shadow">
+<div class="flex gap-3 items-start">
+<div class="w-16 h-16 rounded-lg bg-surface-container flex items-center justify-center text-primary-container shrink-0 overflow-hidden border border-[#E2E8F0]">
+<img class="w-full h-full object-cover" data-alt="A precision engineered aluminium EV battery pack enclosure with intricate heat dissipation fins, photographed in a crisp studio setting with industrial lighting, high contrast metallic finish, minimalist tech aesthetic, corporate clean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxUrFWe_rKn2kp3CUTsGN36ki-l_CEscIO7K6iS7wLCjaZ8XEnh7GEkjQ3ntccCykBab73jjtwf1lzZliroxYCMMiIW3kcxzghe1wBLHsoaMWfvC8EuUzA-DqtveL2ZuYOJs53fiKDOyFiRjAtyDXGqGnEwaqcVzTl_kn19Ca3PXtS2D5TmRmRXNpSQteoWRy_laSrNFjpInAEnpmiMdY3qQzQ67jMtiqq8WroiMZLaKiNXHwMBUrHKQ">
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-code-sm text-[10px] uppercase font-bold text-on-tertiary-container tracking-wider">EV Powertrain / Battery Pack</span>
+<h3 class="font-title-md text-[14px] font-bold text-primary truncate mt-0.5">IP67 Aluminium EV Battery Enclosure</h3>
+<p class="font-body-sm text-[11px] text-secondary mt-0.5">ADC12 Alloy • High thermal conductivity • Structural crashworthiness</p>
+</div>
+</div>
+<div class="mt-3 pt-2.5 border-t border-[#E2E8F0] flex justify-between items-center">
+<span class="font-code-sm text-[11px] text-[#0F172A] font-semibold">Lead Time: 18-24 Days</span>
+<button class="font-label-sm text-label-sm text-[#4A9D4E] hover:text-[#36743A] font-bold flex items-center gap-0.5">
+              View Specs <span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="border border-[#CBD5E1] rounded-lg p-3 bg-white hover:shadow-sm transition-shadow">
+<div class="flex gap-3 items-start">
+<div class="w-16 h-16 rounded-lg bg-surface-container flex items-center justify-center text-primary-container shrink-0 overflow-hidden border border-[#E2E8F0]">
+<img class="w-full h-full object-cover" data-alt="Close up of a CNC precision machined die cast aluminium rotor housing for high RPM electric motors, displaying smooth cylindrical walls, high tolerance edges, cool neutral lighting, authoritative enterprise engineering style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWPhwjLHGLtRqWobt3uQknJUpvV0RYkiUAUQDZYMDHCXIjRy59dhXgAFEzD_wqzvC7MM7dDRMSdZ0hu7RH_d4kfc7q8Kdf92uhVU73gC4sCbBLnITDany9eFd75ge9i5RYWNjwNYXOeA6DrB_9zR9UbvK7XTBmCLInib7otrhO9e5HjAu6cD_Yc8-s_UonDdX8t7GgqWj0Gvnw0u8LDorwGpS15oHz8fQ5fOfRbBHKPimYqUnUYzBYBw">
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-code-sm text-[10px] uppercase font-bold text-on-tertiary-container tracking-wider">Motor Stator &amp; Rotor Shells</span>
+<h3 class="font-title-md text-[14px] font-bold text-primary truncate mt-0.5">Die-Cast Rotor Housing &amp; End Shields</h3>
+<p class="font-body-sm text-[11px] text-secondary mt-0.5">A380 Alloy • Tolerances to ±15 microns • Integrated liquid cooling sleeve</p>
+</div>
+</div>
+<div class="mt-3 pt-2.5 border-t border-[#E2E8F0] flex justify-between items-center">
+<span class="font-code-sm text-[11px] text-[#0F172A] font-semibold">Lead Time: 12-16 Days</span>
+<button class="font-label-sm text-label-sm text-[#4A9D4E] hover:text-[#36743A] font-bold flex items-center gap-0.5">
+              View Specs <span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 5: Network Footprint & Track Record -->
+<div class="bg-surface-container-lowest rounded-xl border border-[#E2E8F0] shadow-sm overflow-hidden mb-4">
+<div class="p-space-base border-b border-[#E2E8F0] flex items-center justify-between bg-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="hub">hub</span>
+<h2 class="font-title-md text-title-md text-primary font-bold">Nexora B2B Track Record</h2>
+</div>
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="insights">insights</span>
+</div>
+<div class="p-space-base">
+<!-- 3-Column Statistical Metric Tile Grid -->
+<div class="grid grid-cols-3 gap-2">
+<div class="p-2.5 rounded-lg bg-[#F4F7F6] border border-[#E2E8F0] text-center">
+<div class="font-headline-sm text-headline-sm font-bold text-primary">143</div>
+<div class="font-label-sm text-[10px] text-secondary uppercase font-semibold mt-0.5">Connected OEMs</div>
+</div>
+<div class="p-2.5 rounded-lg bg-[#F4F7F6] border border-[#E2E8F0] text-center">
+<div class="font-headline-sm text-headline-sm font-bold text-primary">12</div>
+<div class="font-label-sm text-[10px] text-secondary uppercase font-semibold mt-0.5">Active RFQs</div>
+</div>
+<div class="p-2.5 rounded-lg bg-[#F4F7F6] border border-[#E2E8F0] text-center">
+<div class="font-headline-sm text-headline-sm font-bold text-on-tertiary-container">₹4.8 Cr</div>
+<div class="font-label-sm text-[10px] text-secondary uppercase font-semibold mt-0.5">Fulfilled</div>
+</div>
+</div>
+<div class="mt-3 p-2.5 rounded-lg bg-primary-container text-white flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px]" data-icon="lock">lock</span>
+<span class="font-body-sm text-[11px] text-on-primary font-medium">Smart Contracts &amp; Escrow Enabled</span>
+</div>
+<span class="font-code-sm text-[10px] text-tertiary-fixed font-bold bg-white/10 px-2 py-0.5 rounded">NX-VERIFIED</span>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Component (Exact JSON Execution & Semantically Bound to Profile/Network Destination) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-space-xs pb-safe bg-white border-t border-[#E2E8F0] shadow-sm transition-colors"><a class="flex flex-col items-center justify-center text-secondary font-label-sm gap-0.5 py-1 active:scale-95 duration-100 ease-out transition-colors w-16" data-icon="home" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="">Home</span></a><a class="flex flex-col items-center justify-center text-secondary font-label-sm gap-0.5 py-1 active:scale-95 duration-100 ease-out transition-colors w-16" data-icon="travel_explore" href="#"><span class="material-symbols-outlined text-[22px]">travel_explore</span><span class="">Explore</span></a><a class="flex flex-col items-center justify-center text-secondary font-label-sm gap-0.5 py-1 active:scale-95 duration-100 ease-out transition-colors w-16 relative" data-icon="handshake" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[22px]">handshake</span><span class="absolute -top-1 -right-2 bg-on-tertiary-container text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none min-w-[16px] text-center">4</span></div><span class="">Deals</span></a><a class="flex flex-col items-center justify-center text-secondary font-label-sm gap-0.5 py-1 active:scale-95 duration-100 ease-out transition-colors w-16" data-icon="chat_bubble" href="#"><span class="material-symbols-outlined text-[22px]">chat_bubble</span><span class="">Messages</span></a><a class="flex flex-col items-center justify-center text-[#4A9D4E] font-label-sm gap-0.5 py-1 active:scale-95 duration-100 ease-out transition-colors w-16 font-bold" data-icon="person" data-weight="fill" href="#"><span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">person</span><span class="">Profile</span></a></nav>
+
+
+</body></html>

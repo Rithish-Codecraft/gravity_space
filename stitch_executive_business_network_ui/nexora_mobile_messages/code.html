@@ -1,0 +1,431 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Nexora - Mobile Messages &amp; Deal Rooms</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Geist Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS Play CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline-variant": "#c6c6cb",
+            "tertiary-fixed": "#a0f79d",
+            "on-tertiary-fixed": "#002205",
+            "secondary-fixed-dim": "#b7c8e1",
+            "primary-fixed": "#dfe2ec",
+            "surface-container-high": "#e2e7ff",
+            "on-secondary-fixed-variant": "#38485d",
+            "tertiary-container": "#002906",
+            "surface": "#faf8ff",
+            "surface-tint": "#5b5e67",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "primary-container": "#1e2229",
+            "outline": "#76777c",
+            "on-tertiary-fixed-variant": "#005315",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#c3c6d0",
+            "error": "#ba1a1a",
+            "on-primary-fixed-variant": "#43474f",
+            "surface-container": "#eaedff",
+            "on-secondary-container": "#54647a",
+            "secondary-fixed": "#d3e4fe",
+            "on-error-container": "#93000a",
+            "primary": "#080c12",
+            "surface-bright": "#faf8ff",
+            "on-primary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "surface-variant": "#dae2fd",
+            "secondary": "#505f76",
+            "on-tertiary-container": "#479a4c",
+            "on-background": "#131b2e",
+            "on-surface": "#131b2e",
+            "surface-dim": "#d2d9f4",
+            "secondary-container": "#d0e1fb",
+            "surface-container-highest": "#dae2fd",
+            "on-surface-variant": "#45474b",
+            "primary-fixed-dim": "#c3c6d0",
+            "inverse-on-surface": "#eef0ff",
+            "background": "#faf8ff",
+            "on-primary-container": "#868992",
+            "on-primary-fixed": "#181c23",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#0b1c30",
+            "tertiary": "#000f01",
+            "inverse-surface": "#283044",
+            "tertiary-fixed-dim": "#84da83"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "0.75rem",
+            "space-base": "1rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2rem",
+            "space-lg": "1.5rem",
+            "space-2xl": "3rem",
+            "space-2xs": "0.125rem",
+            "gutter-desktop": "1.5rem",
+            "margin-desktop": "2rem",
+            "space-3xl": "4rem",
+            "space-xs": "0.25rem",
+            "margin-mobile": "1rem",
+            "gutter-mobile": "1rem"
+          },
+          "fontFamily": {
+            "label-md": ["Geist"],
+            "title-md": ["Geist"],
+            "body-sm": ["Geist"],
+            "headline-sm": ["Geist"],
+            "label-sm": ["Geist"],
+            "headline-lg": ["Geist"],
+            "display-sm": ["Geist"],
+            "body-lg": ["Geist"],
+            "body-md": ["Geist"],
+            "display-lg": ["Geist"],
+            "headline-lg-mobile": ["Geist"],
+            "code-sm": ["Geist"]
+          },
+          "fontSize": {
+            "label-md": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.005em", "fontWeight": "500" }],
+            "title-md": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-sm": ["0.75rem", { "lineHeight": "1.125rem", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-lg": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-sm": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.025em", "fontWeight": "600" }],
+            "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-md": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-lg": ["3.5rem", { "lineHeight": "4rem", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "code-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Hide scrollbar for tab navigation */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col justify-between selection:bg-tertiary-fixed selection:text-on-tertiary-fixed pb-24">
+<!-- TOP APP BAR (from Shared Components JSON) -->
+<header class="flex justify-between items-center w-full px-margin-mobile py-space-sm h-14 fixed top-0 left-0 z-50 bg-primary-container shadow-sm border-b border-outline dark:border-outline-variant">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Open Navigation Menu" class="text-on-primary transition-colors duration-150 active:scale-95 flex items-center justify-center p-1 rounded hover:bg-primary" type="button">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm font-bold text-on-primary tracking-tight">Nexora</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-label-sm font-semibold bg-on-tertiary-container/20 text-tertiary-fixed border border-on-tertiary-container/40">B2B NETWORK</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Search RFQs and Chats" class="text-on-primary transition-colors duration-150 active:scale-95 p-1.5 rounded hover:bg-primary flex items-center justify-center" type="button">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button aria-label="Notifications" class="relative text-on-primary transition-colors duration-150 active:scale-95 p-1.5 rounded hover:bg-primary flex items-center justify-center" type="button">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-on-tertiary-container rounded-full ring-2 ring-primary-container"></span>
+</button>
+</div>
+</header>
+<!-- MAIN SCROLLABLE CONTENT CANVAS -->
+<main class="w-full max-w-lg mx-auto pt-16 px-margin-mobile flex-1 flex flex-col">
+<!-- HEADER HERO & CONTEXT -->
+<section class="pt-space-md pb-space-sm">
+<div class="flex items-start justify-between">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold tracking-tight">Deal Rooms &amp; Messages</h1>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5 max-w-xs">Confidential B2B negotiations, verified inquiries, and RFQ chats.</p>
+</div>
+<button aria-label="Create New RFQ Chat" class="p-2 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-surface hover:bg-surface-container-low transition-colors duration-150 active:scale-95 flex items-center justify-center shadow-sm" type="button">
+<span class="material-symbols-outlined text-primary-container" data-icon="edit_square">edit_square</span>
+</button>
+</div>
+<!-- AI NEGOTIATION SUMMARY BANNER -->
+<div class="mt-space-md bg-surface-container-lowest border border-on-tertiary-container/30 rounded-xl p-space-md shadow-sm flex items-start gap-space-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-on-tertiary-container"></div>
+<div class="w-8 h-8 rounded-lg bg-on-tertiary-container/10 flex items-center justify-center text-on-tertiary-container shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-xl" data-icon="auto_awesome" data-weight="fill" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="flex-1 min-w-0 pr-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold uppercase tracking-wider">Nexora Copilot</span>
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+<span class="font-body-sm text-body-sm text-secondary">Ready to execute</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium mt-0.5 leading-snug">Nexora AI identified 2 quotes ready for price lock &amp; sign.</p>
+</div>
+<button class="text-on-tertiary-container hover:text-on-tertiary-fixed-variant self-center font-label-sm text-label-sm font-semibold flex items-center shrink-0" type="button">
+          Review
+          <span class="material-symbols-outlined text-sm ml-0.5" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- TABS COMPONENT -->
+<div class="mt-space-md -mx-margin-mobile px-margin-mobile overflow-x-auto no-scrollbar flex items-center gap-space-xs pb-1">
+<button class="whitespace-nowrap px-space-md py-1.5 rounded-full font-label-md text-label-md bg-primary-container text-on-primary font-semibold shadow-sm transition-colors" type="button">
+          All Chats (12)
+        </button>
+<button class="whitespace-nowrap px-space-md py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest border border-outline-variant text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button">
+          Active RFQs (5)
+        </button>
+<button class="whitespace-nowrap px-space-md py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest border border-outline-variant text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-xs" data-icon="lock">lock</span>
+          NDA Deal Rooms (3)
+        </button>
+<button class="whitespace-nowrap px-space-md py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest border border-outline-variant text-secondary hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button">
+          Credit Partners (2)
+        </button>
+</div>
+</section>
+<!-- MESSAGE THREADS LIST -->
+<section class="mt-space-sm space-y-space-sm pb-16">
+<!-- ITEM 1: Ather Energy Sourcing Team (Active Deal Room) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant shadow-sm hover:border-on-tertiary-container/50 transition-all duration-150 relative cursor-pointer active:scale-[0.99]">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-title-md text-title-md font-bold tracking-tight shadow-sm shrink-0">
+              AE
+            </div>
+<div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<h2 class="font-title-md text-title-md text-on-surface font-semibold">Ather Energy Sourcing Team</h2>
+<span class="material-symbols-outlined text-on-tertiary-container text-base" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-on-tertiary-container/10 text-on-tertiary-container font-semibold border border-on-tertiary-container/20">
+<span class="material-symbols-outlined text-xs mr-1" data-icon="lock">lock</span>
+                  NDA Signed • Tier-1 Verified
+                </span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-body-sm text-[11px] text-secondary">10:42 AM</span>
+<span class="mt-1 inline-flex items-center justify-center w-5 h-5 rounded-full bg-on-tertiary-container text-on-tertiary font-label-sm text-xs font-bold shadow-sm">
+              2
+            </span>
+</div>
+</div>
+<!-- Last message snippet -->
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm line-clamp-2 leading-snug">
+          We reviewed your IP67 test certificate. Can you confirm dispatch schedule for initial batch of 500 units?
+        </p>
+<!-- Attachment & Mandate Tag footer -->
+<div class="mt-space-sm pt-space-xs border-t border-surface-container flex items-center justify-between gap-2 flex-wrap">
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container-low border border-outline-variant text-on-surface font-label-sm text-xs">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="description">description</span>
+<span class="truncate max-w-[140px]">RFQ-AE-2025-09.pdf</span>
+</div>
+<span class="font-label-sm text-xs font-semibold px-2 py-0.5 rounded bg-surface-container text-primary-container border border-outline-variant/60">
+            ₹1.2 Cr Mandate
+          </span>
+</div>
+</article>
+<!-- ITEM 2: Sundram Fasteners - Procurement Desk -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant shadow-sm hover:border-outline transition-all duration-150 cursor-pointer active:scale-[0.99]">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-on-surface flex items-center justify-center font-title-md text-title-md font-bold tracking-tight shrink-0 border border-outline-variant">
+              SF
+            </div>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface font-semibold">Sundram Fasteners - Procurement Desk</h2>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-secondary-container/50 text-secondary font-medium border border-secondary-container">
+<span class="material-symbols-outlined text-xs mr-1" data-icon="gavel">gavel</span>
+                  Auction Room
+                </span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-body-sm text-[11px] text-secondary">Yesterday</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm line-clamp-2 leading-snug">
+          Your counter-bid of ₹214.50/kg for Die-Cast Ingot is under review by the committee.
+        </p>
+<div class="mt-space-sm pt-space-xs border-t border-surface-container flex items-center justify-between">
+<span class="font-label-sm text-xs text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="schedule">schedule</span>
+            Bid valid for 48 hrs
+          </span>
+<span class="font-label-sm text-xs font-semibold px-2 py-0.5 rounded bg-surface-container text-secondary font-mono border border-outline-variant/60">
+            5,000 kg RFQ
+          </span>
+</div>
+</article>
+<!-- ITEM 3: Canara Bank Commercial SME Branch -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant shadow-sm hover:border-outline transition-all duration-150 cursor-pointer active:scale-[0.99]">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-primary flex items-center justify-center font-title-md text-title-md font-bold tracking-tight shrink-0 border border-outline-variant">
+              CB
+            </div>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface font-semibold">Canara Bank Commercial SME Branch</h2>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-surface-container-low text-secondary font-medium border border-outline-variant">
+<span class="material-symbols-outlined text-xs mr-1" data-icon="account_balance">account_balance</span>
+                  Credit Channel Partner
+                </span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-body-sm text-[11px] text-secondary">Yesterday</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm line-clamp-2 leading-snug">
+          Sanction letter generated for ₹50 Lakh SIDBI term loan. Please e-sign via DigiLocker.
+        </p>
+<div class="mt-space-sm pt-space-xs border-t border-surface-container flex items-center justify-between gap-2">
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container-low border border-outline-variant text-on-surface font-label-sm text-xs">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="picture_as_pdf">picture_as_pdf</span>
+<span class="truncate max-w-[170px]">Sanction_Advice_MSME.pdf</span>
+</div>
+<span class="font-label-sm text-xs font-semibold px-2 py-0.5 rounded bg-tertiary-fixed/40 text-on-tertiary-fixed-variant">
+            e-Sign Pending
+          </span>
+</div>
+</article>
+<!-- ITEM 4: Euler Motors - Supply Chain -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant shadow-sm hover:border-outline transition-all duration-150 cursor-pointer active:scale-[0.99]">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-on-surface flex items-center justify-center font-title-md text-title-md font-bold tracking-tight shrink-0 border border-outline-variant">
+              EM
+            </div>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface font-semibold">Euler Motors - Supply Chain</h2>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-surface-container text-secondary font-medium">
+                  Initial Inquiry
+                </span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-body-sm text-[11px] text-secondary">Oct 24</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm line-clamp-2 leading-snug">
+          Looking forward to our technical meeting on Monday regarding EV powertrain castings.
+        </p>
+<div class="mt-space-sm pt-space-xs border-t border-surface-container flex items-center justify-between text-secondary font-label-sm text-xs">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="videocam">videocam</span>
+            Google Meet scheduled
+          </span>
+<span class="">EV Castings Division</span>
+</div>
+</article>
+<!-- ITEM 5: Tata AutoComp Vendor Desk -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant shadow-sm hover:border-outline transition-all duration-150 cursor-pointer active:scale-[0.99]">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-on-surface flex items-center justify-center font-title-md text-title-md font-bold tracking-tight shrink-0 border border-outline-variant">
+              TA
+            </div>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface font-semibold">Tata AutoComp Vendor Desk</h2>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-on-tertiary-container/10 text-on-tertiary-container font-medium">
+                  Direct Intro Accepted
+                </span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-body-sm text-[11px] text-secondary">Oct 22</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm line-clamp-2 leading-snug">
+          Welcome to our vendor onboarding portal. Please submit Annexure-IV.
+        </p>
+<div class="mt-space-sm pt-space-xs border-t border-surface-container flex items-center justify-between text-secondary font-label-sm text-xs">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="assignment_turned_in">assignment_turned_in</span>
+            Onboarding Phase 1
+          </span>
+<span class="text-on-tertiary-container font-medium">Action Required</span>
+</div>
+</article>
+</section>
+</main>
+<!-- FLOATING ACTION BUTTON (Secure Deal Room Creation) -->
+<div class="fixed bottom-20 right-4 z-40">
+<button class="flex items-center gap-space-xs px-4 py-3 bg-on-tertiary-container hover:bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold rounded-full shadow-lg transition-all duration-150 active:scale-95 group" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="lock" data-weight="fill" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="">New Secure Deal Room</span>
+</button>
+</div>
+<!-- BOTTOM NAVIGATION BAR (Exact blueprint from Shared Components JSON) -->
+<!-- Active Tab determined semantically: 'Deals' for Deal Rooms & Messages -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 px-space-xs pb-safe bg-surface-container-lowest border-t border-outline-variant shadow-md">
+<!-- Tab 1: Home -->
+<a class="flex flex-col items-center justify-center text-secondary font-label-sm gap-space-2xs py-1 hover:bg-surface-container-low transition-colors active:scale-95 duration-100 ease-out flex-1" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- Tab 2: Explore -->
+<a class="flex flex-col items-center justify-center text-secondary font-label-sm gap-space-2xs py-1 hover:bg-surface-container-low transition-colors active:scale-95 duration-100 ease-out flex-1" href="#">
+<span class="material-symbols-outlined" data-icon="travel_explore">travel_explore</span>
+<span class="font-label-sm text-label-sm">Explore</span>
+</a>
+<!-- Tab 3: Deals (inactive with badge counter 4) -->
+<a class="relative flex flex-col items-center justify-center text-secondary font-label-sm gap-space-2xs py-1 hover:bg-surface-container-low transition-colors active:scale-95 duration-100 ease-out flex-1" href="#">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="handshake">handshake</span>
+<span class="absolute -top-1 -right-2 inline-flex items-center justify-center min-w-[16px] h-4 px-1 rounded-full bg-primary-container text-on-primary font-label-sm text-[10px] font-bold">4</span>
+</div>
+<span class="font-label-sm text-label-sm">Deals</span>
+</a>
+<!-- Tab 4: Messages (Active state - Emerald Green #4A9D4E / on-tertiary-container) -->
+<a class="flex flex-col items-center justify-center text-on-tertiary-container font-label-sm gap-space-2xs py-1 hover:bg-surface-container-low transition-colors active:scale-95 duration-100 ease-out flex-1" href="#">
+<span class="material-symbols-outlined font-bold" data-icon="chat_bubble" data-weight="fill" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="font-label-sm text-label-sm font-semibold">Messages</span>
+</a>
+<!-- Tab 5: Profile -->
+<a class="flex flex-col items-center justify-center text-secondary font-label-sm gap-space-2xs py-1 hover:bg-surface-container-low transition-colors active:scale-95 duration-100 ease-out flex-1" href="#">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+
+
+</body></html>

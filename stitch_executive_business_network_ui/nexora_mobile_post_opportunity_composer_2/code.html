@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nexora - Create Business Broadcast</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed": "#d8e2ff",
+            "on-secondary-fixed": "#002113",
+            "on-primary-container": "#7586b0",
+            "on-secondary-fixed-variant": "#005236",
+            "inverse-on-surface": "#eef0ff",
+            "on-error": "#ffffff",
+            "surface-dim": "#d2d9f4",
+            "on-surface": "#131b2e",
+            "on-tertiary-fixed": "#2a1700",
+            "on-tertiary-fixed-variant": "#653e00",
+            "on-primary-fixed": "#051a3e",
+            "tertiary-container": "#301b00",
+            "secondary-fixed": "#6ffbbe",
+            "primary": "#000619",
+            "tertiary-fixed-dim": "#ffb95f",
+            "outline-variant": "#c5c6cf",
+            "surface-tint": "#4c5e85",
+            "surface-container-lowest": "#ffffff",
+            "on-background": "#131b2e",
+            "on-surface-variant": "#44474e",
+            "surface-container": "#eaedff",
+            "surface-container-highest": "#dae2fd",
+            "primary-fixed-dim": "#b4c6f3",
+            "secondary-container": "#6cf8bb",
+            "surface-container-high": "#e2e7ff",
+            "outline": "#75777f",
+            "on-primary-fixed-variant": "#35466c",
+            "surface-variant": "#dae2fd",
+            "surface-bright": "#faf8ff",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "background": "#faf8ff",
+            "tertiary-fixed": "#ffddb8",
+            "inverse-surface": "#283044",
+            "surface": "#faf8ff",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "tertiary": "#0e0500",
+            "secondary": "#006c49",
+            "on-tertiary-container": "#bc7800",
+            "inverse-primary": "#b4c6f3",
+            "primary-container": "#091e42",
+            "on-secondary-container": "#00714d",
+            "secondary-fixed-dim": "#4edea3",
+            "surface-container-low": "#f2f3ff",
+            "on-primary": "#ffffff",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "card-padding-default": "1.5rem",
+            "grid-margin-mobile": "1rem",
+            "element-stack-xs": "0.25rem",
+            "gutter-tablet": "1rem",
+            "gutter-desktop": "1.5rem",
+            "element-stack-sm": "0.5rem",
+            "card-padding-compact": "1rem",
+            "gutter-mobile": "0.75rem",
+            "grid-margin-tablet": "1.5rem",
+            "element-stack-md": "0.75rem",
+            "element-stack-lg": "1.25rem",
+            "grid-margin-desktop": "2.5rem"
+          },
+          "fontFamily": {
+            "label-caps": ["JetBrains Mono"],
+            "mono-metric": ["JetBrains Mono"],
+            "title-md": ["Geist"],
+            "display-xl": ["Geist"],
+            "body-md": ["Geist"],
+            "headline-lg-mobile": ["Geist"],
+            "headline-lg": ["Geist"],
+            "body-lg": ["Geist"],
+            "body-sm": ["Geist"],
+            "headline-sm": ["Geist"],
+            "display-xl-mobile": ["Geist"]
+          },
+          "fontSize": {
+            "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "mono-metric": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-xl": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-xl-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen pb-24 selection:bg-secondary selection:text-surface-container-lowest">
+<!-- TopAppBar Component -->
+<header class="sticky top-0 z-40 bg-surface-container-lowest flex items-center justify-between px-gutter-mobile h-14 w-full shadow-[0_1px_3px_0_rgba(9,30,66,0.06)]">
+<div class="flex items-center gap-2">
+<button aria-label="Cancel broadcast" class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h1 class="font-headline-sm text-headline-sm font-semibold tracking-tight text-primary">Nexora</h1>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 text-on-surface-variant hover:bg-surface-container-low rounded-lg font-body-sm text-body-sm font-medium transition-colors" type="button">
+        Drafts
+      </button>
+<button class="flex items-center gap-1.5 bg-secondary text-surface-container-lowest px-3.5 py-1.5 rounded-lg font-title-md text-body-sm font-semibold hover:bg-on-secondary-container active:scale-[0.98] shadow-sm transition-all" type="button">
+<span>Publish</span>
+<span class="material-symbols-outlined text-[16px]">send</span>
+</button>
+</div>
+</header>
+<!-- Author Context Bar -->
+<section class="bg-surface-container-lowest px-grid-margin-mobile py-element-stack-md border-b border-surface-container shadow-[0_1px_2px_rgba(9,30,66,0.02)]">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-surface-container-lowest flex items-center justify-center font-mono-metric text-mono-metric font-semibold text-xs shrink-0">
+            ABC
+          </div>
+<div class="truncate">
+<div class="flex items-center gap-1.5">
+<span class="font-body-md text-body-sm font-semibold text-primary truncate">ABC EV Components</span>
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-label-caps text-label-caps text-secondary font-medium tracking-wide">TIER-1 VERIFIED SUPPLIER</p>
+</div>
+</div>
+<button class="p-1 text-on-surface-variant hover:bg-surface-container-low rounded">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</button>
+</div>
+<!-- Audience Scope Badge Button -->
+<div class="flex items-center justify-between bg-surface-container-low/70 px-3 py-1.5 rounded-lg border border-surface-container">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-surface-tint text-[16px]">hub</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Audience: <strong class="text-on-surface font-medium">Public Network &amp; AI Match Engine</strong></span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">tune</span>
+</div>
+</div>
+</section>
+<!-- Main Broadcast Creation Canvas -->
+<main class="max-w-2xl mx-auto px-grid-margin-mobile pt-element-stack-lg space-y- element-stack-lg flex flex-col gap-4">
+<!-- Intent Matrix Carousel Tabs -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Commercial Intent Mode</span>
+<span class="font-mono-metric text-[11px] text-secondary font-semibold bg-secondary-fixed/30 px-2 py-0.5 rounded-full border border-secondary/20">Active RFQ Matrix</span>
+</div>
+<div class="flex gap-2 overflow-x-auto no-scrollbar pb-1 -mx-grid-margin-mobile px-grid-margin-mobile">
+<button class="shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-primary-container text-surface-container-lowest font-body-sm text-body-sm font-medium shadow-sm">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">request_quote</span>
+<span>Requirement (RFQ)</span>
+</button>
+<button class="shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-lowest border border-outline-variant/60 text-on-surface-variant font-body-sm text-body-sm hover:border-outline transition-colors">
+<span class="material-symbols-outlined text-[16px]">campaign</span>
+<span>Product Announcement</span>
+</button>
+<button class="shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-lowest border border-outline-variant/60 text-on-surface-variant font-body-sm text-body-sm hover:border-outline transition-colors">
+<span class="material-symbols-outlined text-[16px]">payments</span>
+<span>Funding / Credit</span>
+</button>
+<button class="shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-lowest border border-outline-variant/60 text-on-surface-variant font-body-sm text-body-sm hover:border-outline transition-colors">
+<span class="material-symbols-outlined text-[16px]">storefront</span>
+<span>Dealership</span>
+</button>
+<button class="shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-lowest border border-outline-variant/60 text-on-surface-variant font-body-sm text-body-sm hover:border-outline transition-colors">
+<span class="material-symbols-outlined text-[16px]">precision_manufacturing</span>
+<span>Plant Capacity</span>
+</button>
+</div>
+</div>
+<!-- AI Post Assistant Bar -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary-container to-[#172554] p-card-padding-compact text-surface-container-lowest shadow-md">
+<div class="absolute -right-4 -top-6 w-24 h-24 bg-secondary-fixed/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary-fixed text-[18px]" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span class="font-title-md text-body-sm font-semibold text-surface-container-lowest">AI Broadcast Assistant</span>
+<span class="text-xs bg-surface-container-lowest/10 px-2 py-0.5 rounded text-secondary-fixed font-mono-metric font-medium">Smart Parser</span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-container-high mb-2">
+        Tell us naturally what you need, and we'll format it with intent tags and target matching.
+      </p>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest/10 border border-surface-container-high/30 text-surface-container-lowest placeholder:text-surface-container-high/60 rounded-lg text-body-sm font-body-sm px-3 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-secondary-fixed focus:bg-surface-container-lowest/20" placeholder="e.g., We need 5,000 kg aluminium ingots delivered to Hosur by next week..." type="text"/>
+<button aria-label="Format post with AI" class="absolute right-2 top-1/2 -translate-y-1/2 text-secondary-fixed hover:text-surface-container-lowest p-1" type="button">
+<span class="material-symbols-outlined text-[20px]">auto_fix_high</span>
+</button>
+</div>
+</div>
+<!-- Structured Form Body -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/60 p-card-padding-compact shadow-sm space-y-4">
+<!-- Title Input -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mb-1.5">
+          Requirement Summary / Headline *
+        </label>
+<input class="w-full rounded-lg border border-outline-variant/80 px-3 py-2 font-body-md text-body-md text-on-surface focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 outline-none transition" type="text" value="Supply of Die-Cast Aluminium Ingot (ADC12 Grade) - Hosur Plant"/>
+</div>
+<!-- Detailed Terms Textarea -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mb-1.5">
+          Detailed Specifications &amp; Commercial Terms
+        </label>
+<textarea class="w-full rounded-lg border border-outline-variant/80 px-3 py-2 font-body-sm text-body-sm text-on-surface placeholder:text-outline-variant focus:border-primary-container focus:ring-2 focus:ring-primary-container/10 outline-none transition resize-none" placeholder="Specify exact metallurgical tolerances, delivery cycles, ISO standard compliance, payment terms (LC/Net 45)..." rows="3">ADC12 Standard Alloy composition. Monthly recurring dispatch of 5 Metric Tons. Mill Test Certificates (MTC) required with each consignment. Unloading at Hosur Sector 4 facility.</textarea>
+</div>
+<!-- Commercial Grid Matrix -->
+<div class="pt-2 border-t border-surface-container">
+<span class="block font-label-caps text-label-caps text-primary uppercase tracking-wider mb-2.5">
+          Key Deal Parameters
+        </span>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Material/Category -->
+<div class="bg-surface-container-low/50 p-2.5 rounded-lg border border-outline-variant/50">
+<span class="font-label-caps text-[10px] text-outline uppercase block mb-1">Category</span>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Raw Metals &amp; Alloys</span>
+<span class="material-symbols-outlined text-[16px] text-outline">tune</span>
+</div>
+</div>
+<!-- Quantity / MoQ -->
+<div class="bg-surface-container-low/50 p-2.5 rounded-lg border border-outline-variant/50">
+<span class="font-label-caps text-[10px] text-outline uppercase block mb-1">Quantity / MoQ</span>
+<div class="flex items-center">
+<input class="w-full bg-transparent p-0 border-0 font-mono-metric text-mono-metric font-semibold text-on-surface focus:ring-0" type="text" value="5,000 kg"/>
+</div>
+</div>
+<!-- Target Price -->
+<div class="bg-surface-container-low/50 p-2.5 rounded-lg border border-outline-variant/50">
+<span class="font-label-caps text-[10px] text-outline uppercase block mb-1">Target Price (₹)</span>
+<div class="flex items-center">
+<span class="font-mono-metric text-body-sm text-on-surface-variant mr-1">₹</span>
+<input class="w-full bg-transparent p-0 border-0 font-mono-metric text-mono-metric font-semibold text-on-surface focus:ring-0" type="text" value="214.50 /kg"/>
+</div>
+</div>
+<!-- Corridor / Location -->
+<div class="bg-surface-container-low/50 p-2.5 rounded-lg border border-outline-variant/50">
+<span class="font-label-caps text-[10px] text-outline uppercase block mb-1">Target Corridor</span>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Hosur, TN</span>
+<span class="material-symbols-outlined text-[16px] text-secondary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Media & Documentation Upload Area -->
+<div class="pt-2 border-t border-surface-container">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">
+            Verification &amp; Spec Assets
+          </span>
+<span class="font-mono-metric text-[11px] text-secondary font-medium">1 file attached</span>
+</div>
+<div class="space-y-2">
+<!-- Uploaded chip -->
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container border border-surface-container-high">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-secondary text-[20px]">description</span>
+<div class="truncate">
+<p class="font-body-sm text-body-sm font-medium text-on-surface truncate">ADC12_Tolerances_Hosur_Plant.pdf</p>
+<p class="font-label-caps text-[10px] text-outline">1.8 MB • Technical Drawing</p>
+</div>
+</div>
+<button class="p-1 text-outline hover:text-error">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Upload Actions Grid -->
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-center gap-1.5 p-2.5 rounded-lg border border-dashed border-outline-variant hover:border-primary-container bg-surface-container-low/30 hover:bg-surface-container-low transition-colors text-on-surface-variant font-body-sm text-body-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">upload_file</span>
+<span class="truncate">CAD / Spec Sheet</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 p-2.5 rounded-lg border border-dashed border-outline-variant hover:border-primary-container bg-surface-container-low/30 hover:bg-surface-container-low transition-colors text-on-surface-variant font-body-sm text-body-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">add_photo_alternate</span>
+<span class="truncate">Photos / Video</span>
+</button>
+</div>
+</div>
+</div>
+<!-- AI Distribution Matching Engine Toggle -->
+<div class="p-3 bg-surface-container-low rounded-xl border border-secondary-fixed/40 flex items-start justify-between gap-3">
+<div class="flex gap-2.5">
+<div class="mt-0.5 p-1 rounded-md bg-secondary text-surface-container-lowest">
+<span class="material-symbols-outlined text-[18px]">rocket_launch</span>
+</div>
+<div>
+<span class="font-body-md text-body-sm font-semibold text-primary block">AI Opportunity Distribution</span>
+<p class="font-body-sm text-[12px] text-on-surface-variant leading-tight mt-0.5">
+              Instantly push structured parameters to <strong class="text-secondary">42 verified regional smelters</strong> &amp; Tier-2 vendors within 150 km radius.
+            </p>
+</div>
+</div>
+<!-- Switch -->
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-0.5">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+</div>
+<!-- Match Pre-Calculation Ribbon -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest border border-outline-variant/60">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings: 'FILL' 1;">insights</span>
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Estimated Match Index</span>
+<p class="font-mono-metric text-mono-metric font-semibold text-primary">94.8% Institutional Liquidity</p>
+</div>
+</div>
+<span class="font-mono-metric text-label-caps bg-secondary-fixed/40 text-on-secondary-fixed-variant px-2.5 py-1 rounded-full font-semibold">
+        HIGH AFFINITY
+      </span>
+</div>
+</main>
+<!-- BottomNavBar Component (JSON Anchor Implementation) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex items-center justify-around px-gutter-mobile py-2 bg-surface-container-lowest dark:bg-primary border-t border-outline-variant/30 shadow-[0_-2px_10px_rgba(9,30,66,0.05)]">
+<!-- Home tab -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant font-normal active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="font-label-caps text-[10px] mt-0.5">Home</span>
+</button>
+<!-- Explore tab -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant font-normal active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-[22px]">travel_explore</span>
+<span class="font-label-caps text-[10px] mt-0.5">Explore</span>
+</button>
+<!-- Post tab (ACTIVE STATE: Contextual screen matches 'Post') -->
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed font-semibold active:scale-95 transition-transform duration-150">
+<div class="w-10 h-10 -mt-4 bg-primary-container text-surface-container-lowest rounded-full flex items-center justify-center shadow-lg border-2 border-surface-container-lowest">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+</div>
+<span class="font-label-caps text-[10px] mt-0.5 font-bold">Post</span>
+</button>
+<!-- Deals tab -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant font-normal active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-[22px]">handshake</span>
+<span class="font-label-caps text-[10px] mt-0.5">Deals</span>
+</button>
+<!-- Network tab -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant font-normal active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-[22px]">chat</span>
+<span class="font-label-caps text-[10px] mt-0.5">Network</span>
+</button>
+</nav>
+</body></html>

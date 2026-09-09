@@ -1,0 +1,391 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Nexora - Opportunity &amp; Deal Center</title>
+<!-- Material Symbols Outlined Font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#1E2229",
+            "accent": "#4A9D4E",
+            "accent-hover": "#3e8542",
+            "secondary": "#64748B",
+            "canvas": "#F4F7F6",
+            "card-bg": "#FFFFFF",
+            "card-border": "#E2E8F0",
+            "ink": "#0F172A",
+            "ink-muted": "#64748B",
+            "error": "#BA1A1A",
+            "error-container": "#FFDAD6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "card-padding-default": "1.5rem",
+            "grid-margin-mobile": "1rem",
+            "element-stack-xs": "0.25rem",
+            "gutter-tablet": "1rem",
+            "gutter-desktop": "1.5rem",
+            "element-stack-sm": "0.5rem",
+            "card-padding-compact": "1rem",
+            "gutter-mobile": "0.75rem",
+            "grid-margin-tablet": "1.5rem",
+            "element-stack-md": "0.75rem",
+            "element-stack-lg": "1.25rem",
+            "grid-margin-desktop": "2.5rem"
+          },
+          "fontFamily": {
+            "label-caps": ["JetBrains Mono"],
+            "mono-metric": ["JetBrains Mono"],
+            "title-md": ["Geist"],
+            "display-xl": ["Geist"],
+            "body-md": ["Geist"],
+            "headline-lg-mobile": ["Geist"],
+            "headline-lg": ["Geist"],
+            "body-lg": ["Geist"],
+            "body-sm": ["Geist"],
+            "headline-sm": ["Geist"],
+            "display-xl-mobile": ["Geist"]
+          },
+          "fontSize": {
+            "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }],
+            "mono-metric": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-xl": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-xl-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-canvas text-ink antialiased selection:bg-accent selection:text-white min-h-screen flex justify-center font-body-md text-body-md">
+<!-- Mobile Emulation Container / Responsive Wrapper -->
+<div class="w-full max-w-[420px] bg-canvas min-h-screen relative shadow-2xl flex flex-col">
+<!-- TopAppBar Component: Deep Charcoal (#1E2229) with white brand mark & header action cluster in sync with SCREEN_4 -->
+<header class="sticky top-0 z-40 bg-primary text-white border-b border-primary/40 px-gutter-mobile h-14 w-full flex items-center justify-between shadow-md">
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-white text-xl" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-white">Nexora</span>
+</div>
+<span class="font-label-caps text-label-caps bg-white/15 text-white px-1.5 py-0.5 rounded text-[10px] font-semibold">B2B</span>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Search" class="p-1.5 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors duration-150">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</button>
+<button aria-label="Nexora Copilot" class="flex items-center gap-1 px-2 py-1 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-colors duration-150">
+<span class="material-symbols-outlined text-accent text-[17px]" data-icon="spark" style="font-variation-settings: 'FILL' 1;">spark</span>
+<span class="font-label-caps text-label-caps text-[10px] text-white">AI</span>
+</button>
+<button aria-label="Notifications" class="p-1.5 relative rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors duration-150">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-accent border border-primary rounded-full"></span>
+</button>
+<button aria-label="Company Switcher" class="relative ml-0.5 ring-1 ring-white/30 rounded-full p-0.5">
+<div class="w-7 h-7 rounded-full bg-white/15 text-white flex items-center justify-center font-label-caps text-[11px] font-bold">
+ABC
+</div>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-accent border-2 border-primary rounded-full"></span>
+</button>
+</div>
+</header>
+<!-- Main Canvas Mobile Content -->
+<main class="flex-1 w-full px-grid-margin-mobile pt-element-stack-md pb-24 space-y-element-stack-lg">
+<!-- Page Title & Operational Status Subheader -->
+<div class="flex items-center justify-between pt-element-stack-xs">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-accent inline-block animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-accent uppercase font-semibold text-[11px]">Enterprise Terminal Live</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-ink font-bold mt-0.5 tracking-tight">Opportunity &amp; Deal Center</h1>
+</div>
+<button class="flex items-center gap-1 bg-card-bg border border-card-border px-2.5 py-1.5 rounded-lg text-ink shadow-2xs hover:bg-canvas transition-colors duration-150">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="tune">tune</span>
+<span class="font-label-caps text-label-caps text-ink">Filter</span>
+</button>
+</div>
+<!-- Summary Metrics Header Bar (Bento Scaffolding with pure white containers) -->
+<section class="grid grid-cols-3 gap-2 bg-card-bg p-element-stack-sm rounded-xl border border-card-border shadow-sm">
+<div class="p-2.5 rounded-lg bg-canvas border border-card-border/60 flex flex-col justify-between">
+<span class="font-label-caps text-[10px] text-ink-muted leading-none">Deal Pipeline</span>
+<div class="mt-1.5">
+<div class="font-mono-metric text-mono-metric text-ink font-bold">₹4.8 Cr</div>
+<span class="font-label-caps text-[10px] text-accent font-semibold">+18.4% QoQ</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-canvas border border-card-border/60 flex flex-col justify-between">
+<span class="font-label-caps text-[10px] text-ink-muted leading-none">Matches</span>
+<div class="mt-1.5">
+<div class="font-mono-metric text-mono-metric text-ink font-bold">12 Deals</div>
+<span class="font-label-caps text-[10px] text-ink-muted">Verified RFQ</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-amber-50/50 flex flex-col justify-between border border-amber-200/80">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-[10px] text-amber-900 font-semibold leading-none">Action Req.</span>
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+</div>
+<div class="mt-1.5">
+<div class="font-mono-metric text-mono-metric text-ink font-bold">4 Priority</div>
+<span class="font-label-caps text-[10px] text-error font-medium">Expires &lt;48h</span>
+</div>
+</div>
+</section>
+<!-- Horizontal Category Filter Tabs: Emerald Green active state, Sage Gray borders -->
+<nav class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5 -mx-grid-margin-mobile px-grid-margin-mobile">
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-accent text-white font-title-md text-[12px] font-semibold shadow-2xs">
+        All Deals
+      </button>
+<button class="shrink-0 px-3 py-1.5 rounded-full bg-card-bg border border-card-border text-ink font-body-sm text-[12px] hover:bg-canvas flex items-center gap-1.5 transition-colors">
+<span class="">Buyer RFQs</span>
+<span class="px-1.5 py-0.2 rounded-full bg-accent/15 text-accent text-[10px] font-mono-metric font-bold">4</span>
+</button>
+<button class="shrink-0 px-3 py-1.5 rounded-full bg-card-bg border border-card-border text-secondary font-body-sm text-[12px] hover:bg-canvas flex items-center gap-1.5 transition-colors">
+<span class="">Supplier Offers</span>
+<span class="px-1.5 py-0.2 rounded-full bg-canvas border border-card-border text-secondary text-[10px] font-mono-metric font-semibold">5</span>
+</button>
+<button class="shrink-0 px-3 py-1.5 rounded-full bg-card-bg border border-card-border text-secondary font-body-sm text-[12px] hover:bg-canvas flex items-center gap-1.5 transition-colors">
+<span class="">Financing &amp; Schemes</span>
+<span class="px-1.5 py-0.2 rounded-full bg-canvas border border-card-border text-secondary text-[10px] font-mono-metric font-semibold">2</span>
+</button>
+<button class="shrink-0 px-3 py-1.5 rounded-full bg-card-bg border border-card-border text-secondary font-body-sm text-[12px] hover:bg-canvas flex items-center gap-1.5 transition-colors">
+<span class="">Distribution</span>
+<span class="px-1.5 py-0.2 rounded-full bg-canvas border border-card-border text-secondary text-[10px] font-mono-metric font-semibold">1</span>
+</button>
+</nav>
+<!-- Deal Cards Feed: Pure White (#FFFFFF) containers, crisp borders (#E2E8F0) -->
+<div class="space-y-4">
+<!-- Deal Card 1: Ather Energy Sourcing Mandate -->
+<article class="bg-card-bg rounded-xl border border-card-border overflow-hidden shadow-sm transition-all hover:border-secondary/40">
+<div class="p-card-padding-compact space-y-3">
+<!-- Top Row Tags & Verified Badge -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded bg-accent/10 border border-accent/25 text-accent">
+<span class="material-symbols-outlined text-xs" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-mono-metric text-xs font-semibold">92% AI Match</span>
+<span class="text-[11px] font-body-sm text-secondary font-medium">• Immediate Procurement</span>
+</div>
+<span class="flex items-center gap-1 text-ink font-label-caps text-[10px] bg-canvas border border-card-border px-2 py-0.5 rounded font-semibold">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="">OEM</span>
+</span>
+</div>
+<!-- Enterprise Entity & Title -->
+<div class="flex gap-3 items-start">
+<div class="w-11 h-11 rounded-lg bg-canvas flex items-center justify-center font-title-md text-ink font-bold shrink-0 border border-card-border">
+              AE
+            </div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md font-bold text-ink truncate">Ather Energy Mandate</span>
+</div>
+<p class="font-body-sm text-body-sm text-ink-muted">500 EV Battery Enclosures / month</p>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-caps text-[10px] text-ink-muted block">Quarterly Size</span>
+<span class="font-mono-metric text-mono-metric text-ink font-bold">₹1.2 Cr</span>
+</div>
+</div>
+<!-- AI Match Rationale Matrix Checklist -->
+<div class="p-2.5 rounded-lg bg-canvas border border-accent/30 space-y-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-[10px] uppercase text-accent font-bold">Algorithmic Compatibility</span>
+<span class="font-mono-metric text-[11px] text-accent font-semibold">High Synergy</span>
+</div>
+<div class="grid grid-cols-1 gap-1 text-[12px] text-ink">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-accent text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="">Sector Alignment: EV Powertrain &amp; Subsystems</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-accent text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="">Audited Capacity: 5,000 units/mo verified</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-accent text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="">Optimized Freight: Distance &lt;350 km (Hosur Hub)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Shelf Actions: Primary CTA Accent Emerald Green (#4A9D4E) -->
+<div class="px-card-padding-compact py-2.5 bg-canvas/70 border-t border-card-border flex items-center gap-2">
+<button class="flex-1 bg-accent hover:bg-accent-hover text-white font-title-md text-title-md text-[13px] font-semibold py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="description">description</span>
+<span class="">Submit Proposal / RFQ</span>
+</button>
+<button class="w-10 h-9 shrink-0 bg-card-bg border border-card-border rounded-lg flex items-center justify-center text-ink hover:bg-canvas active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-lg text-secondary" data-icon="phone_in_talk">phone_in_talk</span>
+</button>
+</div>
+</article>
+<!-- Deal Card 2: Sundaram Fasteners - High-Tensile Aluminium Extrusions -->
+<article class="bg-card-bg rounded-xl border border-card-border overflow-hidden shadow-sm transition-all hover:border-secondary/40">
+<div class="p-card-padding-compact space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded bg-accent/10 border border-accent/25 text-accent">
+<span class="material-symbols-outlined text-xs" data-icon="award_star" style="font-variation-settings: 'FILL' 1;">award_star</span>
+<span class="font-mono-metric text-xs font-semibold">94% Compatibility</span>
+<span class="text-[11px] font-body-sm text-secondary font-medium">• Sourcing Open</span>
+</div>
+<div class="flex items-center gap-1 text-error bg-error-container/50 border border-error-container px-2 py-0.5 rounded font-label-caps text-[10px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+<span class="">4d remaining</span>
+</div>
+</div>
+<div class="flex gap-3 items-start">
+<div class="w-11 h-11 rounded-lg bg-canvas flex items-center justify-center font-title-md text-ink font-bold shrink-0 border border-card-border">
+              SF
+            </div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-title-md text-title-md font-bold text-ink truncate">Sundaram Fasteners</span>
+</div>
+<p class="font-body-sm text-body-sm text-ink-muted">High-Tensile Aluminium Extrusions</p>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-caps text-[10px] text-ink-muted block">Target Price</span>
+<span class="font-mono-metric text-mono-metric text-ink font-bold">₹320 / kg</span>
+</div>
+</div>
+<div class="flex items-center justify-between px-3 py-2 bg-canvas rounded-lg text-xs font-body-sm border border-card-border/60">
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="inventory_2">inventory_2</span>
+<span class="">Volume: <strong class="text-ink font-mono-metric font-semibold">5,000 kg/mo</strong></span>
+</div>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="group">group</span>
+<span class="">Activity: <strong class="text-ink font-mono-metric font-semibold">14 bids placed</strong></span>
+</div>
+</div>
+</div>
+<div class="px-card-padding-compact py-2.5 bg-canvas/70 border-t border-card-border flex items-center justify-between gap-2">
+<div class="flex items-center gap-1 text-[11px] text-ink-muted">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="lock_clock">lock_clock</span>
+<span class="">Auction closes 28 Oct</span>
+</div>
+<button class="bg-accent hover:bg-accent-hover text-white font-title-md text-title-md text-[13px] font-semibold py-1.5 px-4 rounded-lg flex items-center gap-1 active:scale-[0.98] transition-colors shadow-sm">
+<span class="">Submit Quote</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Deal Card 3: SIDBI / MSME Working Capital & Term Subsidy -->
+<article class="bg-card-bg rounded-xl border border-card-border overflow-hidden shadow-sm transition-all hover:border-secondary/40">
+<div class="p-card-padding-compact space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded bg-canvas border border-card-border text-ink">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="account_balance">account_balance</span>
+<span class="font-label-caps text-xs font-semibold text-ink">Pre-Approved Credit Scheme</span>
+</div>
+<span class="font-label-caps text-[10px] text-accent bg-accent/15 border border-accent/25 px-2 py-0.5 rounded font-bold">
+              Subsidized
+            </span>
+</div>
+<div class="flex gap-3 items-start">
+<div class="w-11 h-11 rounded-lg bg-canvas flex items-center justify-center font-title-md text-ink font-bold shrink-0 border border-card-border">
+              SI
+            </div>
+<div class="flex-1 min-w-0">
+<span class="font-title-md text-title-md font-bold text-ink block leading-tight">SIDBI MSME Working Capital</span>
+<p class="font-body-sm text-body-sm text-ink-muted">Term Loan with Interest Subvention</p>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-caps text-[10px] text-ink-muted block">Max Facility</span>
+<span class="font-mono-metric text-mono-metric text-ink font-bold">₹50,00,000</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 bg-canvas p-2.5 rounded-lg text-center border border-card-border/60">
+<div class="border-r border-card-border">
+<span class="font-label-caps text-[10px] text-ink-muted block">Subsidized Interest</span>
+<span class="font-mono-metric text-sm font-bold text-accent">6.5% p.a.</span>
+</div>
+<div>
+<span class="font-label-caps text-[10px] text-ink-muted block">Collateral Cover</span>
+<span class="font-mono-metric text-sm font-bold text-ink">CGTMSE Backed</span>
+</div>
+</div>
+</div>
+<div class="px-card-padding-compact py-2.5 bg-canvas/70 border-t border-card-border">
+<button class="w-full bg-card-bg border border-card-border hover:border-primary text-ink font-title-md text-title-md text-[13px] font-semibold py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 active:scale-[0.98] transition-colors shadow-2xs">
+<span class="material-symbols-outlined text-base text-secondary" data-icon="calculate">calculate</span>
+<span class="">Calculate EMI &amp; Route Channel Partner</span>
+</button>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar Component: In exact sync with SCREEN_4 structure, with active 'Deals' tab highlighted in Emerald Green (#4A9D4E) and unread badge -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex items-center justify-around px-gutter-mobile py-2 bg-card-bg shadow-[0_-4px_16px_rgba(15,23,42,0.06)] border-t border-card-border"><!-- Tab 1: Home (Inactive - Sage Gray) -->
+<a class="flex flex-col items-center justify-center text-secondary font-normal hover:text-ink transition-colors duration-150 group active:scale-95" href="#">
+  <span class="material-symbols-outlined text-[22px]" data-icon="home">home</span>
+  <span class="font-label-caps text-label-caps text-[10px] mt-0.5">Home</span>
+</a>
+<!-- Tab 2: Explore (Inactive - Sage Gray) -->
+<a class="flex flex-col items-center justify-center text-secondary font-normal hover:text-ink transition-colors duration-150 group active:scale-95" href="#">
+  <span class="material-symbols-outlined text-[22px]" data-icon="travel_explore">travel_explore</span>
+  <span class="font-label-caps text-label-caps text-[10px] mt-0.5">Explore</span>
+</a>
+<!-- Tab 3: Deals (ACTIVE - Emerald Green #4A9D4E with badge counter 4) -->
+<a class="flex flex-col items-center justify-center text-accent font-semibold active:scale-95 transition-transform duration-150 relative" href="#">
+  <div class="relative">
+    <span class="material-symbols-outlined text-[22px]" data-icon="handshake" style="font-variation-settings: 'FILL' 1;">handshake</span>
+    <span class="absolute -top-1 -right-2 bg-accent text-white font-mono-metric text-[9px] font-bold px-1 rounded-full h-3.5 min-w-[14px] flex items-center justify-center ring-2 ring-card-bg">4</span>
+  </div>
+  <span class="font-label-caps text-label-caps text-[10px] mt-0.5">Deals</span>
+</a>
+<!-- Tab 4: Messages (Inactive - Sage Gray) -->
+<a class="flex flex-col items-center justify-center text-secondary font-normal hover:text-ink transition-colors duration-150 group active:scale-95" href="#">
+  <span class="material-symbols-outlined text-[22px]" data-icon="chat_bubble">chat_bubble</span>
+  <span class="font-label-caps text-label-caps text-[10px] mt-0.5">Messages</span>
+</a>
+<!-- Tab 5: Profile (Inactive - Sage Gray) -->
+<a class="flex flex-col items-center justify-center text-secondary font-normal hover:text-ink transition-colors duration-150 group active:scale-95" href="#">
+  <span class="material-symbols-outlined text-[22px]" data-icon="domain">domain</span>
+  <span class="font-label-caps text-label-caps text-[10px] mt-0.5">Profile</span>
+</a></nav>
+</div>
+
+
+</body></html>
