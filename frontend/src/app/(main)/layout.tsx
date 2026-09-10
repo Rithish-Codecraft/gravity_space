@@ -30,10 +30,12 @@ export default function MainLayout({
   }
 
   return (
-    <>
+    <div className="flex flex-col h-full overflow-hidden relative">
       <TopHeader />
-      {children}
+      <div className="flex-1 overflow-y-auto no-scrollbar pb-[72px]">
+        {children}
+      </div>
       <BottomNav />
-    </>
+    </div>
   );
 }

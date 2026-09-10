@@ -43,8 +43,8 @@ export default function RootLayout({
           `}
         </style>
       </head>
-      <body className="bg-[var(--color-canvas)] text-[var(--color-ink)] antialiased min-h-screen pb-20 flex justify-center selection:bg-[var(--color-accent)]/20">
-        <main className="w-full max-w-[420px] bg-[var(--color-canvas)] min-h-screen relative shadow-2xl flex flex-col">
+      <body className="bg-slate-950 text-[var(--color-ink)] antialiased h-[100dvh] w-full flex items-center justify-center selection:bg-[var(--color-accent)]/20 overflow-hidden">
+        <main className="w-full h-full max-w-[430px] sm:h-[92vh] sm:aspect-[9/16] bg-[var(--color-canvas)] relative shadow-2xl flex flex-col overflow-hidden sm:rounded-[2.5rem] sm:border-[12px] border-slate-800 ring-1 ring-white/10">
           {children}
         </main>
       </body>

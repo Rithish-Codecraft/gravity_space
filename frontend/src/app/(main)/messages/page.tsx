@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Messages() {
   return (
     <div className="flex-1 flex flex-col gap-[var(--spacing-element-stack-md)] py-[var(--spacing-element-stack-sm)]">
@@ -8,10 +10,10 @@ export default function Messages() {
             <span className="material-symbols-outlined text-[16px]">handshake</span>
             Procurement Rooms
           </button>
-          <button className="flex-1 py-2 px-3 rounded-xl bg-[var(--color-primary)] text-white font-[var(--font-title-md)] text-[12px] font-semibold flex items-center justify-center gap-1.5 shadow-sm">
+          <Link href="/messages/chat" className="flex-1 py-2 px-3 rounded-xl bg-[var(--color-primary)] text-white font-[var(--font-title-md)] text-[12px] font-semibold flex items-center justify-center gap-1.5 shadow-sm hover:opacity-90 transition-opacity">
             <span className="material-symbols-outlined text-[var(--color-accent)] text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>spark</span>
             Nexora Copilot AI
-          </button>
+          </Link>
         </div>
       </section>
 
