@@ -202,7 +202,7 @@ export default function Profile() {
           <button 
             onClick={() => {
               localStorage.clear();
-              router.push("/login");
+              router.push("/");
             }}
             className="w-full py-2.5 rounded-lg border border-[var(--color-error)] text-[var(--color-error)] font-semibold text-[13px] hover:bg-red-50 transition-colors flex items-center justify-center gap-2"
           >

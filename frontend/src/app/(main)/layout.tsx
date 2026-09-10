@@ -17,7 +17,7 @@ export default function MainLayout({
   useEffect(() => {
     const name = localStorage.getItem("nexora_user_name");
     if (!name) {
-      router.push("/login");
+      router.push("/");
     } else {
       setIsAuthorized(true);
     }
