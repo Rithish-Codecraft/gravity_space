@@ -83,6 +83,55 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Live Data Sources Engine */}
+      <section className="px-[var(--spacing-gutter-mobile)] mt-0">
+        <div className="bg-[var(--color-card-bg)] rounded-xl border border-[var(--color-card-border)] p-3 shadow-sm">
+          <div className="flex items-center justify-between mb-2.5">
+            <div className="flex items-center gap-1.5">
+              <span className="material-symbols-outlined text-[var(--color-ink)] text-[16px]">account_tree</span>
+              <h3 className="font-[var(--font-title-md)] text-[13px] text-[var(--color-ink)] font-bold">Scheme Aggregation Engine</h3>
+            </div>
+            <span className="flex items-center gap-1 font-[var(--font-label-caps)] text-[10px] text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-sm border border-emerald-200">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              LIVE SYNC
+            </span>
+          </div>
+          
+          <div className="grid grid-cols-3 gap-2">
+            <div className="flex flex-col items-center justify-center p-2 rounded border border-[var(--color-card-border)] bg-[var(--color-canvas)]">
+              <span className="text-[14px] mb-1">🇮🇳</span>
+              <span className="font-[var(--font-label-caps)] text-[9px] font-bold text-[var(--color-ink)] text-center">API Setu</span>
+              <span className="text-[8px] text-[var(--color-ink-muted)] mt-0.5">Connected</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-2 rounded border border-[var(--color-card-border)] bg-[var(--color-canvas)]">
+              <span className="text-[14px] mb-1">🏛️</span>
+              <span className="font-[var(--font-label-caps)] text-[9px] font-bold text-[var(--color-ink)] text-center">myScheme</span>
+              <span className="text-[8px] text-[var(--color-ink-muted)] mt-0.5">Synced 1m ago</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-2 rounded border border-[var(--color-card-border)] bg-[var(--color-canvas)]">
+              <span className="text-[14px] mb-1">🚀</span>
+              <span className="font-[var(--font-label-caps)] text-[9px] font-bold text-[var(--color-ink)] text-center">Startup India</span>
+              <span className="text-[8px] text-[var(--color-ink-muted)] mt-0.5">Connected</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-2 rounded border border-[var(--color-card-border)] bg-[var(--color-canvas)]">
+              <span className="text-[14px] mb-1">🏦</span>
+              <span className="font-[var(--font-label-caps)] text-[9px] font-bold text-[var(--color-ink)] text-center">JanSamarth</span>
+              <span className="text-[8px] text-[var(--color-ink-muted)] mt-0.5">Credit APIs</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-2 rounded border border-[var(--color-card-border)] bg-[var(--color-canvas)]">
+              <span className="text-[14px] mb-1">🤝</span>
+              <span className="font-[var(--font-label-caps)] text-[9px] font-bold text-[var(--color-ink)] text-center">NGO-DARPAN</span>
+              <span className="text-[8px] text-[var(--color-ink-muted)] mt-0.5">Verified Base</span>
+            </div>
+            <div className="flex flex-col items-center justify-center p-2 rounded border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/5">
+              <span className="material-symbols-outlined text-[var(--color-accent)] text-[16px] mb-0.5" style={{ fontVariationSettings: "'FILL' 1" }}>smart_toy</span>
+              <span className="font-[var(--font-label-caps)] text-[9px] font-bold text-[var(--color-accent)] text-center">Rule Engine</span>
+              <span className="text-[8px] text-[var(--color-accent)] mt-0.5 font-bold">RAG Active</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Opportunity Pulse Carousel */}
       <section className="pt-1">
         <div className="flex items-center justify-between px-[var(--spacing-gutter-mobile)] mb-2">
