@@ -26,7 +26,7 @@ export default function Login() {
       <header className="bg-[var(--color-primary)] flex items-center justify-between px-4 h-14 w-full sticky top-0 z-30 shadow-md text-white">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-[var(--color-accent)] flex items-center justify-center text-white active:scale-[0.98] transition-transform shadow-sm">
-            <span className="material-symbols-outlined text-[18px]">auto_awesome</span>
+            <span className="text-[18px]">🌌</span>
           </div>
           <div className="flex items-baseline gap-1.5">
             <span className="text-[19px] font-semibold tracking-tight text-white">Nexora</span>

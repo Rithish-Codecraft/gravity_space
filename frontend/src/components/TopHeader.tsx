@@ -26,7 +26,7 @@ export function TopHeader() {
   }, []);
 
   const tabConfig: Record<string, { title: string, icon: string, badge: string, fillIcon: boolean }> = {
-    "/": { title: "Nexora", icon: "auto_awesome", badge: "B2B", fillIcon: true },
+    "/": { title: "Nexora", icon: "🌌", badge: "B2B", fillIcon: true },
     "/explore": { title: "Radar & Search", icon: "travel_explore", badge: "SECTOR", fillIcon: false },
     "/deals": { title: "Deal Center", icon: "handshake", badge: "4 RFQS", fillIcon: true },
     "/messages": { title: "Deal Rooms", icon: "forum", badge: "COPILOT", fillIcon: false },
@@ -39,12 +39,16 @@ export function TopHeader() {
     <header className="sticky top-0 z-40 bg-[var(--color-primary)] text-white border-b border-[var(--color-primary)]/40 px-[var(--spacing-gutter-mobile)] h-14 w-full flex items-center justify-between shadow-md transition-colors duration-200">
       <div className="flex items-center gap-2">
         <div className="flex items-center gap-1.5">
-          <span 
-            className="material-symbols-outlined text-white text-xl" 
-            style={{ fontVariationSettings: currentConfig.fillIcon ? "'FILL' 1" : "'FILL' 0" }}
-          >
-            {currentConfig.icon}
-          </span>
+          {pathname === "/" ? (
+            <span className="text-xl">🌌</span>
+          ) : (
+            <span 
+              className="material-symbols-outlined text-white text-xl" 
+              style={{ fontVariationSettings: currentConfig.fillIcon ? "'FILL' 1" : "'FILL' 0" }}
+            >
+              {currentConfig.icon}
+            </span>
+          )}
           <span className="font-[var(--font-headline-sm)] text-[20px] font-semibold tracking-tight text-white leading-[28px]">
             {currentConfig.title}
           </span>

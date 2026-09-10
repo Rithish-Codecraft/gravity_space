@@ -15,6 +15,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Nexora - B2B Opportunity Command Center",
   description: "AI-powered assistance to discover relevant government schemes, check eligibility and connect with meaningful business opportunities.",
+  icons: {
+    icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🌌</text></svg>',
+  },
 };
 
 export default function RootLayout({
