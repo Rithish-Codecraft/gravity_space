@@ -2,17 +2,37 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-const tabConfig: Record<string, { title: string, icon: string, badge: string, fillIcon: boolean }> = {
-  "/": { title: "Nexora", icon: "auto_awesome", badge: "B2B", fillIcon: true },
-  "/explore": { title: "Radar & Search", icon: "travel_explore", badge: "SECTOR", fillIcon: false },
-  "/deals": { title: "Deal Center", icon: "handshake", badge: "4 RFQS", fillIcon: true },
-  "/messages": { title: "Deal Rooms", icon: "forum", badge: "COPILOT", fillIcon: false },
-  "/profile": { title: "ABC EV Dossier", icon: "domain", badge: "TIER-1", fillIcon: true }
-};
+import { useState, useEffect } from "react";
 
 export function TopHeader() {
   const pathname = usePathname();
+  const [companyAbbr, setCompanyAbbr] = useState("ABC");
+  const [companyName, setCompanyName] = useState("ABC EV");
+
+  useEffect(() => {
+    const storedCompany = localStorage.getItem("nexora_company_name");
+    if (storedCompany) {
+      setCompanyName(storedCompany);
+      // Create a 2-3 letter abbreviation
+      const words = storedCompany.split(' ');
+      let abbr = "";
+      if (words.length >= 2) {
+        abbr = (words[0][0] + words[1][0]).toUpperCase();
+      } else {
+        abbr = storedCompany.substring(0, 3).toUpperCase();
+      }
+      setCompanyAbbr(abbr);
+    }
+  }, []);
+
+  const tabConfig: Record<string, { title: string, icon: string, badge: string, fillIcon: boolean }> = {
+    "/": { title: "Nexora", icon: "auto_awesome", badge: "B2B", fillIcon: true },
+    "/explore": { title: "Radar & Search", icon: "travel_explore", badge: "SECTOR", fillIcon: false },
+    "/deals": { title: "Deal Center", icon: "handshake", badge: "4 RFQS", fillIcon: true },
+    "/messages": { title: "Deal Rooms", icon: "forum", badge: "COPILOT", fillIcon: false },
+    "/profile": { title: `${companyAbbr} Dossier`, icon: "domain", badge: "TIER-1", fillIcon: true }
+  };
+
   const currentConfig = tabConfig[pathname] || tabConfig["/"];
 
   return (
@@ -48,7 +68,7 @@ export function TopHeader() {
         </button>
         <Link href="/profile" aria-label="Company Switcher" className="relative ml-0.5 ring-1 ring-white/30 rounded-full p-0.5 active:scale-95 transition-transform block">
           <div className="w-7 h-7 rounded-full bg-white/15 text-white flex items-center justify-center font-[var(--font-label-caps)] text-[11px] font-bold">
-            ABC
+            {companyAbbr}
           </div>
           <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-[var(--color-accent)] border-2 border-[var(--color-primary)] rounded-full"></span>
         </Link>

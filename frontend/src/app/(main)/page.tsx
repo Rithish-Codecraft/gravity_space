@@ -1,4 +1,24 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 export default function Home() {
+  const [userName, setUserName] = useState("User");
+  const [companyName, setCompanyName] = useState("Company Name");
+
+  useEffect(() => {
+    const storedName = localStorage.getItem("nexora_user_name");
+    const storedCompany = localStorage.getItem("nexora_company_name");
+    
+    if (storedName) {
+      // Get the first name
+      setUserName(storedName.split(' ')[0]);
+    }
+    if (storedCompany) {
+      setCompanyName(storedCompany);
+    }
+  }, []);
+
   return (
     <div className="flex-1 flex flex-col gap-[var(--spacing-element-stack-md)] py-[var(--spacing-element-stack-sm)]">
       {/* Greeting & Market Engine Status */}
@@ -6,7 +26,7 @@ export default function Home() {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="font-[var(--font-headline-lg-mobile)] text-[24px] leading-[32px] font-bold tracking-tight text-[var(--color-ink)]">
-              Good morning, Rithish 👋
+              Good morning, {userName} 👋
             </h1>
             <div className="flex items-center gap-1.5 mt-0.5">
               <span className="w-2 h-2 rounded-full bg-[var(--color-accent)] inline-block animate-pulse"></span>
@@ -26,7 +46,7 @@ export default function Home() {
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-[var(--color-accent)]"></div>
               <span className="font-[var(--font-title-md)] text-[13px] text-[var(--color-ink)] font-semibold">
-                ABC EV Components
+                {companyName}
               </span>
               <span className="font-[var(--font-label-caps)] text-[10px] bg-[var(--color-accent)]/10 text-[var(--color-accent)] font-medium px-1.5 py-0.5 rounded border border-[var(--color-accent)]/25">
                 Tier-1 Verified
@@ -274,7 +294,7 @@ export default function Home() {
               <div className="w-9 h-9 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center font-[var(--font-label-caps)] text-xs font-bold">ABC</div>
               <div>
                 <div className="flex items-center gap-1.5">
-                  <span className="font-[var(--font-title-md)] text-[14px] text-[var(--color-ink)] font-bold">ABC EV Components</span>
+                  <span className="font-[var(--font-title-md)] text-[14px] text-[var(--color-ink)] font-bold">{companyName}</span>
                   <span className="material-symbols-outlined text-[var(--color-accent)] text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
                 </div>
                 <div className="flex items-center gap-2 text-[var(--color-ink-muted)] font-[var(--font-label-caps)] text-[10px]">
@@ -313,7 +333,7 @@ export default function Home() {
               <span className="font-[var(--font-label-caps)] text-[10px] text-[var(--color-accent)] font-bold">AI MATCH RATIONALE</span>
             </div>
             <p className="font-[var(--font-body-sm)] text-[11px] text-[var(--color-ink)] leading-tight">
-              You manufacture automotive components. ABC EV Components is actively sourcing Tier-1 integration partners within Tamil Nadu & Karnataka.
+              You manufacture automotive components. {companyName} is actively sourcing Tier-1 integration partners within Tamil Nadu & Karnataka.
             </p>
           </div>
           <div className="p-3.5 pt-3 space-y-2 border-t border-[var(--color-card-border)] mt-2.5">

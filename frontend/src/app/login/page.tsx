@@ -1,7 +1,26 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "next/form"; // Wait, React state
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
-  return (
+  const router = useRouter();
+  const [name, setName] = useState("");
+  const [company, setCompany] = useState("");
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name.trim() || !company.trim()) return;
+    
+    // Save to localStorage
+    localStorage.setItem("nexora_user_name", name.trim());
+    localStorage.setItem("nexora_company_name", company.trim());
+    
+    // Redirect to home
+    router.push("/");
+  };
     <div className="flex-1 flex flex-col gap-4">
       {/* Top Bar: Deep Charcoal Header */}
       <header className="bg-[var(--color-primary)] flex items-center justify-between px-4 h-14 w-full sticky top-0 z-30 shadow-md text-white">
@@ -61,57 +80,47 @@ export default function Login() {
 
         {/* Primary Form Container */}
         <div className="bg-white rounded-xl border border-[var(--color-card-border)] p-5 shadow-sm flex flex-col gap-4">
-          <form className="flex flex-col gap-4">
-            {/* Registered Business Identifier Field */}
+          <form onSubmit={handleLogin} className="flex flex-col gap-4">
+            {/* Your Name Field */}
+            <div className="flex flex-col gap-1.5">
+              <label className="font-[var(--font-mono-metric)] text-[11px] font-semibold text-[var(--color-secondary)] uppercase tracking-wider" htmlFor="user-name">Your Full Name</label>
+              <div className="flex rounded-lg border border-[var(--color-card-border)] focus-within:border-[var(--color-accent)] focus-within:ring-2 focus-within:ring-[var(--color-accent)]/15 bg-white overflow-hidden transition-all h-11">
+                <input 
+                  className="flex-1 px-3 py-2 text-[var(--color-ink)] font-[var(--font-mono-metric)] text-[14px] border-0 focus:ring-0 focus:outline-none placeholder:text-[var(--color-secondary)]/60 bg-transparent font-medium" 
+                  id="user-name" 
+                  placeholder="e.g. Rithish Kumar" 
+                  required 
+                  type="text" 
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+            </div>
+
+            {/* Company Name Field */}
             <div className="flex flex-col gap-1.5">
               <div className="flex justify-between items-center">
-                <label className="font-[var(--font-mono-metric)] text-[11px] font-semibold text-[var(--color-secondary)] uppercase tracking-wider" htmlFor="biz-id">Registered Business Identifier</label>
+                <label className="font-[var(--font-mono-metric)] text-[11px] font-semibold text-[var(--color-secondary)] uppercase tracking-wider" htmlFor="company-name">Company Name</label>
                 <span className="font-[var(--font-mono-metric)] text-[11px] text-[var(--color-accent)] font-semibold flex items-center gap-0.5">
                   <span className="material-symbols-outlined text-[13px]">verified</span>Live Registry
                 </span>
               </div>
               <div className="flex rounded-lg border border-[var(--color-card-border)] focus-within:border-[var(--color-accent)] focus-within:ring-2 focus-within:ring-[var(--color-accent)]/15 bg-white overflow-hidden transition-all h-11">
-                <button className="flex items-center gap-1 px-2.5 bg-[var(--color-canvas)] border-r border-[var(--color-card-border)] text-[var(--color-ink)] font-[var(--font-mono-metric)] text-[12px] font-semibold hover:bg-slate-100 transition-colors" type="button">
-                  <span>GSTIN</span>
-                  <span className="material-symbols-outlined text-[14px] text-[var(--color-secondary)]">arrow_drop_down</span>
-                </button>
-                <input className="flex-1 px-3 py-2 text-[var(--color-ink)] font-[var(--font-mono-metric)] text-[14px] border-0 focus:ring-0 focus:outline-none placeholder:text-[var(--color-secondary)]/60 bg-transparent uppercase font-medium tracking-tight" id="biz-id" placeholder="33AABCU9603R1ZM" required type="text" defaultValue="33AABCU9603R1ZM"/>
-                <div className="px-2.5 flex items-center gap-1 text-[var(--color-accent)]">
-                  <span className="material-symbols-outlined text-[17px]">check_circle</span>
-                </div>
-              </div>
-              <div className="flex items-center justify-between px-0.5 text-[11px] font-[var(--font-mono-metric)] text-[var(--color-secondary)]">
-                <span className="flex items-center gap-1 text-[var(--color-accent)] font-medium">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)]"></span>GSTN & MCA Verified Entity
-                </span>
-                <span>Supports Udyam / CIN</span>
-              </div>
-            </div>
-
-            {/* Authorized Signatory Mobile Field */}
-            <div className="flex flex-col gap-1.5">
-              <div className="flex justify-between items-center">
-                <label className="font-[var(--font-mono-metric)] text-[11px] font-semibold text-[var(--color-secondary)] uppercase tracking-wider" htmlFor="biz-phone">Authorized Signatory Mobile</label>
-                <span className="font-[var(--font-mono-metric)] text-[11px] text-[var(--color-accent)] font-semibold flex items-center gap-0.5">
-                  <span className="material-symbols-outlined text-[13px]">lock_person</span>Govt-Linked OTP
-                </span>
-              </div>
-              <div className="flex rounded-lg border border-[var(--color-card-border)] focus-within:border-[var(--color-accent)] focus-within:ring-2 focus-within:ring-[var(--color-accent)]/15 bg-white overflow-hidden transition-all h-11">
-                <button className="flex items-center gap-1.5 px-2.5 bg-[var(--color-canvas)] border-r border-[var(--color-card-border)] text-[var(--color-ink)] font-[var(--font-mono-metric)] text-[13px] hover:bg-slate-100 transition-colors" type="button">
-                  <span aria-hidden="true" className="inline-block w-4 text-[13px] leading-none">🇮🇳</span>
-                  <span className="font-semibold text-[var(--color-ink)]">+91</span>
-                  <span className="material-symbols-outlined text-[14px] text-[var(--color-secondary)]">arrow_drop_down</span>
-                </button>
-                <input className="flex-1 px-3 py-2 text-[var(--color-ink)] font-[var(--font-mono-metric)] text-[14px] border-0 focus:ring-0 focus:outline-none placeholder:text-[var(--color-secondary)]/60 bg-transparent font-medium" id="biz-phone" inputMode="numeric" placeholder="98765 43210" required type="tel" defaultValue="98765 43210"/>
-                <button className="px-2.5 text-[var(--color-secondary)] hover:text-[var(--color-ink)] transition-colors flex items-center" title="Clear field" type="button">
-                  <span className="material-symbols-outlined text-[18px]">cancel</span>
-                </button>
+                <input 
+                  className="flex-1 px-3 py-2 text-[var(--color-ink)] font-[var(--font-mono-metric)] text-[14px] border-0 focus:ring-0 focus:outline-none placeholder:text-[var(--color-secondary)]/60 bg-transparent font-medium" 
+                  id="company-name" 
+                  placeholder="e.g. ABC EV Components" 
+                  required 
+                  type="text" 
+                  value={company}
+                  onChange={(e) => setCompany(e.target.value)}
+                />
               </div>
             </div>
 
             {/* Advisory Notice */}
             <p className="text-[12px] text-[var(--color-secondary)] leading-relaxed bg-[var(--color-canvas)] p-3 rounded-lg border border-[var(--color-card-border)]">
-              Only verified business directors, partners, or authorized representatives can access Nexora's opportunity network.
+              Build your profile to join Nexora's verified opportunity network.
             </p>
 
             {/* Options Row */}
@@ -120,14 +129,13 @@ export default function Login() {
                 <input defaultChecked className="w-4 h-4 rounded border-[var(--color-card-border)] text-[var(--color-accent)] focus:ring-[var(--color-accent)]/25" type="checkbox"/>
                 <span className="text-[13px] text-[var(--color-secondary)]">Remember corporate device</span>
               </label>
-              <Link className="text-[13px] text-[var(--color-primary)] hover:text-[var(--color-accent)] font-semibold transition-colors" href="#">Verify via DSC</Link>
             </div>
 
             {/* Primary Action CTA Button */}
-            <Link href="/" className="w-full mt-1 h-11 rounded-lg bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-white font-semibold text-[15px] flex items-center justify-center gap-2 active:scale-[0.98] transition-all shadow-sm">
-              <span>Verify Business & Continue</span>
+            <button type="submit" className="w-full mt-1 h-11 rounded-lg bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-white font-semibold text-[15px] flex items-center justify-center gap-2 active:scale-[0.98] transition-all shadow-sm disabled:opacity-50">
+              <span>Build Profile & Continue</span>
               <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-            </Link>
+            </button>
           </form>
 
           {/* Bank-Grade Trust & Compliance Footnote */}
