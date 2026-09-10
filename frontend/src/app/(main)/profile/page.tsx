@@ -197,6 +197,20 @@ export default function Profile() {
           </div>
         </section>
 
+        {/* Section 6: Account Actions */}
+        <section className="bg-white rounded-xl border border-[var(--color-card-border)] p-4 shadow-sm mt-4">
+          <button 
+            onClick={() => {
+              localStorage.clear();
+              router.push("/login");
+            }}
+            className="w-full py-2.5 rounded-lg border border-[var(--color-error)] text-[var(--color-error)] font-semibold text-[13px] hover:bg-red-50 transition-colors flex items-center justify-center gap-2"
+          >
+            <span className="material-symbols-outlined text-[18px]">logout</span>
+            Sign Out
+          </button>
+        </section>
+
       </div>
     </div>
   );

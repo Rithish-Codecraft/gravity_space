@@ -118,6 +118,34 @@ export default function Login() {
               </div>
             </div>
 
+            {/* Email Field */}
+            <div className="flex flex-col gap-1.5">
+              <label className="font-[var(--font-mono-metric)] text-[11px] font-semibold text-[var(--color-secondary)] uppercase tracking-wider" htmlFor="email">Work Email</label>
+              <div className="flex rounded-lg border border-[var(--color-card-border)] focus-within:border-[var(--color-accent)] focus-within:ring-2 focus-within:ring-[var(--color-accent)]/15 bg-white overflow-hidden transition-all h-11">
+                <input 
+                  className="flex-1 px-3 py-2 text-[var(--color-ink)] font-[var(--font-mono-metric)] text-[14px] border-0 focus:ring-0 focus:outline-none placeholder:text-[var(--color-secondary)]/60 bg-transparent font-medium" 
+                  id="email" 
+                  placeholder="name@company.com" 
+                  required 
+                  type="email" 
+                />
+              </div>
+            </div>
+
+            {/* Password Field */}
+            <div className="flex flex-col gap-1.5">
+              <label className="font-[var(--font-mono-metric)] text-[11px] font-semibold text-[var(--color-secondary)] uppercase tracking-wider" htmlFor="password">Password / PIN</label>
+              <div className="flex rounded-lg border border-[var(--color-card-border)] focus-within:border-[var(--color-accent)] focus-within:ring-2 focus-within:ring-[var(--color-accent)]/15 bg-white overflow-hidden transition-all h-11">
+                <input 
+                  className="flex-1 px-3 py-2 text-[var(--color-ink)] font-[var(--font-mono-metric)] text-[14px] border-0 focus:ring-0 focus:outline-none placeholder:text-[var(--color-secondary)]/60 bg-transparent font-medium" 
+                  id="password" 
+                  placeholder="••••••••" 
+                  required 
+                  type="password" 
+                />
+              </div>
+            </div>
+
             {/* Advisory Notice */}
             <p className="text-[12px] text-[var(--color-secondary)] leading-relaxed bg-[var(--color-canvas)] p-3 rounded-lg border border-[var(--color-card-border)]">
               Build your profile to join Nexora's verified opportunity network.
