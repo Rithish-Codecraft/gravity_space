@@ -66,7 +66,7 @@ export function TopHeader() {
           <span className="material-symbols-outlined text-[var(--color-accent)] text-[17px]" style={{ fontVariationSettings: "'FILL' 1" }}>spark</span>
           <span className="font-[var(--font-label-caps)] text-[10px] text-white">AI</span>
         </Link>
-        <button aria-label="Notifications" className="p-1.5 relative rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors duration-150">
+        <button onClick={() => alert("Notifications coming soon")} aria-label="Notifications" className="p-1.5 relative rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors duration-150">
           <span className="material-symbols-outlined text-[20px]">notifications</span>
           <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[var(--color-accent)] border border-[var(--color-primary)] rounded-full"></span>
         </button>

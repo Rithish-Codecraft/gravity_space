@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { createClient } from "@/utils/supabase/client";
 
 export default function Profile() {
   const router = useRouter();
@@ -200,9 +201,9 @@ export default function Profile() {
         {/* Section 6: Account Actions */}
         <section className="bg-white rounded-xl border border-[var(--color-card-border)] p-4 shadow-sm mt-4">
           <button 
-            onClick={() => {
-              localStorage.clear();
-              router.push("/");
+            onClick={async () => {
+              const { logout } = await import('@/app/auth/actions');
+              await logout();
             }}
             className="w-full py-2.5 rounded-lg border border-[var(--color-error)] text-[var(--color-error)] font-semibold text-[13px] hover:bg-red-50 transition-colors flex items-center justify-center gap-2"
           >

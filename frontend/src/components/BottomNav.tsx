@@ -14,8 +14,14 @@ export function BottomNav() {
     { id: "profile", path: "/profile", icon: "domain", label: "Profile", badge: null },
   ];
 
+  const isExplore = pathname === "/explore";
+
   return (
-    <nav className="fixed bottom-0 left-0 w-full z-50 flex items-center justify-around px-gutter-mobile py-2 bg-[var(--color-card-bg)] shadow-[0_-4px_16px_rgba(15,23,42,0.06)] border-t border-[var(--color-card-border)]">
+    <nav className={`fixed bottom-0 left-0 w-full z-50 flex items-center justify-around px-gutter-mobile py-2 transition-colors duration-200 ${
+      isExplore 
+        ? "bg-black/80 backdrop-blur-md border-t border-white/10" 
+        : "bg-[var(--color-card-bg)] shadow-[0_-4px_16px_rgba(15,23,42,0.06)] border-t border-[var(--color-card-border)]"
+    }`}>
       {navItems.map((item) => {
         const isActive = pathname === item.path;
         return (
@@ -23,7 +29,9 @@ export function BottomNav() {
             key={item.id}
             href={item.path}
             className={`nav-btn flex flex-col items-center justify-center transition-colors duration-150 py-1 px-2.5 rounded-lg active:scale-95 relative group ${
-              isActive ? "text-[var(--color-accent)] font-semibold" : "text-[var(--color-secondary)] font-normal hover:text-[var(--color-ink)]"
+              isActive 
+                ? (isExplore ? "text-[#479a4c] font-semibold" : "text-[var(--color-accent)] font-semibold") 
+                : (isExplore ? "text-white/60 font-normal hover:text-white" : "text-[var(--color-secondary)] font-normal hover:text-[var(--color-ink)]")
             }`}
           >
             <div className="relative">

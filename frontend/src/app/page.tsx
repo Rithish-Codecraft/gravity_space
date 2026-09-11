@@ -2,16 +2,54 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { createClient } from "@/utils/supabase/client";
 
 export default function Login() {
   const router = useRouter();
   const [bizId, setBizId] = useState("33AABCU9603R1ZM");
   const [phone, setPhone] = useState("98765 43210");
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Fallback to local storage for testing if Supabase is not configured yet
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
+      alert("⚠️ Supabase Backend is not configured yet! Please provide NEXT_PUBLIC_SUPABASE_URL in .env.local to enable real database authentication. Falling back to local session...");
+      localStorage.setItem("nexora_user_name", bizId);
+      localStorage.setItem("nexora_company_name", "Verified Company");
+      router.push("/home");
+      return;
+    }
+
+    const supabase = createClient();
+    
+    // Attempt Supabase Authentication
+    // Using dummy email for demo purposes since we are taking GSTIN/Phone right now
+    const dummyEmail = `${bizId.toLowerCase()}@nexora.b2b`;
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: dummyEmail,
+      password: phone, // Using phone as password for demo mapping
+    });
+
+    if (error) {
+      // If user doesn't exist, sign them up automatically for demo purposes
+      if (error.message.includes("Invalid login")) {
+        const { error: signUpError } = await supabase.auth.signUp({
+          email: dummyEmail,
+          password: phone,
+        });
+        if (signUpError) {
+          alert("Authentication Failed: " + signUpError.message);
+          return;
+        }
+      } else {
+        alert("Authentication Error: " + error.message);
+        return;
+      }
+    }
+
+    // Set local storage as fallback for legacy components during transition
     localStorage.setItem("nexora_user_name", bizId);
-    localStorage.setItem("nexora_company_name", "Verified Company");
     router.push("/home");
   };
 

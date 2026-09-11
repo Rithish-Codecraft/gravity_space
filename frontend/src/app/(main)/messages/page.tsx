@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 export default function Messages() {
@@ -6,7 +8,7 @@ export default function Messages() {
       {/* Deal Rooms & Copilot AI Top Filter */}
       <section className="px-[var(--spacing-gutter-mobile)] pt-1">
         <div className="flex items-center gap-2">
-          <button className="flex-1 py-2 px-3 rounded-xl bg-[var(--color-accent)] text-white font-[var(--font-title-md)] text-[12px] font-semibold flex items-center justify-center gap-1.5 shadow-sm">
+          <button onClick={() => alert("Procurement Rooms coming in Phase 3")} className="flex-1 py-2 px-3 rounded-xl bg-[var(--color-accent)] text-white font-[var(--font-title-md)] text-[12px] font-semibold flex items-center justify-center gap-1.5 shadow-sm">
             <span className="material-symbols-outlined text-[16px]">handshake</span>
             Procurement Rooms
           </button>
@@ -20,7 +22,7 @@ export default function Messages() {
       {/* Active Deal Conversations */}
       <section className="px-[var(--spacing-gutter-mobile)] space-y-2">
         {/* Conversation 1: Ather Deal Room */}
-        <div className="bg-[var(--color-card-bg)] rounded-xl border border-[var(--color-card-border)] p-3.5 shadow-sm hover:border-[var(--color-accent)]/40 transition-colors cursor-pointer">
+        <div onClick={() => alert("Real-time messaging coming in Phase 3")} className="bg-[var(--color-card-bg)] rounded-xl border border-[var(--color-card-border)] p-3.5 shadow-sm hover:border-[var(--color-accent)]/40 transition-colors cursor-pointer">
           <div className="flex items-start justify-between">
             <div className="flex items-center gap-3">
               <div className="relative">
