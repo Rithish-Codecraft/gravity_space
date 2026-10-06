@@ -9,19 +9,13 @@ export function BottomNav() {
   const navItems = [
     { id: "home", path: "/home", icon: "home", label: "Home", badge: null },
     { id: "explore", path: "/explore", icon: "travel_explore", label: "Explore", badge: null },
-    { id: "deals", path: "/deals", icon: "handshake", label: "Deals", badge: "4" },
+    { id: "copilot", path: "/copilot", icon: "auto_awesome", label: "Copilot", badge: "AI" },
     { id: "messages", path: "/messages", icon: "chat_bubble", label: "Messages", badge: "dot" },
     { id: "profile", path: "/profile", icon: "domain", label: "Profile", badge: null },
   ];
 
-  const isExplore = pathname === "/explore";
-
   return (
-    <nav className={`fixed bottom-0 left-0 w-full z-50 flex items-center justify-around px-gutter-mobile py-2 transition-colors duration-200 ${
-      isExplore 
-        ? "bg-black/80 backdrop-blur-md border-t border-white/10" 
-        : "bg-[var(--color-card-bg)] shadow-[0_-4px_16px_rgba(15,23,42,0.06)] border-t border-[var(--color-card-border)]"
-    }`}>
+    <nav className="fixed bottom-0 left-0 w-full z-50 flex items-center justify-around px-2 py-2 bg-nexora-surface shadow-[0_-4px_16px_rgba(15,23,42,0.06)] border-t border-nexora-border transition-colors duration-200">
       {navItems.map((item) => {
         const isActive = pathname === item.path;
         return (
@@ -30,8 +24,8 @@ export function BottomNav() {
             href={item.path}
             className={`nav-btn flex flex-col items-center justify-center transition-colors duration-150 py-1 px-2.5 rounded-lg active:scale-95 relative group ${
               isActive 
-                ? (isExplore ? "text-[#479a4c] font-semibold" : "text-[var(--color-accent)] font-semibold") 
-                : (isExplore ? "text-white/60 font-normal hover:text-white" : "text-[var(--color-secondary)] font-normal hover:text-[var(--color-ink)]")
+                ? "text-nexora-primary font-semibold" 
+                : "text-nexora-muted font-normal hover:text-nexora-text"
             }`}
           >
             <div className="relative">
@@ -42,15 +36,15 @@ export function BottomNav() {
                 {item.icon}
               </span>
               {item.badge === "dot" && (
-                <span className="absolute -top-0.5 -right-1 w-2 h-2 bg-[var(--color-accent)] rounded-full"></span>
+                <span className="absolute -top-0.5 -right-1 w-2 h-2 bg-nexora-success rounded-full"></span>
               )}
               {item.badge && item.badge !== "dot" && (
-                <span className="absolute -top-1 -right-2 bg-[var(--color-accent)] text-white font-[var(--font-mono-metric)] text-[9px] font-bold px-1 rounded-full h-3.5 min-w-[14px] flex items-center justify-center">
+                <span className={`absolute -top-1 -right-2 ${item.id === 'copilot' ? 'bg-nexora-ai' : 'bg-nexora-primary'} text-white text-[9px] font-bold px-1 rounded-full h-3.5 min-w-[14px] flex items-center justify-center`}>
                   {item.badge}
                 </span>
               )}
             </div>
-            <span className="font-[var(--font-label-caps)] text-[10px] mt-0.5">
+            <span className="text-[10px] mt-0.5">
               {item.label}
             </span>
           </Link>

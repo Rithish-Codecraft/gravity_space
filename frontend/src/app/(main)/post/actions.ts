@@ -70,3 +70,51 @@ export async function createPost(formData: FormData) {
 
   redirect('/home')
 }
+
+export async function createOpportunity(formData: FormData) {
+  const supabase = await createClient()
+
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) redirect('/login')
+
+  const { data: member } = await supabase
+    .from('business_members')
+    .select('business_id')
+    .eq('user_id', user.id)
+    .limit(1)
+    .single()
+
+  if (!member?.business_id) {
+    throw new Error('User does not belong to a business.')
+  }
+
+  const type = formData.get('type') as string
+  const title = formData.get('title') as string
+  const description = formData.get('description') as string
+  
+  if (!title || !description || !type) throw new Error('Missing required fields')
+
+  const { error } = await supabase
+    .from('opportunities')
+    .insert({
+      business_id: member.business_id,
+      created_by: user.id,
+      type: type,
+      title: title,
+      description: description,
+      status: 'OPEN',
+      budget_min: formData.get('budget_min') ? Number(formData.get('budget_min')) : null,
+      budget_max: formData.get('budget_max') ? Number(formData.get('budget_max')) : null,
+      currency: 'INR',
+      quantity: formData.get('quantity') ? Number(formData.get('quantity')) : null,
+      quantity_unit: formData.get('quantity_unit') as string || null,
+      visibility: 'PUBLIC'
+    })
+
+  if (error) {
+    console.error('Error creating opportunity:', error)
+    throw new Error('Failed to create opportunity')
+  }
+
+  redirect('/home')
+}

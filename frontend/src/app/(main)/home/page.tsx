@@ -1,7 +1,8 @@
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
-import { formatDistanceToNow } from "date-fns";
-import PostActions from "@/components/PostActions";
+import OpportunityCard from "@/components/OpportunityCard";
+import BusinessIdentity from "@/components/BusinessIdentity";
+import { Sparkles, ChevronRight, ArrowRight } from "lucide-react";
 
 export default async function Home() {
   const supabase = await createClient();
@@ -22,152 +23,113 @@ export default async function Home() {
       .limit(1)
       .single();
     
-    if (member?.businesses?.name) {
-      companyName = member.businesses.name;
+    const biz = member?.businesses as any;
+    if (biz?.name) {
+      companyName = biz.name;
     }
   }
 
-  // Fetch Feed Posts
-  const { data: posts } = await supabase
-    .from('posts')
+  // Fetch top 1 opportunity match
+  const { data: topMatch } = await supabase
+    .from('opportunity_matches')
     .select(`
-      *,
-      businesses ( id, name, logo_url, verification_status, sector ),
-      post_likes ( profile_id ),
-      post_comments ( count )
+      id, match_score, match_reason,
+      opportunity:opportunities(
+        id, title, budget_min, budget_max,
+        business:businesses(name, logo_url, sector, city, state, verification_status)
+      )
     `)
-    .order('created_at', { ascending: false });
+    .order('match_score', { ascending: false })
+    .limit(1)
+    .single();
+
+  // Fetch recommended businesses (mock recommendation logic by getting recent verified ones)
+  const { data: recommendedBiz } = await supabase
+    .from('businesses')
+    .select('id, name, logo_url, sector, city, state, verification_status')
+    .eq('verification_status', 'VERIFIED')
+    .limit(3);
 
   return (
-    <div className="flex-1 flex flex-col gap-[var(--spacing-element-stack-md)] py-[var(--spacing-element-stack-sm)] pb-20">
-      {/* Greeting */}
-      <section className="px-[var(--spacing-gutter-mobile)] pt-1">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="font-[var(--font-headline-lg-mobile)] text-[24px] leading-[32px] font-bold tracking-tight text-[var(--color-ink)]">
-              Good morning, {userName} 👋
-            </h1>
-            <div className="flex items-center gap-1.5 mt-0.5">
-              <span className="w-2 h-2 rounded-full bg-[var(--color-accent)] inline-block animate-pulse"></span>
-              <span className="font-[var(--font-label-caps)] text-[11px] text-[var(--color-accent)] font-semibold">
-                Network Active
-              </span>
-            </div>
-          </div>
+    <div className="flex-1 flex flex-col gap-6 py-4 pb-24 bg-nexora-background min-h-[100dvh] max-w-md mx-auto w-full">
+      {/* Hero Greeting */}
+      <section className="px-4 pt-2">
+        <div className="flex items-center gap-2 text-nexora-ai mb-1">
+          <Sparkles className="w-4 h-4" />
+          <span className="text-xs font-bold uppercase tracking-wider">Nexora AI Summary</span>
         </div>
-
-        {/* Mini Profile Status */}
-        <div className="mt-2.5 bg-[var(--color-card-bg)] rounded-xl border border-[var(--color-card-border)] p-3 shadow-sm">
-          <div className="flex items-center justify-between pb-2">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-[var(--color-accent)]"></div>
-              <span className="font-[var(--font-title-md)] text-[13px] text-[var(--color-ink)] font-semibold">
-                {companyName}
-              </span>
-            </div>
-            <Link href="/profile" className="font-[var(--font-label-caps)] text-[11px] text-[var(--color-accent)] font-semibold hover:underline flex items-center">
-              View Profile
-              <span className="material-symbols-outlined text-[14px]">chevron_right</span>
-            </Link>
-          </div>
-        </div>
+        <h1 className="text-2xl font-bold text-nexora-text leading-tight">
+          Good morning, {userName}
+        </h1>
+        <p className="text-nexora-muted mt-1 text-sm">
+          You have <strong>3</strong> high-priority matches and <strong>1</strong> new message regarding your recent posting.
+        </p>
       </section>
 
-      {/* Quick Intent Composer Bar */}
-      <section className="px-[var(--spacing-gutter-mobile)] mt-2">
-        <div className="bg-[var(--color-card-bg)] rounded-xl border border-[var(--color-card-border)] p-3 shadow-sm">
-          <div className="flex items-center gap-2.5 pb-2.5 border-b border-[var(--color-card-border)]">
-            <div className="w-8 h-8 shrink-0 rounded-full bg-[var(--color-primary)] text-white flex items-center justify-center font-[var(--font-label-caps)] text-xs font-bold">
-              {companyName.substring(0, 2).toUpperCase()}
-            </div>
-            <Link href="/post" className="w-full bg-[var(--color-canvas)] rounded-lg text-[13px] font-[var(--font-body-sm)] text-[var(--color-secondary)] border border-[var(--color-card-border)] px-3 py-2 cursor-pointer hover:border-[var(--color-accent)] transition-colors">
-              Share an update or requirement...
-            </Link>
-          </div>
-          <div className="flex items-center pt-2.5 gap-2">
-            <Link href="/post?type=GENERAL" className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[var(--color-canvas)] border border-[var(--color-card-border)] text-[var(--color-ink)] text-[12px] hover:bg-[var(--color-card-border)]/40 transition-colors">
-              <span className="material-symbols-outlined text-[var(--color-secondary)] text-[16px]">edit_document</span>
-              Update
-            </Link>
-            <Link href="/post?type=REQUIREMENT" className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-[var(--color-canvas)] border border-[var(--color-card-border)] text-[var(--color-ink)] text-[12px] hover:bg-[var(--color-card-border)]/40 transition-colors">
-              <span className="material-symbols-outlined text-[var(--color-secondary)] text-[16px]">priority_high</span>
-              Requirement
-            </Link>
-          </div>
+      {/* Top Match */}
+      <section className="px-4">
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="text-base font-bold text-nexora-text">Top Opportunity Match</h2>
+          <Link href="/explore" className="text-sm font-semibold text-nexora-primary hover:underline">
+            View All
+          </Link>
         </div>
-      </section>
-
-      {/* Feed Segmented Filter Control */}
-      <section className="px-[var(--spacing-gutter-mobile)] pt-1">
-        <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-0.5">
-          <button className="px-3 py-1 rounded-full bg-[var(--color-accent)] text-white font-[var(--font-title-md)] text-[12px] shrink-0 font-semibold shadow-sm">Latest Feed</button>
-        </div>
-      </section>
-
-      {/* Main Feed Stream */}
-      <section className="px-[var(--spacing-gutter-mobile)] space-y-4">
-        {posts && posts.length > 0 ? posts.map((post) => {
-          const likesCount = post.post_likes?.length || 0;
-          const commentsCount = post.post_comments?.[0]?.count || 0;
-          const hasLiked = user ? post.post_likes?.some((like: any) => like.profile_id === user.id) : false;
-
-          return (
-          <article key={post.id} className="bg-[var(--color-card-bg)] rounded-xl border border-[var(--color-card-border)] shadow-sm overflow-hidden">
-            <div className="p-3.5 pb-2.5 flex items-start justify-between">
-              <Link href={`/businesses/${post.business_id}`} className="flex items-center gap-2.5 group">
-                <div className="w-10 h-10 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center font-[var(--font-label-caps)] text-sm font-bold overflow-hidden">
-                  {post.businesses?.logo_url ? (
-                     <img src={post.businesses.logo_url} className="w-full h-full object-cover" />
-                  ) : (
-                     post.businesses?.name?.substring(0, 2).toUpperCase() || 'B'
-                  )}
-                </div>
-                <div>
-                  <div className="flex items-center gap-1.5 group-hover:underline">
-                    <span className="font-[var(--font-title-md)] text-[14px] text-[var(--color-ink)] font-bold">{post.businesses?.name}</span>
-                    {post.businesses?.verification_status === 'VERIFIED' && (
-                      <span className="material-symbols-outlined text-[var(--color-accent)] text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
-                    )}
-                  </div>
-                  <div className="flex items-center gap-1 text-[var(--color-ink-muted)] font-[var(--font-label-caps)] text-[10px]">
-                    <span>{post.businesses?.sector || 'Business'}</span>
-                    <span>•</span>
-                    <span>{formatDistanceToNow(new Date(post.created_at))} ago</span>
-                  </div>
-                </div>
-              </Link>
-            </div>
+        
+        {topMatch ? (
+          (() => {
+            const opp = topMatch.opportunity as any;
+            const biz = opp.business;
+            const location = biz.city ? `${biz.city}, ${biz.state || ''}` : null;
+            const reasons = topMatch.match_reason ? topMatch.match_reason.split('|').filter(Boolean) : ['High intent match'];
             
-            {post.post_type === 'REQUIREMENT' && (
-              <div className="mx-3.5 mb-2 px-2 py-1 bg-amber-50 border border-amber-200 text-amber-800 text-[10px] font-bold tracking-wider uppercase rounded inline-flex items-center gap-1">
-                <span className="material-symbols-outlined text-[12px]">notification_important</span> Requirement
-              </div>
-            )}
-
-            <div className="px-3.5 pb-2.5">
-              <p className="font-[var(--font-body-md)] text-[14px] text-[var(--color-ink)] whitespace-pre-wrap leading-relaxed">
-                {post.content}
-              </p>
-            </div>
-            
-            {/* Action Bar */}
-            <div className="p-3.5 pt-3 border-t border-[var(--color-card-border)] flex items-center justify-between text-[var(--color-ink-muted)] font-[var(--font-mono-metric)] text-[13px]">
-              <PostActions 
-                postId={post.id} 
-                initialLikes={likesCount} 
-                initialComments={commentsCount} 
-                hasLikedInitially={hasLiked} 
+            return (
+              <OpportunityCard 
+                id={topMatch.id}
+                businessName={biz.name}
+                businessLogo={biz.logo_url}
+                businessSector={biz.sector}
+                businessLocation={location}
+                isVerified={biz.verification_status === 'VERIFIED'}
+                title={opp.title}
+                budgetMin={opp.budget_min}
+                budgetMax={opp.budget_max}
+                matchScore={topMatch.match_score || 95}
+                matchReasons={reasons}
               />
-            </div>
-          </article>
-        )}) : (
-          <div className="p-6 text-center text-[var(--color-secondary)]">
-            <p>No posts in your network yet.</p>
+            )
+          })()
+        ) : (
+          <div className="bg-nexora-surface border border-nexora-border rounded-xl p-4 text-center text-sm text-nexora-muted">
+            No matches found right now.
           </div>
         )}
       </section>
-      
-      <div className="h-6"></div>
+
+      {/* Recommended Businesses */}
+      <section className="px-4">
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="text-base font-bold text-nexora-text">Discover Businesses</h2>
+          <button className="text-sm font-semibold text-nexora-primary hover:underline">
+            Search
+          </button>
+        </div>
+        <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2 -mx-4 px-4">
+          {recommendedBiz?.map(biz => (
+            <div key={biz.id} className="min-w-[240px] bg-nexora-surface border border-nexora-border rounded-xl p-3 shadow-sm shrink-0 flex flex-col justify-between">
+              <BusinessIdentity 
+                name={biz.name}
+                logoUrl={biz.logo_url}
+                sector={biz.sector}
+                location={biz.city}
+                isVerified={biz.verification_status === 'VERIFIED'}
+              />
+              <Link href={`/profile/${biz.id}`} className="mt-3 text-sm text-nexora-primary font-medium flex items-center gap-1 hover:underline">
+                View Profile <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
